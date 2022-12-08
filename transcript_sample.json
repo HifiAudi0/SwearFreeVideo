@@ -1,0 +1,326 @@
+_SvIzSD0USE English (auto-generated) en True True [
+    {'language': 'Afrikaans', 'language_code': 'af'
+    },
+    {'language': 'Akan', 'language_code': 'ak'
+    },
+    {'language': 'Albanian', 'language_code': 'sq'
+    },
+    {'language': 'Amharic', 'language_code': 'am'
+    },
+    {'language': 'Arabic', 'language_code': 'ar'
+    },
+    {'language': 'Armenian', 'language_code': 'hy'
+    },
+    {'language': 'Assamese', 'language_code': 'as'
+    },
+    {'language': 'Aymara', 'language_code': 'ay'
+    },
+    {'language': 'Azerbaijani', 'language_code': 'az'
+    },
+    {'language': 'Bangla', 'language_code': 'bn'
+    },
+    {'language': 'Basque', 'language_code': 'eu'
+    },
+    {'language': 'Belarusian', 'language_code': 'be'
+    },
+    {'language': 'Bhojpuri', 'language_code': 'bho'
+    },
+    {'language': 'Bosnian', 'language_code': 'bs'
+    },
+    {'language': 'Bulgarian', 'language_code': 'bg'
+    },
+    {'language': 'Burmese', 'language_code': 'my'
+    },
+    {'language': 'Catalan', 'language_code': 'ca'
+    },
+    {'language': 'Cebuano', 'language_code': 'ceb'
+    },
+    {'language': 'Chinese (Simplified)', 'language_code': 'zh-Hans'
+    },
+    {'language': 'Chinese (Traditional)', 'language_code': 'zh-Hant'
+    },
+    {'language': 'Corsican', 'language_code': 'co'
+    },
+    {'language': 'Croatian', 'language_code': 'hr'
+    },
+    {'language': 'Czech', 'language_code': 'cs'
+    },
+    {'language': 'Danish', 'language_code': 'da'
+    },
+    {'language': 'Divehi', 'language_code': 'dv'
+    },
+    {'language': 'Dutch', 'language_code': 'nl'
+    },
+    {'language': 'English', 'language_code': 'en'
+    },
+    {'language': 'Esperanto', 'language_code': 'eo'
+    },
+    {'language': 'Estonian', 'language_code': 'et'
+    },
+    {'language': 'Ewe', 'language_code': 'ee'
+    },
+    {'language': 'Filipino', 'language_code': 'fil'
+    },
+    {'language': 'Finnish', 'language_code': 'fi'
+    },
+    {'language': 'French', 'language_code': 'fr'
+    },
+    {'language': 'Galician', 'language_code': 'gl'
+    },
+    {'language': 'Ganda', 'language_code': 'lg'
+    },
+    {'language': 'Georgian', 'language_code': 'ka'
+    },
+    {'language': 'German', 'language_code': 'de'
+    },
+    {'language': 'Greek', 'language_code': 'el'
+    },
+    {'language': 'Guarani', 'language_code': 'gn'
+    },
+    {'language': 'Gujarati', 'language_code': 'gu'
+    },
+    {'language': 'Haitian Creole', 'language_code': 'ht'
+    },
+    {'language': 'Hausa', 'language_code': 'ha'
+    },
+    {'language': 'Hawaiian', 'language_code': 'haw'
+    },
+    {'language': 'Hebrew', 'language_code': 'iw'
+    },
+    {'language': 'Hindi', 'language_code': 'hi'
+    },
+    {'language': 'Hmong', 'language_code': 'hmn'
+    },
+    {'language': 'Hungarian', 'language_code': 'hu'
+    },
+    {'language': 'Icelandic', 'language_code': 'is'
+    },
+    {'language': 'Igbo', 'language_code': 'ig'
+    },
+    {'language': 'Indonesian', 'language_code': 'id'
+    },
+    {'language': 'Irish', 'language_code': 'ga'
+    },
+    {'language': 'Italian', 'language_code': 'it'
+    },
+    {'language': 'Japanese', 'language_code': 'ja'
+    },
+    {'language': 'Javanese', 'language_code': 'jv'
+    },
+    {'language': 'Kannada', 'language_code': 'kn'
+    },
+    {'language': 'Kazakh', 'language_code': 'kk'
+    },
+    {'language': 'Khmer', 'language_code': 'km'
+    },
+    {'language': 'Kinyarwanda', 'language_code': 'rw'
+    },
+    {'language': 'Korean', 'language_code': 'ko'
+    },
+    {'language': 'Krio', 'language_code': 'kri'
+    },
+    {'language': 'Kurdish', 'language_code': 'ku'
+    },
+    {'language': 'Kyrgyz', 'language_code': 'ky'
+    },
+    {'language': 'Lao', 'language_code': 'lo'
+    },
+    {'language': 'Latin', 'language_code': 'la'
+    },
+    {'language': 'Latvian', 'language_code': 'lv'
+    },
+    {'language': 'Lingala', 'language_code': 'ln'
+    },
+    {'language': 'Lithuanian', 'language_code': 'lt'
+    },
+    {'language': 'Luxembourgish', 'language_code': 'lb'
+    },
+    {'language': 'Macedonian', 'language_code': 'mk'
+    },
+    {'language': 'Malagasy', 'language_code': 'mg'
+    },
+    {'language': 'Malay', 'language_code': 'ms'
+    },
+    {'language': 'Malayalam', 'language_code': 'ml'
+    },
+    {'language': 'Maltese', 'language_code': 'mt'
+    },
+    {'language': 'Māori', 'language_code': 'mi'
+    },
+    {'language': 'Marathi', 'language_code': 'mr'
+    },
+    {'language': 'Mongolian', 'language_code': 'mn'
+    },
+    {'language': 'Nepali', 'language_code': 'ne'
+    },
+    {'language': 'Northern Sotho', 'language_code': 'nso'
+    },
+    {'language': 'Norwegian', 'language_code': 'no'
+    },
+    {'language': 'Nyanja', 'language_code': 'ny'
+    },
+    {'language': 'Odia', 'language_code': 'or'
+    },
+    {'language': 'Oromo', 'language_code': 'om'
+    },
+    {'language': 'Pashto', 'language_code': 'ps'
+    },
+    {'language': 'Persian', 'language_code': 'fa'
+    },
+    {'language': 'Polish', 'language_code': 'pl'
+    },
+    {'language': 'Portuguese', 'language_code': 'pt'
+    },
+    {'language': 'Punjabi', 'language_code': 'pa'
+    },
+    {'language': 'Quechua', 'language_code': 'qu'
+    },
+    {'language': 'Romanian', 'language_code': 'ro'
+    },
+    {'language': 'Russian', 'language_code': 'ru'
+    },
+    {'language': 'Samoan', 'language_code': 'sm'
+    },
+    {'language': 'Sanskrit', 'language_code': 'sa'
+    },
+    {'language': 'Scottish Gaelic', 'language_code': 'gd'
+    },
+    {'language': 'Serbian', 'language_code': 'sr'
+    },
+    {'language': 'Shona', 'language_code': 'sn'
+    },
+    {'language': 'Sindhi', 'language_code': 'sd'
+    },
+    {'language': 'Sinhala', 'language_code': 'si'
+    },
+    {'language': 'Slovak', 'language_code': 'sk'
+    },
+    {'language': 'Slovenian', 'language_code': 'sl'
+    },
+    {'language': 'Somali', 'language_code': 'so'
+    },
+    {'language': 'Southern Sotho', 'language_code': 'st'
+    },
+    {'language': 'Spanish', 'language_code': 'es'
+    },
+    {'language': 'Sundanese', 'language_code': 'su'
+    },
+    {'language': 'Swahili', 'language_code': 'sw'
+    },
+    {'language': 'Swedish', 'language_code': 'sv'
+    },
+    {'language': 'Tajik', 'language_code': 'tg'
+    },
+    {'language': 'Tamil', 'language_code': 'ta'
+    },
+    {'language': 'Tatar', 'language_code': 'tt'
+    },
+    {'language': 'Telugu', 'language_code': 'te'
+    },
+    {'language': 'Thai', 'language_code': 'th'
+    },
+    {'language': 'Tigrinya', 'language_code': 'ti'
+    },
+    {'language': 'Tsonga', 'language_code': 'ts'
+    },
+    {'language': 'Turkish', 'language_code': 'tr'
+    },
+    {'language': 'Turkmen', 'language_code': 'tk'
+    },
+    {'language': 'Ukrainian', 'language_code': 'uk'
+    },
+    {'language': 'Unknown Language', 'language_code': 'und'
+    },
+    {'language': 'Urdu', 'language_code': 'ur'
+    },
+    {'language': 'Uyghur', 'language_code': 'ug'
+    },
+    {'language': 'Uzbek', 'language_code': 'uz'
+    },
+    {'language': 'Vietnamese', 'language_code': 'vi'
+    },
+    {'language': 'Welsh', 'language_code': 'cy'
+    },
+    {'language': 'Western Frisian', 'language_code': 'fy'
+    },
+    {'language': 'Xhosa', 'language_code': 'xh'
+    },
+    {'language': 'Yiddish', 'language_code': 'yi'
+    },
+    {'language': 'Yoruba', 'language_code': 'yo'
+    },
+    {'language': 'Zulu', 'language_code': 'zu'
+    }
+]
+[
+    {'text': "what's up guys welcome back to my", 'start': 0.12, 'duration': 4.139
+    },
+    {'text': "channel I don't think I mentioned this", 'start': 1.829, 'duration': 4.47
+    },
+    {'text': 'but thank you so much for a thousand', 'start': 4.259, 'duration': 4.081
+    },
+    {'text': 'subscribers by the time this video is', 'start': 6.299, 'duration': 3.871
+    },
+    {'text': "published I'll probably add two thousand", 'start': 8.34, 'duration': 4.62
+    },
+    {'text': 'a quick reminder that besides the last', 'start': 10.17, 'duration': 5.46
+    },
+    {'text': 'video all these clips are either edited', 'start': 12.96, 'duration': 4.11
+    },
+    {'text': 'or sound like the characters are cursing', 'start': 15.63, 'duration': 3.899
+    },
+    {'text': "so please don't be commenting that the", 'start': 17.07, 'duration': 4.53
+    },
+    {'text': 'video is fake if you enjoy this video', 'start': 19.529, 'duration': 5.041
+    },
+    {'text': "please consider subscribing it's free", 'start': 21.6, 'duration': 5.12
+    },
+    {'text': 'and it really helps out my channel', 'start': 24.57, 'duration': 4.949
+    },
+    {'text': "that's it for the intro let's get", 'start': 26.72, 'duration': 6.7
+    },
+    {'text': "straight into the video I hope we didn't", 'start': 29.519, 'duration': 5.04
+    },
+    {'text': 'fight it everyone', 'start': 33.42, 'duration': 3.69
+    },
+    {'text': 'what about Madame gazelles old friends', 'start': 34.559, 'duration': 5.491
+    },
+    {'text': "wasn't she wants in a pop group that's", 'start': 37.11, 'duration': 6.719
+    },
+    {'text': 'right she played guitar with the [\xa0__\xa0
+        ]', 'start': 40.05, 'duration': 15.06
+    },
+    {'text': "gazelles can you fix it let's have a", 'start': 43.829, 'duration': 20.101
+    },
+    {'text': "look hmm that's very broken pebble and", 'start': 55.11, 'duration': 12.21
+    },
+    {'text': 'Gorge jump on board mummy and daddy pig', 'start': 63.93, 'duration': 12.47
+    },
+    {'text': 'you have to pedal now [\xa0__\xa0
+        ] it we stand', 'start': 67.32, 'duration': 12.24
+    },
+    {'text': 'there you are Suzy now you look like a', 'start': 76.4, 'duration': 10.48
+    },
+    {'text': 'tiger thank you Miss rabbit wow I like', 'start': 79.56, 'duration': 13.949
+    },
+    {'text': 'your face Suzy are you sure your boots', 'start': 86.88, 'duration': 8.37
+    },
+    {'text': 'safe Grampy rabbit', 'start': 93.509, 'duration': 13.741
+    },
+    {'text': 'oh is it going to take long it will take', 'start': 95.25, 'duration': 15.68
+    },
+    {'text': 'us wrong magic takes', 'start': 107.25, 'duration': 7.189
+    },
+    {'text': '[Applause
+        ]', 'start': 110.93, 'duration': 3.509
+    },
+    {'text': 'George like speakers', 'start': 114.59, 'duration': 6.29
+    },
+    {'text': '[Music
+        ]', 'start': 117.82, 'duration': 3.06
+    }
+]
+[
+    {'text': "what's up guys welcome back to my  channel I don't think I mentioned this  but thank you so much for a thousand  subscribers by the time this video is  published I'll probably add two thousand  a quick reminder that besides the last  video all these clips are either edited  or sound like the characters are cursing  so please don't be commenting that the  video is fake if you enjoy this video  please consider subscribing it's free  and it really helps out my channel  that's it for the intro let's get  straight into the video I hope we didn't  fight it everyone  what about Madame gazelles old friends  wasn't she wants in a pop group that's  right she played guitar with the [ __ ]  gazelles can you fix it let's have a  look hmm that's very broken pebble and  Gorge jump on board mummy and daddy pig  you have to pedal now [ __ ] it we stand  there you are Suzy now you look like a  tiger thank you Miss rabbit wow I like  your face Suzy are you sure your boots  safe Grampy rabbit  oh is it going to take long it will take  us wrong magic takes  [Applause]  George like speakers  [Music]", 'start': 0.12, 'duration': 4.139
+    }
+]
