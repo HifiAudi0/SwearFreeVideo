@@ -19,7 +19,7 @@
         player = new YT.Player('player', {
           height: '390',
           width: '640',
-          videoId: 'M7lc1UVf-VE',
+          videoId: '_SvIzSD0USE',
           playerVars: {
             'playsinline': 1
           },
@@ -41,13 +41,28 @@
       var done = false;
       function onPlayerStateChange(event) {
         if (event.data == YT.PlayerState.PLAYING && !done) {
-          setTimeout(stopVideo, 6000);
+            var currentTimestamp = 0;
+            var startSwearing = 67.32;
+            var durationSwearing = 12.24;
+            var endSwearing = startSwearing + durationSwearing;
+            console.log("ENDING SWEARING", endSwearing);
+          
+            setInterval(function ()  {
+                currentTimestamp = player.getCurrentTime()
+                console.log("CURRENT TIMESTAMP: " + currentTimestamp);
+                if (currentTimestamp > startSwearing && currentTimestamp < endSwearing) { // HARD CODED
+                    console.log("SWEARING INCOMING")
+                } else { console.log("NO SWEARING::::")}
+            }, 1000);
+
+           
           done = true;
         }
       }
-      function stopVideo() {
-        player.stopVideo();
-      }
+    //   function getTimestamp(player) {
+    //     var currentTimestamp = player.getCurrentTime();
+    //     return currentTimestamp;
+    //   }
     </script>
   </body>
 </html>

@@ -1,8 +1,11 @@
 from youtube_transcript_api import YouTubeTranscriptApi
+import json
 
+
+video_id = '_SvIzSD0USE'
 
 # retrieve the available transcripts
-transcript_list = YouTubeTranscriptApi.list_transcripts('_SvIzSD0USE')
+transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
 
 # iterate over all available transcripts
 for transcript in transcript_list:
@@ -30,9 +33,13 @@ for transcript in transcript_list:
 transcript = transcript_list.find_transcript(['de', 'en'])  
 
 # or just filter for manually created transcripts  
-transcript = transcript_list.find_manually_created_transcript(['de', 'en'])  
+# transcript = transcript_list.find_manually_created_transcript(['de', 'en'])  
 
 # or automatically generated ones  
-transcript = transcript_list.find_generated_transcript(['de', 'en'])
+# transcript = transcript_list.find_generated_transcript(['de', 'en'])
 
+
+# Write the transcript to a file as a json object
+with open(video_id + '.json', 'w') as outfile:
+    json.dump(transcript.fetch(), outfile)
 
