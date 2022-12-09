@@ -45,11 +45,12 @@
             var startSwearing = 67.32;
             var durationSwearing = 12.24;
             var endSwearing = startSwearing + durationSwearing;
-            console.log("ENDING SWEARING", endSwearing);
+           
           
             setInterval(function ()  {
                 currentTimestamp = player.getCurrentTime()
-                console.log("CURRENT TIMESTAMP: " + currentTimestamp);
+                console.log("CURRENT TIMESTAMP::: " + currentTimestamp);
+                console.log("START SWEARING::::", startSwearing, "ENDING SWEARING:::", endSwearing);
                 if (currentTimestamp > startSwearing && currentTimestamp < endSwearing) { // HARD CODED
                     console.log("SWEARING INCOMING")
                 } else { console.log("NO SWEARING::::")}

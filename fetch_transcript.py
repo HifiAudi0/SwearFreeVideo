@@ -30,7 +30,7 @@ for transcript in transcript_list:
     print(transcript.translate('en').fetch())
 
 # you can also directly filter for the language you are looking for, using the transcript list
-transcript = transcript_list.find_transcript(['de', 'en'])  
+transcript = transcript_list.find_transcript(['en'])  
 
 # or just filter for manually created transcripts  
 # transcript = transcript_list.find_manually_created_transcript(['de', 'en'])  
