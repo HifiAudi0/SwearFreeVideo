@@ -9,6 +9,14 @@
   {{#if url}}
     <p>URL: {{url}}</p>
   {{/if}}
+
+  {{#if swearingData}}
+  {{#each swearingData}}
+    <p>Swearing Data: {{this.duration[0]}}</p><br/>
+        <p>Swearing Data: {{this.duration[1]}}</p><br/>
+
+    {{/each}}
+  {{/if}}
 </form> 
 
 <style>

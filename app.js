@@ -4,7 +4,8 @@ const exphbs = require("express-handlebars");
 const app = express();
 const path = require("node:path"); // FIX half of the fix for vercel not working with views
 const bodyParser = require("body-parser");
-var qs = require('qs') // Need this to capture req.query instead of req.params
+var qs = require('qs'); // Need this to capture req.query instead of req.params
+const e = require("express");
 const spawn = require("child_process").spawn;
 
 app.engine(
@@ -49,30 +50,52 @@ app.get("/sendUrl", (req, res) => {
     // pythonProcess.stdout.on('data', (data) => {
     //     console.log("(Node) Python said this to me: ", data.toString());
     // });
-    let data;
+    var data;
 
     function startReadFile() {
         try {
             if (data) stopReadFile();
-            data = fs.readFileSync(`${video_id}.json`)
-            console.log("data", JSON.parse(data));
+            data = fs.readFileSync(`${video_id}.json`, 'utf8')
+
+            // console.log("data", JSON.parse(data));
 
         }
         catch (e) {
             console.log("File not ready yet error:::", e)
+            const myInterval = setInterval(() => { data = startReadFile() }, 1000, video_id)
+
         }
+        return data
     }
-    const myInterval = setInterval(startReadFile, 1000, video_id)
 
     function stopReadFile() {
         clearInterval(myInterval);
     }
 
-
+    startReadFile();
+    console.log("DATA:::::::::  ", data)
+    let jsonData = JSON.parse(data);
+    var swearingData = [];
+    // jsonData = JSON.parse(data);
+    jsonData.map((sentence) => {
+        // console.log("sentence", sentence.text);
+        doesTextSwear = /[ __ ]/.exec(sentence["text"]);
+        if (doesTextSwear) {
+            console.log("Swear word found: ", sentence["text"])
+            console.log("Duration: ", sentence["duration"]);
+            console.log("Timestamp: ", sentence["start"]);
+            swearingData.push(sentence["text"]);
+            swearingData.push(sentence["duration"]);
+            swearingData.push(sentence["start"]);
+        } //else { console.log("No swear words found", sentence["text"]) }
+    })
 
     res.render("youtube_iframe", {
-        url: video_id
+        url: video_id,
+        swearingData: swearingData
     });
+
+    res.send({ "message": "success" });
 })
 
 module.exports = app;
