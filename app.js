@@ -81,21 +81,24 @@ app.get("/sendUrl", (req, res) => {
         // console.log("sentence", sentence.text);
         doesTextSwear = /[ __ ]/.exec(sentence["text"]);
         if (doesTextSwear) {
-            console.log("Swear word found: ", sentence["text"])
-            console.log("Duration: ", sentence["duration"]);
-            console.log("Timestamp: ", sentence["start"]);
+            console.log("%c Swear word found: ", "color: orange", sentence["text"])
+            console.log("%c Duration: ", "color: red", sentence["duration"]);
+            console.log("%c Timestamp: ", "color: blue", sentence["start"]);
             swearingData.push(sentence["text"]);
             swearingData.push(sentence["duration"]);
             swearingData.push(sentence["start"]);
         } //else { console.log("No swear words found", sentence["text"]) }
     })
 
-    res.render("youtube_iframe", {
-        url: video_id,
-        swearingData: swearingData
-    });
+    // res.render("youtube_iframe", {
+    //     url: video_id,
+    //     swearingData: swearingData
+    // });
 
-    res.send({ "message": "success" });
+    // res.send(swearingData);
 })
+
+
+
 
 module.exports = app;

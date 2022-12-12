@@ -12,8 +12,7 @@
 
   {{#if swearingData}}
   {{#each swearingData}}
-    <p>Swearing Data: {{this.duration[0]}}</p><br/>
-        <p>Swearing Data: {{this.duration[1]}}</p><br/>
+    <p>Swearing Data: {{this}}</p><br/>
 
     {{/each}}
   {{/if}}
@@ -29,6 +28,21 @@
     <div id="player"></div>
 
     <script>
+          {{!-- console.log("__________________________________________________")
+    console.log("__________________________________________________")
+    console.log("__________________________________________________")
+      
+          fetch("/sendUrl", {
+      method: "GET"
+    }).then((response) => response.json()).then((resp_data) => {
+
+      console.log(resp_data)
+    })
+
+    console.log("__________________________________________________")
+    console.log("__________________________________________________")
+    console.log("__________________________________________________") --}}
+
       // 2. This code loads the IFrame Player API code asynchronously.
       var tag = document.createElement('script');
 
