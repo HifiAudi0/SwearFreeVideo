@@ -42,7 +42,9 @@ app.get("/sendUrl", (req, res) => {
     console.log("URL", req.query);
     const video_id = /v=(.*)/.exec(req.query.url)[1];
     console.log("video_id", video_id);
-    const pythonProcess = spawn('python', ["fetch_transcript.py", video_id]);
+
+
+
 
     // See python notes at bottom of .py file
     // This block of code is not working, but it is not needed for the project
@@ -50,54 +52,57 @@ app.get("/sendUrl", (req, res) => {
     // pythonProcess.stdout.on('data', (data) => {
     //     console.log("(Node) Python said this to me: ", data.toString());
     // });
-    var data;
 
-    function startReadFile() {
-        try {
-            if (data) stopReadFile();
-            data = fs.readFileSync(`${video_id}.json`, 'utf8')
 
-            // console.log("data", JSON.parse(data));
 
-        }
-        catch (e) {
-            console.log("File not ready yet error:::", e)
-            const myInterval = setInterval(() => { data = startReadFile() }, 1000, video_id)
+    var fetchTrandscript = spawn('python', ["fetch_transcript.py", video_id]);
 
-        }
-        return data
-    }
 
-    function stopReadFile() {
-        clearInterval(myInterval);
-    }
 
-    startReadFile();
-    console.log("DATA:::::::::  ", data)
-    let jsonData = JSON.parse(data);
-    var swearingData = [];
-    // jsonData = JSON.parse(data);
-    jsonData.map((sentence) => {
-        // console.log("sentence", sentence.text);
-        doesTextSwear = /[ __ ]/.exec(sentence["text"]);
-        if (doesTextSwear) {
-            console.log("%c Swear word found: ", "color: orange", sentence["text"])
-            console.log("%c Duration: ", "color: red", sentence["duration"]);
-            console.log("%c Timestamp: ", "color: blue", sentence["start"]);
-            swearingData.push(sentence["text"]);
-            swearingData.push(sentence["duration"]);
-            swearingData.push(sentence["start"]);
-        } //else { console.log("No swear words found", sentence["text"]) }
+    fetchTrandscript.stdout.on('data', (data) => {
+        console.log(data.toString());
+    });
+
+    fetchTrandscript.stderr.on('data', (data) => {
+        console.error(data.toString());
+    });
+
+    fetchTrandscript.on('exit', (code) => {
+        console.log(`Child exited with code ${code}`);
+
+
+
+        // fetchTranscriptReadFile().then((data) => {
+
+        data = fs.readFileSync(`${video_id}.json`, 'utf8')
+
+
+        console.log("DATA:::::::::  ", data)
+        let jsonData = JSON.parse(data);
+        var swearingData = [];
+        // jsonData = JSON.parse(data);
+        jsonData.map((sentence) => {
+            // console.log("sentence", sentence.text);
+            doesTextSwear = /[ __ ]/.exec(sentence["text"]);
+            if (doesTextSwear) {
+                console.log("%c Swear word found: ", "color: orange", sentence["text"])
+                console.log("%c Duration: ", "color: red", sentence["duration"]);
+                console.log("%c Timestamp: ", "color: blue", sentence["start"]);
+                swearingData.push(sentence["text"]);
+                swearingData.push(sentence["duration"]);
+                swearingData.push(sentence["start"]);
+            } //else { console.log("No swear words found", sentence["text"]) }
+        })
+
+        // res.render("youtube_iframe", {
+        //     url: video_id,
+        //     swearingData: swearingData
+        // });
+
+        res.send(swearingData);
     })
-
-    // res.render("youtube_iframe", {
-    //     url: video_id,
-    //     swearingData: swearingData
-    // });
-
-    // res.send(swearingData);
-})
-
+});
+// })
 
 
 
