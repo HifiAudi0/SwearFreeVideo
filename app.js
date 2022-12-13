@@ -36,7 +36,7 @@ app.get("/index", (req, res) => {
 
 
 
-app.get("/sendUrl", (req, res) => {
+app.use("/sendUrl", (req, res, next) => {
     console.log("GOT INDEX POST REQUEST");
     // **CAUTION**: We are -NOT- checking req.query for malicious code
     console.log("URL", req.query);
@@ -94,15 +94,25 @@ app.get("/sendUrl", (req, res) => {
             } //else { console.log("No swear words found", sentence["text"]) }
         })
 
-        // res.render("youtube_iframe", {
-        //     url: video_id,
-        //     swearingData: swearingData
-        // });
+        res.locals.swearingData = swearingData;
+        res.locals.url = video_id;
+        // next();
 
-        res.send(swearingData);
+        res.render("youtube_iframe", {
+            url: video_id,
+            swearingData: swearingData
+        });
+
+        // res.send(swearingData);
     })
 });
 // })
+
+// app.get("/sendUrl", (req, res) => {
+// res.send("hello")
+//     res.send(`Swearing Data 2nd middleware: ${res.locals.swearingData}`);
+
+// });
 
 
 
