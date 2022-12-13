@@ -1,13 +1,19 @@
 import './App.css';
 import { useEffect, useState } from "react";
-
+import axios from 'axios';
 
 
 function IntialPage() {
 
   return (
     <>
-      <form onSubmit={() => fetchSubmit(document.getElementById("url").value)}>
+      {/* <form onSubmit={() => fetchSubmit(document.getElementById("url").value)}> */}
+      {/* <form onSubmit={() => <FetchSubmit url={document.getElementById("url").value} />} > */}
+      {/* create a form with onsubmit and call the function FetchSubmit passing down the argument document.getElementById("url").value */}
+      <form onSubmit={(e) => {
+        e.preventDefault();
+        FetchSubmit({ url: document.getElementById("url").value })
+      }}>
         <label htmlFor="url">Youtube URL (example: https://www.youtube.com/watch?v=IhQmXaEhksI) :</label><br />
         <input className="url" type="text" id="url" name="url" /><br />
         <input type="submit" value="Submit"></input>
@@ -16,17 +22,31 @@ function IntialPage() {
   );
 }
 
-function fetchSubmit(url) {
-  console.log("URL REACT::::  ", url);
+function FetchSubmit(props) {
 
-  fetch(`/sendUrl/?url=${url}`, {
-    method: "GET"
-  }).then((resp_data) => {
 
-    console.log(resp_data);
-  })
+
+  console.log("URL REACT::::  ", props.url);
+
+
+  // fetch(`/sendUrl/?url=${props.url}`, {
+  //   method: "POST"
+  // })
+  axios.post(`/sendUrl/?url=${props.url}`)
+    .then((jsonData) => {
+      console.log("JSON DATA::: ", jsonData.data);
+    })
+
+
+  return (
+    <>
+      <p>SOMETHING</p>
+    </>
+  );
 
 }
+
+
 
 
 function LoadVideo() {
@@ -163,4 +183,4 @@ function LoadVideo() {
   );
 }
 
-export { LoadVideo, IntialPage };
+export { LoadVideo, IntialPage, FetchSubmit };

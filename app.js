@@ -4,10 +4,13 @@ const exphbs = require("express-handlebars");
 const app = express();
 const path = require("node:path"); // FIX half of the fix for vercel not working with views
 const bodyParser = require("body-parser");
+const router = express.Router();
 var qs = require('qs'); // Need this to capture req.query instead of req.params
 const e = require("express");
 const spawn = require("child_process").spawn;
 require("dotenv").config({ path: __dirname + "/.env" }); // FIX vercel .replace ERROR , always worked locally though
+
+app.use("/", router);
 
 
 app.engine(
@@ -38,7 +41,7 @@ app.get("/index", (req, res) => {
 
 
 
-app.use("/sendUrl", (req, res, next) => {
+router.use("/sendUrl", (req, res, next) => {
     console.log("GOT INDEX POST REQUEST");
     // **CAUTION**: We are -NOT- checking req.query for malicious code
     console.log("URL", req.query);
@@ -86,21 +89,22 @@ app.use("/sendUrl", (req, res, next) => {
             } //else { console.log("No swear words found", sentence["text"]) }
         })
 
+        console.log("EXPRESS I SHOULD BE SENDING DATA NOW BACK TO CLIENT");
         res.locals.swearingData = swearingData;
         res.locals.url = video_id;
-        next();
+        // next();
 
         // res.render("youtube_iframe", {
         //     url: video_id,
         //     swearingData: swearingData
         // });
-
-        // res.send(swearingData);
+        let jsonSwearingData = JSON.parse(swearingData);
+        res.end(jsonSwearingData);
     })
 });
 // })
 
-app.get("/sendUrl", (req, res) => {
+router.post("/sendUrl", (req, res) => {
     res.send(`Swearing Data 2nd middleware: ${res.locals.swearingData}`);
 
 });
