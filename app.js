@@ -7,6 +7,8 @@ const bodyParser = require("body-parser");
 var qs = require('qs'); // Need this to capture req.query instead of req.params
 const e = require("express");
 const spawn = require("child_process").spawn;
+require("dotenv").config({ path: __dirname + "/.env" }); // FIX vercel .replace ERROR , always worked locally though
+
 
 app.engine(
     "hbs",
@@ -43,9 +45,6 @@ app.use("/sendUrl", (req, res, next) => {
     const video_id = /v=(.*)/.exec(req.query.url)[1];
     console.log("video_id", video_id);
 
-
-
-
     // See python notes at bottom of .py file
     // This block of code is not working, but it is not needed for the project
     // to function. It is just a nice to have feature.
@@ -53,11 +52,7 @@ app.use("/sendUrl", (req, res, next) => {
     //     console.log("(Node) Python said this to me: ", data.toString());
     // });
 
-
-
     var fetchTrandscript = spawn('python', ["fetch_transcript.py", video_id]);
-
-
 
     fetchTrandscript.stdout.on('data', (data) => {
         console.log(data.toString());
@@ -70,12 +65,9 @@ app.use("/sendUrl", (req, res, next) => {
     fetchTrandscript.on('exit', (code) => {
         console.log(`Child exited with code ${code}`);
 
-
-
         // fetchTranscriptReadFile().then((data) => {
 
         data = fs.readFileSync(`${video_id}.json`, 'utf8')
-
 
         console.log("DATA:::::::::  ", data)
         let jsonData = JSON.parse(data);
@@ -96,23 +88,22 @@ app.use("/sendUrl", (req, res, next) => {
 
         res.locals.swearingData = swearingData;
         res.locals.url = video_id;
-        // next();
+        next();
 
-        res.render("youtube_iframe", {
-            url: video_id,
-            swearingData: swearingData
-        });
+        // res.render("youtube_iframe", {
+        //     url: video_id,
+        //     swearingData: swearingData
+        // });
 
         // res.send(swearingData);
     })
 });
 // })
 
-// app.get("/sendUrl", (req, res) => {
-// res.send("hello")
-//     res.send(`Swearing Data 2nd middleware: ${res.locals.swearingData}`);
+app.get("/sendUrl", (req, res) => {
+    res.send(`Swearing Data 2nd middleware: ${res.locals.swearingData}`);
 
-// });
+});
 
 
 
