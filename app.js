@@ -9,6 +9,9 @@ var qs = require('qs'); // Need this to capture req.query instead of req.params
 const e = require("express");
 const spawn = require("child_process").spawn;
 require("dotenv").config({ path: __dirname + "/.env" }); // FIX vercel .replace ERROR , always worked locally though
+var cors = require('cors')
+
+app.use(cors()) // FIX solves the following error: Access to XMLHttpRequest at  from origin has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource
 
 app.use("/", router);
 
@@ -41,9 +44,9 @@ app.get("/index", (req, res) => {
 
 
 
-router.use("/sendUrl", (req, res, next) => {
+app.post("/sendUrl", (req, res, next) => {
     console.log("GOT INDEX POST REQUEST");
-    // **CAUTION**: We are -NOT- checking req.query for malicious code
+    // ! **CAUTION**: We are -NOT- checking req.query for malicious code
     console.log("URL", req.query);
     const video_id = /v=(.*)/.exec(req.query.url)[1];
     console.log("video_id", video_id);
@@ -54,6 +57,7 @@ router.use("/sendUrl", (req, res, next) => {
     // pythonProcess.stdout.on('data', (data) => {
     //     console.log("(Node) Python said this to me: ", data.toString());
     // });
+
 
     var fetchTrandscript = spawn('python', ["fetch_transcript.py", video_id]);
 
@@ -72,7 +76,7 @@ router.use("/sendUrl", (req, res, next) => {
 
         data = fs.readFileSync(`${video_id}.json`, 'utf8')
 
-        console.log("DATA:::::::::  ", data)
+        // console.log("DATA:::::::::  ", data)
         let jsonData = JSON.parse(data);
         var swearingData = [];
         // jsonData = JSON.parse(data);
@@ -88,7 +92,7 @@ router.use("/sendUrl", (req, res, next) => {
                 swearingData.push(sentence["start"]);
             } //else { console.log("No swear words found", sentence["text"]) }
         })
-
+        console.log("SWEARING DATA", swearingData)
         console.log("EXPRESS I SHOULD BE SENDING DATA NOW BACK TO CLIENT");
         res.locals.swearingData = swearingData;
         res.locals.url = video_id;
@@ -98,16 +102,16 @@ router.use("/sendUrl", (req, res, next) => {
         //     url: video_id,
         //     swearingData: swearingData
         // });
-        let jsonSwearingData = JSON.parse(swearingData);
-        res.end(jsonSwearingData);
+        let jsonSwearingData = JSON.stringify(swearingData);
+        res.json(swearingData);
     })
 });
 // })
 
-router.post("/sendUrl", (req, res) => {
-    res.send(`Swearing Data 2nd middleware: ${res.locals.swearingData}`);
+// router.post("/sendUrl", (req, res) => {
+//     res.send(`Swearing Data 2nd middleware: ${res.locals.swearingData}`);
 
-});
+// });
 
 
 
