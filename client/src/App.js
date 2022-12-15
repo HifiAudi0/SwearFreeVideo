@@ -23,29 +23,29 @@ function IntialPage() {
 
     // Videos with Confirmed swearing in them: 
     //https://www.youtube.com/watch?v=_SvIzSD0USE&t=76s
-    // https://www.youtube.com/watch?v=2uvV1-02UCU
+    // https://www.youtube.com/watch?v=2uvV1-02UCU - ALOT OF SWEARING OVER 300 TIMES I THINK
     // https://www.youtube.com/watch?v=2d4L1flXhLY
 
 
 
     // setUrl(`${document.getElementById("url").value}`)
     // setUrl("https://www.youtube.com/watch?v=IhQmXaEhksI")
-    var the_url = "https://www.youtube.com/watch?v=2uvV1-02UCU";
+    var the_url = "https://www.youtube.com/watch?v=2d4L1flXhLY";
     // console.log("URLS IS", url);
 
     // console.log("URL REACT::::  ", url);
     // Using axios instead of fetch fixed an issue where we got a response but not the data we wanted.
-    const constructedUrl = "/sendUrl?url=https://www.youtube.com/watch?v=2uvV1-02UCU";
+    const constructedUrl = "/sendUrl?url=https://www.youtube.com/watch?v=2d4L1flXhLY";
     console.log("CONSTRUCTED URL::: ", constructedUrl)
 
     axios.post(constructedUrl)
       .then((jsonData) => {
-        console.log("JSON DATA::: ", jsonData.data);
+        // console.log("JSON DATA::: ", jsonData.data);
         setData(jsonData.data);
-        console.log("DATA:::::::::::::::::::::::::", jsonData.data);
+        // console.log("DATA:::::::::::::::::::::::::", jsonData.data);
         setVideoId(/v=(.*)/.exec(the_url)[1]);
         var id = /v=(.*)/.exec(the_url)[1];
-        console.log("LOAD VIDEO _OUTSIDE_", id);
+        // console.log("LOAD VIDEO _OUTSIDE_", id);
 
       }).catch((err) => { console.log("REACT FETCH ERROR::: ", err); })
 
@@ -79,8 +79,8 @@ function IntialPage() {
 function LoadVideo(video_id, data) {
 
 
-  console.log("VIDEO IS INSIDE", video_id);
-  console.log("5555555555555DATA555555555555", video_id["data"]);
+  // console.log("VIDEO IS INSIDE", video_id);
+  // console.log("5555555555555DATA555555555555", video_id["data"]);
 
   //const fetch = document.getElementById("fetch").innerHTML = `${swearingData}`;
   // const some_data = document.getElementById("data").value;
@@ -137,22 +137,44 @@ function LoadVideo(video_id, data) {
       // Default code //
 
       if (event.data == window.YT.PlayerState.PLAYING && !done) {
-        var currentTimestamp = 0;
-        var startSwearing = 67.32;
-        var durationSwearing = 12.24;
+        // var currentTimestamp = 0;
+        // var startSwearing = 67.32;
+        // var durationSwearing = 12.24;
+        var currentTimestamp, startSwearing, durationSwearing;
         var endSwearing = startSwearing + durationSwearing;
 
-        console.log("33333333333DATA3333333333", video_id["data"])
+        // console.log("33333333333DATA3333333333", video_id["data"])
 
+        var counter = 0;
+        video_id["data"].map((eachSwearPoint) => {
+          if (counter % 2 == 0) {
+            // even number
+            console.log("SWEAR DURATION", eachSwearPoint)
+          }
+          else {
+            // odd number
+            console.log("SWEAR END", eachSwearPoint)
+          }
+          counter++;
+        })
 
+        // console.log("JSON___________", video_id["data"]);
+
+        // var jsonData = JSON.stringify(video_id["data"]);
+        // console.log("JSON PARSED___________", jsonData);
+
+        // console.log("LENGTH", video_id["data"].length)
         setInterval(function () {
           currentTimestamp = player.playerInfo.currentTime
-          // console.log("CURRENT TIMESTAMP::: " + currentTimestamp);
-          // console.log("START SWEARING::::", startSwearing, "ENDING SWEARING:::", endSwearing);
+
+
+
+
           if (currentTimestamp > startSwearing && currentTimestamp < endSwearing) { // HARD CODED
-            console.log("SWEARING INCOMING")
-          } else { console.log("NO SWEARING::::") }
-        }, 1000);
+            console.log("SWEARING INCOMING TIMSTAMP:::::", currentTimestamp);
+            player.seekTo(durationSwearing);
+          } else { console.log("NO SWEARING::::", currentTimestamp) }
+        }, 500);
 
 
         done = true;

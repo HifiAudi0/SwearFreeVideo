@@ -87,7 +87,7 @@ app.post("/sendUrl", (req, res, next) => {
                 console.log("%c Swear word found: ", "color: orange", sentence["text"])
                 console.log("%c Duration: ", "color: red", sentence["duration"]);
                 console.log("%c Timestamp: ", "color: blue", sentence["start"]);
-                swearingData.push(sentence["text"]);
+                // swearingData.push(sentence["text"]);
                 swearingData.push(sentence["duration"]);
                 swearingData.push(sentence["start"]);
             } //else { console.log("No swear words found", sentence["text"]) }
@@ -104,6 +104,7 @@ app.post("/sendUrl", (req, res, next) => {
         // });
         let jsonSwearingData = JSON.stringify(swearingData);
         res.json(swearingData);
+
     })
 });
 // })
