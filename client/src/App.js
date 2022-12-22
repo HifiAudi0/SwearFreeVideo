@@ -1,7 +1,6 @@
 import './App.css';
 import { useEffect, useState } from "react";
 import axios from 'axios';
-// import { CLIENT_MULTI_STATEMENTS } from 'mysql/lib/protocol/constants/client';
 
 // Note to self:
 // Chrome deveeloper console - highlight object then ctrl+alt+click to expand all object properties
@@ -98,9 +97,9 @@ function LoadVideo(video_id, data) {
 
     function onPlayerReady(event) {
 
-      player.loadVideoById(`${video_id["video_id"]}`, 5, "large") // a bit of hack to get a -different- video id to load
+      player.loadVideoById(`${video_id["video_id"]}`, 5, "large") // a bit of hack to get a -different- video id to load. This may cause unexpected issues, but it works for now.
 
-      // ! NOTE TO DEVELOPER: this is not actually the place where I want the timpestamp and mute to occur. It is actually a litter further down in the code. see similar NOTE down below, thanks!
+      // ! NOTE TO DEVELOPER: this is NOT actually the place where I want the mute to occur. It is actually a litter further down in the code. It's just proof that mute will actually work somewhere in the code atleast. see similar NOTE down below, thanks!
       // ! CANT get timestamp here
       // ! CAN mute here
       // player.mute();
@@ -136,7 +135,7 @@ function LoadVideo(video_id, data) {
 
       setInterval(function () {
 
-        // ! NOTE TO DEVELOPER: THIS is where I need mute to be called and function properly.
+        // ! NOTE TO DEVELOPER: THIS is where I need mute to be called and function properly (Inside of setInterval)
         // ! CANT mute here
         // ! CAN get timestamp here
 
