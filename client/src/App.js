@@ -94,8 +94,8 @@ function LoadVideo(video_id, data) {
     }
 
     function onPlayerReady(event) {
-
-      player.loadVideoById(`${video_id["video_id"]}`, 5, "large") // a bit of hack to get a -different- video id to load. This may cause unexpected issues, but it works for now.
+      
+        player.loadVideoById(`${video_id["video_id"]}`, 5, "large") // a bit of hack to get the video_id to load. For some reason, if we don't include this line, it will break it. This may cause unexpected issues, but it works for now.
 
       // ! NOTE TO DEVELOPER: this is NOT actually the place where I want the mute to occur. It is actually a litter further down in the code. It's just proof that mute will actually work somewhere in the code atleast. see similar NOTE down below, thanks!
       // ! CANT get timestamp here
@@ -113,26 +113,26 @@ function LoadVideo(video_id, data) {
       console.log(videoStatuses.find(status => status[1] === event.data)[0]);
       // Default code //
 
-      try {
-        // player.setPlayerState(window.YT.PlayerState.PAUSED);
-        // mute();
-        console.log("👀 -------------------------------------------------------👀")
-        console.log("👀 ~ file: App.js:216 ~ onPlayerStateChange ~ muting : Player=", player)
-        console.log("👀 -------------------------------------------------------👀")
-
-      } catch (err) {
-        console.log("ERROR IS", err)
-      }
-
       setInterval(function () {
 
         // ! NOTE TO DEVELOPER: THIS is where I need mute to be called and function properly (Inside of setInterval)
         // ! CANT mute here
         // ! CAN get timestamp here
 
+        try {
+          // player.setPlayerState(window.YT.PlayerState.PAUSED);
+          // mute();
+          console.log("👀 -------------------------------------------------------👀")
+          console.log("👀 ~ file: App.js:216 ~ onPlayerStateChange ~ muting : Player=", player)
+          console.log("👀 -------------------------------------------------------👀")
+          player.mute();
+        } catch (err) {
+          console.log("ERROR IS", err)
+        }
+
         var currentTimestamp = player.playerInfo.currentTime;
         var nextSwearStartsAt = video_id["data"][1];
-        var nextSwearDurationIs = video_id["data"][0]
+        var nextSwearDurationIs = video_id["data"][0];
         var endSwearingDuration = nextSwearStartsAt + nextSwearDurationIs;
 
         if (currentTimestamp > nextSwearStartsAt && currentTimestamp < endSwearingDuration) {
