@@ -19,17 +19,15 @@ function IntialPage() {
     // https://www.youtube.com/watch?v=2uvV1-02UCU - ALOT OF SWEARING OVER 300 TIMES I THINK
     // https://www.youtube.com/watch?v=2d4L1flXhLY
 
-    var the_url = "https://www.youtube.com/watch?v=2d4L1flXhLY";
+    var the_url = "/sendUrl?url=https://www.youtube.com/watch?v=_SvIzSD0USE";
 
     // Using axios instead of fetch fixed an issue where we got a response but not the data we wanted.
-    const constructedUrl = "/sendUrl?url=https://www.youtube.com/watch?v=2d4L1flXhLY";
-    console.log("CONSTRUCTED URL::: ", constructedUrl)
 
-    axios.post(constructedUrl)
+    axios.post(the_url)
       .then((jsonData) => {
         setData(jsonData.data);
         setVideoId(/v=(.*)/.exec(the_url)[1]);
-        var id = /v=(.*)/.exec(the_url)[1];
+        // var id = /v=(.*)/.exec(the_url)[1];
       }).catch((err) => { console.log("REACT FETCH ERROR::: ", err); })
 
   }, [])
@@ -110,23 +108,16 @@ function LoadVideo(video_id, data) {
 
     function onPlayerStateChange(event) {
 
-      var currentTimestamp, startSwearing, durationSwearing;
-      var endSwearing = startSwearing + durationSwearing;
-
       // Default code //
       var videoStatuses = Object.entries(window.YT.PlayerState);
       console.log(videoStatuses.find(status => status[1] === event.data)[0]);
       // Default code //
 
-      console.log("👀 -----------------------------------------------------------👀")
-      console.log("👀 ~ file: App.js:136 ~ onPlayerStateChange ~ player", player)
-      console.log("👀 -----------------------------------------------------------👀")
-
       try {
         // player.setPlayerState(window.YT.PlayerState.PAUSED);
-        mute();
+        // mute();
         console.log("👀 -------------------------------------------------------👀")
-        console.log("👀 ~ file: App.js:216 ~ onPlayerStateChange ~ muting")
+        console.log("👀 ~ file: App.js:216 ~ onPlayerStateChange ~ muting : Player=", player)
         console.log("👀 -------------------------------------------------------👀")
 
       } catch (err) {
@@ -140,9 +131,11 @@ function LoadVideo(video_id, data) {
         // ! CAN get timestamp here
 
         var currentTimestamp = player.playerInfo.currentTime;
-        var endSwearingDuration = video_id["data"][1] + video_id["data"][0];
+        var nextSwearStartsAt = video_id["data"][1];
+        var nextSwearDurationIs = video_id["data"][0]
+        var endSwearingDuration = nextSwearStartsAt + nextSwearDurationIs;
 
-        if (currentTimestamp > video_id["data"][1] && currentTimestamp < endSwearingDuration) {
+        if (currentTimestamp > nextSwearStartsAt && currentTimestamp < endSwearingDuration) {
           console.log("SWEARING INCOMING TIMSTAMP:::::", currentTimestamp);
           console.log("__________________________________FIRST MUTE")
           console.log("_____________________________________________")
@@ -151,15 +144,16 @@ function LoadVideo(video_id, data) {
           video_id["data"].shift();
         } else {
           console.log("NO SWEARING::::", currentTimestamp)
-          console.log("NO SWEARING NEXT SWEAR STARTS AT", video_id["data"][1])
-          console.log("NO SWEARING NEXT SWEAR DURATION IS", video_id["data"][0])
+          console.log("NO SWEARING NEXT SWEAR STARTS AT", nextSwearStartsAt)
+          console.log("NO SWEARING NEXT SWEAR DURATION IS", nextSwearDurationIs)
         }
       }, 800);
 
       if (event.data == window.YT.PlayerState.PLAYING && !done) {
 
-        // CANT mute here
-        // TIMESTAMP is not updated every second here
+        // ! NOTE TO DEVELOPER: Again, this is NOT where I actually need to mute. It's just proof that mute will work somewhere in the code. See similar NOTE above, thanks!
+        // ! CANT mute here
+        // ! TIMESTAMP is not updated every second here
 
         done = true;
       }
