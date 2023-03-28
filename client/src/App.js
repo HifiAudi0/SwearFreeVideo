@@ -93,6 +93,7 @@ function LoadVideo(video_id, data) {
       player.mute();
     }
 
+
     function onPlayerReady(event) {
       
         player.loadVideoById(`${video_id["video_id"]}`, 5, "large") // a bit of hack to get the video_id to load. For some reason, if we don't include this line, it will break it. This may cause unexpected issues, but it works for now.
@@ -102,7 +103,10 @@ function LoadVideo(video_id, data) {
       // ! CAN mute here
       // player.mute();
       // mute();
+      setInterval(function () {  console.log("STAMP:::::::", player.playerInfo.currentTime)  }, 800);
     }
+
+ 
 
     var done = false;
 
@@ -125,7 +129,8 @@ function LoadVideo(video_id, data) {
           console.log("👀 -------------------------------------------------------👀")
           console.log("👀 ~ file: App.js:216 ~ onPlayerStateChange ~ muting : Player=", player)
           console.log("👀 -------------------------------------------------------👀")
-          player.mute();
+          // player.mute();
+          player.setVolume(0);
         } catch (err) {
           console.log("ERROR IS", err)
         }
@@ -151,7 +156,7 @@ function LoadVideo(video_id, data) {
 
       if (event.data == window.YT.PlayerState.PLAYING && !done) {
 
-        // ! NOTE TO DEVELOPER: Again, this is NOT where I actually need to mute. It's just proof that mute will work somewhere in the code. See similar NOTE above, thanks!
+        // ! NOTE TO DEVELOPER: this is NOT where I actually need to mute. It's just proof that mute will work somewhere in the code. See similar NOTE above, thanks!
         // ! CANT mute here
         // ! TIMESTAMP is not updated every second here
 
