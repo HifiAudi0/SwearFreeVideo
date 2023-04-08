@@ -8,6 +8,11 @@ import ReactPlayer from 'react-player/youtube'
 // Turbo console log = ctrl+alt+l (that is an lowercase L) after highlighting variable
 // Emojis picker = Windows + .
 
+
+// FEATURES TO ADD:
+// If no transcript is availabile which happens, do not load the video at all, show error message to user.
+
+
 var data = [];
 // var the_url = "";
 
@@ -36,8 +41,9 @@ function IntialPage() {
 
     // Videos with Confirmed swearing in them: 
     //https://www.youtube.com/watch?v=_SvIzSD0USE
-    // https://www.youtube.com/watch?v=2uvV1-02UCU - ALOT OF SWEARING OVER 300 TIMES I THINK
-    // https://www.youtube.com/watch?v=2d4L1flXhLY
+    // https://www.youtube.com/watch?v=2uvV1-02UCU 
+    // https://www.youtube.com/watch?v=2d4L1flXhLY- ALOT OF SWEARING OVER 300 TIMES I THINK
+    // https://www.youtube.com/watch?v=7RAJUzIO8kg TONS OF SWEARING Kanel Joseph
 
     // setTheUrl("https://www.youtube.com/watch?v=_SvIzSD0USE");
 
@@ -69,7 +75,7 @@ function LoadVideo() {
 
     if (currentTimestamp > nextSwearStartsAt && currentTimestamp < endSwearingDuration) {
       console.log("SWEARING INCOMING TIMSTAMP:::::", currentTimestamp);
-      console.log("__________________________________FIRST MUTE")
+      console.log("__________________________________MUTE")
       console.log("_____________________________________________")
 
       playerRef.current?.getInternalPlayer()?.mute();
@@ -82,9 +88,9 @@ function LoadVideo() {
       playerRef.current?.getInternalPlayer()?.unMute();
       setIsMuted(false);
       if (counter != 1) {
-        console.log("----------------------------------------------")
-        console.log("....................REMOVING ITEMS............")
-        console.log("----------------------------------------------")
+        // console.log("----------------------------------------------")
+        // console.log("....................REMOVING ITEMS............")
+        // console.log("----------------------------------------------")
         // removeItem(0);
         // removeItem(1);
         data.shift();
@@ -96,7 +102,7 @@ function LoadVideo() {
       console.log("NO SWEARING NEXT SWEAR STARTS AT", nextSwearStartsAt)
       console.log("NO SWEARING NEXT SWEAR DURATION IS", nextSwearDurationIs)
     }
-  }, 2800); // This SHOULD be 800 under 1 second, in the future. 2800 temporarily.
+  }, 800); // This SHOULD be 800 under 1 second, in the future. 2800 temporarily.
 
   return (
     <>
