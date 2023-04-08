@@ -1,6 +1,7 @@
 import './App.css';
-import { useEffect, useState } from "react";
+import React, { useRef, useState, useEffect } from 'react';
 import axios from 'axios';
+import ReactPlayer from 'react-player/youtube'
 
 // Note to self:
 // Chrome deveeloper console - highlight object then ctrl+alt+click to expand all object properties
@@ -11,6 +12,21 @@ function IntialPage() {
 
   const [data, setData] = useState({}); // DEBUG FIX, do -not- use {} for objects. use [] for objects too. see console.log
   const [video_id, setVideoId] = useState("");
+
+  const playerRef = useRef(null);
+  const [isMuted, setIsMuted] = useState(false);
+
+  const handleProgress = (state) => {
+    if (state.playedSeconds >= 49 && !isMuted) {
+      playerRef.current?.getInternalPlayer()?.mute();
+      setIsMuted(true);
+    } else if (state.playedSeconds >= 50 && isMuted) {
+      playerRef.current?.getInternalPlayer()?.unMute();
+      setIsMuted(false);
+    }
+  };
+  
+
 
   useEffect(() => {
 
@@ -32,6 +48,27 @@ function IntialPage() {
 
   }, [])
 
+  setInterval(function () {
+
+    var currentTimestamp = playerRef.current?.getCurrentTime();
+    var nextSwearStartsAt = video_id["data"][1];
+    var nextSwearDurationIs = video_id["data"][0];
+    var endSwearingDuration = nextSwearStartsAt + nextSwearDurationIs;
+
+    if (currentTimestamp > nextSwearStartsAt && currentTimestamp < endSwearingDuration) {
+      console.log("SWEARING INCOMING TIMSTAMP:::::", currentTimestamp);
+      console.log("__________________________________FIRST MUTE")
+      console.log("_____________________________________________")
+
+      video_id["data"].shift();
+      video_id["data"].shift();
+    } else {
+      console.log("NO SWEARING::::", currentTimestamp)
+      console.log("NO SWEARING NEXT SWEAR STARTS AT", nextSwearStartsAt)
+      console.log("NO SWEARING NEXT SWEAR DURATION IS", nextSwearDurationIs)
+    }
+  }, 800);
+
   return (
     <>
       {/* WORKS - <form onSubmit={() => fetchSubmit(document.getElementById("url").value)}> */}
@@ -43,157 +80,33 @@ function IntialPage() {
       </form>
 
       <p>{data && `DATA here: ${data}`}</p>
-      {video_id && <LoadVideo video_id={video_id} data={data} />}
+      {/* {video_id && <LoadVideo video_id={video_id} data={data} />} */}
+
+
+      <div>
+      <ReactPlayer
+        url='https://www.youtube.com/watch?v=_SvIzSD0USE'
+        playing
+        controls
+        volume={1}
+        muted={false}
+        onProgress={handleProgress}
+        ref={playerRef}
+      />
+    </div>
     </>
   );
 }
 
-
-function LoadVideo(video_id, data) {
-
-  function loadVideo() {
-    console.info(`loadVideo called`);
-
-    (function loadYoutubeIFrameApiScript() {
-      const tag = document.createElement("script");
-      tag.src = "https://www.youtube.com/iframe_api";
-
-      const firstScriptTag = document.getElementsByTagName("script")[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-      tag.onload = setupPlayer;
-    })();
-
-    var player;
-
-    function setupPlayer() {
-      /**
-       * Need to wait until Youtube Player is ready!
-       *
-       * YT.ready is not documented in https://developers.google.com/youtube/iframe_api_reference
-       * but found from https://codesandbox.io/s/youtube-iframe-api-tpjwj
-       */
-      window.YT.ready(player = function () {
-        player = new window.YT.Player("video", {
-          sandbox: "allow-presentation",
-          height: "390",
-          width: "640",
-          videoId: `${video_id}`,
-          events: {
-            onReady: onPlayerReady,
-            onStateChange: onPlayerStateChange
-          }
-        });
-
-      });
-
-    }
-
-    function mute() {
-      player.mute();
-    }
-
-
-    function onPlayerReady(event) {
       
-        player.loadVideoById(`${video_id["video_id"]}`, 5, "large") // a bit of hack to get the video_id to load. For some reason, if we don't include this line, it will break it. This may cause unexpected issues, but it works for now.
+        // player.loadVideoById(`${video_id["video_id"]}`, 5, "large") // a bit of hack to get the video_id to load. For some reason, if we don't include this line, it will break it. This may cause unexpected issues, but it works for now.
 
-      // ! NOTE TO DEVELOPER: this is NOT actually the place where I want the mute to occur. It is actually a litter further down in the code. It's just proof that mute will actually work somewhere in the code atleast. see similar NOTE down below, thanks!
-      // ! CANT get timestamp here
-      // ! CAN mute here
-      // player.mute();
-      // mute();
-      setInterval(function () {  console.log("STAMP:::::::", player.playerInfo.currentTime)  }, 800);
-    }
-
- 
-
-    var done = false;
-
-    function onPlayerStateChange(event) {
-
-      // Default code //
-      var videoStatuses = Object.entries(window.YT.PlayerState);
-      console.log(videoStatuses.find(status => status[1] === event.data)[0]);
-      // Default code //
-
-      setInterval(function () {
-
-        // ! NOTE TO DEVELOPER: THIS is where I need mute to be called and function properly (Inside of setInterval)
-        // ! CANT mute here
-        // ! CAN get timestamp here
-
-        try {
-          // player.setPlayerState(window.YT.PlayerState.PAUSED);
-          // mute();
-          console.log("👀 -------------------------------------------------------👀")
-          console.log("👀 ~ file: App.js:216 ~ onPlayerStateChange ~ muting : Player=", player)
-          console.log("👀 -------------------------------------------------------👀")
-          // player.mute();
-          player.setVolume(0);
-        } catch (err) {
-          console.log("ERROR IS", err)
-        }
-
-        var currentTimestamp = player.playerInfo.currentTime;
-        var nextSwearStartsAt = video_id["data"][1];
-        var nextSwearDurationIs = video_id["data"][0];
-        var endSwearingDuration = nextSwearStartsAt + nextSwearDurationIs;
-
-        if (currentTimestamp > nextSwearStartsAt && currentTimestamp < endSwearingDuration) {
-          console.log("SWEARING INCOMING TIMSTAMP:::::", currentTimestamp);
-          console.log("__________________________________FIRST MUTE")
-          console.log("_____________________________________________")
-
-          video_id["data"].shift();
-          video_id["data"].shift();
-        } else {
-          console.log("NO SWEARING::::", currentTimestamp)
-          console.log("NO SWEARING NEXT SWEAR STARTS AT", nextSwearStartsAt)
-          console.log("NO SWEARING NEXT SWEAR DURATION IS", nextSwearDurationIs)
-        }
-      }, 800);
-
-      if (event.data == window.YT.PlayerState.PLAYING && !done) {
-
-        // ! NOTE TO DEVELOPER: this is NOT where I actually need to mute. It's just proof that mute will work somewhere in the code. See similar NOTE above, thanks!
-        // ! CANT mute here
-        // ! TIMESTAMP is not updated every second here
-
-        done = true;
-      }
-    }
-  }
-
-  if (document.readyState !== "loading") {
-    console.info(`document.readyState ==>`, document.readyState);
-    loadVideo()
-  } else {
-    document.addEventListener("DOMContentLoaded", function () {
-      console.info(`DOMContentLoaded ==>`, document.readyState);
-      loadVideo()
-    });
-  }
-
-  return (
-    <>
-      <html>
-        <head>
-          <title>Parcel Sandbox</title>
-          <meta charset="UTF-8" />
-        </head>
-
-        <body>
-          <div id="video"></div>
-          div
-        </body>
-      </html>
-    </>
-  );
-}
+      
+      // setInterval(function () {  console.log("STAMP:::::::", player.playerInfo.currentTime)  }, 800);
 
 
-export { LoadVideo, IntialPage };
+
+export { IntialPage };
 
 
 

@@ -10,6 +10,7 @@ const e = require("express");
 const spawn = require("child_process").spawn;
 require("dotenv").config({ path: __dirname + "/.env" }); // FIX vercel .replace ERROR , always worked locally though
 var cors = require('cors')
+const validator = require('validator');
 
 app.use(cors()) // FIX solves the following error: Access to XMLHttpRequest at  from origin has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource
 
@@ -48,8 +49,23 @@ app.post("/sendUrl", (req, res, next) => {
     console.log("GOT INDEX POST REQUEST");
     // ! **CAUTION**: We are -NOT- checking req.query for malicious code
     console.log("URL", req.query);
-    const video_id = /v=(.*)/.exec(req.query.url)[1];
-    console.log("video_id", video_id);
+
+
+
+    if (req.query.url[1]) {
+        if (validator.isURL(req.query.url[1], { require_protocol: true })) {
+            const sanitizedUrl = validator.escape(req.query.url[1]);
+            res.send(`Sanitized URL: ${sanitizedUrl}`);
+        } else {
+            res.status(400).send('Invalid URL');
+        }
+    } else {
+        res.status(400).send('Missing URL');
+    }
+
+
+    const video_id = /v=(.*)/.exec(sanitizedUrl);
+    console.log("video_id", sanitizedUrl);
 
     // See python notes at bottom of .py file
     // This block of code is not working, but it is not needed for the project
@@ -74,7 +90,8 @@ app.post("/sendUrl", (req, res, next) => {
 
         // fetchTranscriptReadFile().then((data) => {
 
-        data = fs.readFileSync(`${video_id}.json`, 'utf8')
+        data = fs.readFileSync(`${sanitizedUrl}.json`, 'utf8') // URL is now santizied in above code, safer.
+
 
         // console.log("DATA:::::::::  ", data)
         let jsonData = JSON.parse(data);
