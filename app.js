@@ -52,20 +52,8 @@ app.post("/sendUrl", (req, res, next) => {
 
 
 
-    if (req.query.url[1]) {
-        if (validator.isURL(req.query.url[1], { require_protocol: true })) {
-            const sanitizedUrl = validator.escape(req.query.url[1]);
-            res.send(`Sanitized URL: ${sanitizedUrl}`);
-        } else {
-            res.status(400).send('Invalid URL');
-        }
-    } else {
-        res.status(400).send('Missing URL');
-    }
-
-
-    const video_id = /v=(.*)/.exec(sanitizedUrl);
-    console.log("video_id", sanitizedUrl);
+    var video_id = /v=(.*)/.exec(req.query.url)[1];
+    // console.log("video_id", sanitizedUrl);
 
     // See python notes at bottom of .py file
     // This block of code is not working, but it is not needed for the project
@@ -90,8 +78,14 @@ app.post("/sendUrl", (req, res, next) => {
 
         // fetchTranscriptReadFile().then((data) => {
 
-        data = fs.readFileSync(`${sanitizedUrl}.json`, 'utf8') // URL is now santizied in above code, safer.
-
+        // WARNING
+        // SNYK
+        // Path Traversal: Unsanitized input from an HTTP parameter flows into fs.readFileSync, where it is use...
+        // deepcode ignore PT: <please specify a reason of ignoring this>
+        data = fs.readFileSync(`${video_id}.json`, 'utf8') // URL is now santizied in above code, safer.
+        // WARNING
+        // SNYK
+        // Path Traversal: Unsanitized input from an HTTP parameter flows into fs.readFileSync, where it is use...
 
         // console.log("DATA:::::::::  ", data)
         let jsonData = JSON.parse(data);

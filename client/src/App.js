@@ -50,6 +50,7 @@ function IntialPage() {
 
   setInterval(function () {
 
+    console.log("_____________________________________________", video_id["data"]);
     var currentTimestamp = playerRef.current?.getCurrentTime();
     var nextSwearStartsAt = video_id["data"][1];
     var nextSwearDurationIs = video_id["data"][0];
@@ -67,7 +68,7 @@ function IntialPage() {
       console.log("NO SWEARING NEXT SWEAR STARTS AT", nextSwearStartsAt)
       console.log("NO SWEARING NEXT SWEAR DURATION IS", nextSwearDurationIs)
     }
-  }, 800);
+  }, 2800); // This SHOULD be 800 under 1 second, in the future. 2800 temporarily.
 
   return (
     <>
