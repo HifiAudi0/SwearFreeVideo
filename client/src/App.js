@@ -16,15 +16,15 @@ function IntialPage() {
   const playerRef = useRef(null);
   const [isMuted, setIsMuted] = useState(false);
 
-  const handleProgress = (state) => {
-    if (state.playedSeconds >= 49 && !isMuted) {
-      playerRef.current?.getInternalPlayer()?.mute();
-      setIsMuted(true);
-    } else if (state.playedSeconds >= 50 && isMuted) {
-      playerRef.current?.getInternalPlayer()?.unMute();
-      setIsMuted(false);
-    }
-  };
+  // const handleProgress = (state) => {
+  //   if (state.playedSeconds >= 49 && !isMuted) {
+  //     playerRef.current?.getInternalPlayer()?.mute();
+  //     setIsMuted(true);
+  //   } else if (state.playedSeconds >= 50 && isMuted) {
+  //     playerRef.current?.getInternalPlayer()?.unMute();
+  //     setIsMuted(false);
+  //   }
+  // };
   
 
 
@@ -50,10 +50,16 @@ function IntialPage() {
 
   setInterval(function () {
 
-    console.log("_____________________________________________", video_id["data"]);
+    var counter;
+
+    const removeItem = (index) => {
+      setData(prevItems => prevItems.filter((_, i) => i !== index));
+    }
+
+    console.log("_____________________________________________ DATA", data);
     var currentTimestamp = playerRef.current?.getCurrentTime();
-    var nextSwearStartsAt = video_id["data"][1];
-    var nextSwearDurationIs = video_id["data"][0];
+    var nextSwearStartsAt = data[1];
+    var nextSwearDurationIs = data[0];
     var endSwearingDuration = nextSwearStartsAt + nextSwearDurationIs;
 
     if (currentTimestamp > nextSwearStartsAt && currentTimestamp < endSwearingDuration) {
@@ -61,10 +67,25 @@ function IntialPage() {
       console.log("__________________________________FIRST MUTE")
       console.log("_____________________________________________")
 
-      video_id["data"].shift();
-      video_id["data"].shift();
+      playerRef.current?.getInternalPlayer()?.mute();
+      setIsMuted(true);
+
+      counter = 0;
+      // setData.shift();
+      // setData.shift();
+    } else if (currentTimestamp > endSwearingDuration) {
+      playerRef.current?.getInternalPlayer()?.unMute();
+      setIsMuted(false);
+      if (counter != 1) {
+        console.log("----------------------------------------------")
+        console.log("....................REMOVING ITEMS............")
+        console.log("----------------------------------------------")
+        removeItem(0);
+        removeItem(1);
+        counter = 1;
+      }
     } else {
-      console.log("NO SWEARING::::", currentTimestamp)
+      // console.log("NO SWEARING::::", currentTimestamp)
       console.log("NO SWEARING NEXT SWEAR STARTS AT", nextSwearStartsAt)
       console.log("NO SWEARING NEXT SWEAR DURATION IS", nextSwearDurationIs)
     }
@@ -91,7 +112,7 @@ function IntialPage() {
         controls
         volume={1}
         muted={false}
-        onProgress={handleProgress}
+        // onProgress={handleProgress}
         ref={playerRef}
       />
     </div>
