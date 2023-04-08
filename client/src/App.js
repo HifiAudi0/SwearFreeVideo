@@ -8,10 +8,14 @@ import ReactPlayer from 'react-player/youtube'
 // Turbo console log = ctrl+alt+l (that is an lowercase L) after highlighting variable
 // Emojis picker = Windows + .
 
+var data = [];
+// var the_url = "";
+
 function IntialPage() {
 
-  const [data, setData] = useState({}); // DEBUG FIX, do -not- use {} for objects. use [] for objects too. see console.log
+  // const [data, setData] = useState({}); // DEBUG FIX, do -not- use {} for objects. use [] for objects too. see console.log
   const [video_id, setVideoId] = useState("");
+  const [the_url, setTheUrl] = useState("");
 
   const playerRef = useRef(null);
   const [isMuted, setIsMuted] = useState(false);
@@ -28,32 +32,33 @@ function IntialPage() {
   
 
 
-  useEffect(() => {
+  // useEffect(() => {
 
     // Videos with Confirmed swearing in them: 
     //https://www.youtube.com/watch?v=_SvIzSD0USE
     // https://www.youtube.com/watch?v=2uvV1-02UCU - ALOT OF SWEARING OVER 300 TIMES I THINK
     // https://www.youtube.com/watch?v=2d4L1flXhLY
 
-    var the_url = "/sendUrl?url=https://www.youtube.com/watch?v=_SvIzSD0USE";
+    // setTheUrl("https://www.youtube.com/watch?v=_SvIzSD0USE");
 
     // Using axios instead of fetch fixed an issue where we got a response but not the data we wanted.
-
-    axios.post(the_url)
+function LoadVideo() {
+    axios.post("/sendUrl?url=" + the_url)
       .then((jsonData) => {
-        setData(jsonData.data);
+        // setData(jsonData.data);
+        data = jsonData.data;
         setVideoId(/v=(.*)/.exec(the_url)[1]);
         // var id = /v=(.*)/.exec(the_url)[1];
       }).catch((err) => { console.log("REACT FETCH ERROR::: ", err); })
-
-  }, [])
+    }
+  // }, [])
 
   setInterval(function () {
 
     var counter;
 
     const removeItem = (index) => {
-      setData(prevItems => prevItems.filter((_, i) => i !== index));
+      // setData(prevItems => prevItems.filter((_, i) => i !== index));
     }
 
     console.log("_____________________________________________ DATA", data);
@@ -80,8 +85,10 @@ function IntialPage() {
         console.log("----------------------------------------------")
         console.log("....................REMOVING ITEMS............")
         console.log("----------------------------------------------")
-        removeItem(0);
-        removeItem(1);
+        // removeItem(0);
+        // removeItem(1);
+        data.shift();
+        data.shift();
         counter = 1;
       }
     } else {
@@ -95,19 +102,26 @@ function IntialPage() {
     <>
       {/* WORKS - <form onSubmit={() => fetchSubmit(document.getElementById("url").value)}> */}
       {/*  WORKS - jsonSwearingData = FetchSubmit({ url: document.getElementById("url").value }) */}
-      <form onSubmit={() => { }}>
+      <form onSubmit={(e) => { 
+         e.preventDefault(); 
+   
+        setTheUrl(document.getElementById("url").value); 
+        LoadVideo();
+        console.log("the url", the_url); 
+        }}>
         <label htmlFor="url">Youtube URL (example: https://www.youtube.com/watch?v=_SvIzSD0USEI) :</label><br />
         <input className="url" type="text" id="url" name="url" /><br />
         <input type="submit" value="Submit"></input>
       </form>
 
       <p>{data && `DATA here: ${data}`}</p>
+      <p>{the_url && `the url: ${the_url}`}</p>
       {/* {video_id && <LoadVideo video_id={video_id} data={data} />} */}
 
 
       <div>
       <ReactPlayer
-        url='https://www.youtube.com/watch?v=_SvIzSD0USE'
+        url={the_url}
         playing
         controls
         volume={1}
