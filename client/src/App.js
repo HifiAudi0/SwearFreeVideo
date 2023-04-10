@@ -26,60 +26,38 @@ function IntialPage() {
   const playerRef = useRef(null);
   const [isMuted, setIsMuted] = useState(false);
   const [tMinusNextSwearAt, setTMinusNextSwearAt] = useState(0);
-
-  // const handleProgress = (state) => {
-  //   if (state.playedSeconds >= 49 && !isMuted) {
-  //     playerRef.current?.getInternalPlayer()?.mute();
-  //     setIsMuted(true);
-  //   } else if (state.playedSeconds >= 50 && isMuted) {
-  //     playerRef.current?.getInternalPlayer()?.unMute();
-  //     setIsMuted(false);
-  //   }
-  // };
+  const [totalSwearWordsDetected, setTotalSwearWordsDetected] = useState(0);
 
 
 
-  // useEffect(() => {
 
-  // Videos with Confirmed swearing in them: 
-  //https://www.youtube.com/watch?v=_SvIzSD0USE
-  // https://www.youtube.com/watch?v=2uvV1-02UCU 
-  // https://www.youtube.com/watch?v=2d4L1flXhLY- ALOT OF SWEARING OVER 300 TIMES I THINK
-  // https://www.youtube.com/watch?v=7RAJUzIO8kg TONS OF SWEARING Kanel Joseph
 
-  // setTheUrl("https://www.youtube.com/watch?v=_SvIzSD0USE");
 
-  // Using axios instead of fetch fixed an issue where we got a response but not the data we wanted.
   function LoadVideo() {
     axios.post("/sendUrl?url=" + the_url)
       .then((jsonData) => {
-        // setData(jsonData.data);
         data = jsonData.data;
         setVideoId(/v=(.*)/.exec(the_url)[1]);
-        // var id = /v=(.*)/.exec(the_url)[1];
       }).catch((err) => { console.log("REACT FETCH ERROR::: ", err); })
   }
-  // }, [])
+
 
   setInterval(function () {
 
     var counter;
 
-    const removeItem = (index) => {
-      // setData(prevItems => prevItems.filter((_, i) => i !== index));
-    }
-
-    console.log("_____________________________________________ DATA", data);
+    console.log("DATA", data);
     var currentTimestamp = playerRef.current?.getCurrentTime();
     var nextSwearStartsAt = data[1];
     var nextSwearDurationIs = data[0];
     var endSwearingDuration = nextSwearStartsAt + nextSwearDurationIs;
     setTMinusNextSwearAt(Math.round(nextSwearStartsAt - currentTimestamp));
+    setTotalSwearWordsDetected(data.length / 2)
 
     if (currentTimestamp > nextSwearStartsAt && currentTimestamp < endSwearingDuration) {
-      console.log("SWEARING INCOMING TIMSTAMP:::::", currentTimestamp);
-      console.log("__________________________________MUTE")
-      console.log("_____________________________________________")
+      // console.log("SWEARING INCOMING TIMSTAMP:::::", currentTimestamp);
+      // console.log("__________________________________MUTE")
+      // console.log("_____________________________________________")
 
       playerRef.current?.getInternalPlayer()?.mute();
       setIsMuted(true);
@@ -91,23 +69,19 @@ function IntialPage() {
       playerRef.current?.getInternalPlayer()?.unMute();
       setIsMuted(false);
       if (counter != 1) {
-        // removeItem(0);
-        // removeItem(1);
         data.shift();
         data.shift();
         counter = 1;
       }
     } else {
       // console.log("NO SWEARING::::", currentTimestamp)
-      console.log("NO SWEARING NEXT SWEAR STARTS AT", nextSwearStartsAt)
-      console.log("NO SWEARING NEXT SWEAR DURATION IS", nextSwearDurationIs)
+      // console.log("NO SWEARING NEXT SWEAR STARTS AT", nextSwearStartsAt)
+      // console.log("NO SWEARING NEXT SWEAR DURATION IS", nextSwearDurationIs)
     }
   }, 800);
 
   return (
     <div className="bg">
-      {/* WORKS - <form onSubmit={() => fetchSubmit(document.getElementById("url").value)}> */}
-      {/*  WORKS - jsonSwearingData = FetchSubmit({ url: document.getElementById("url").value }) */}
       <h1>YouTube Swearing Blocker</h1>
       <h3>Auto-detects swear words in YouTube videos and mutes the volume at each swear word in the video.</h3>
       <h3>Example use-case: A parent can watch a YouTube video with their child with only a few bad words in it.</h3>
@@ -118,7 +92,7 @@ function IntialPage() {
         LoadVideo();
         console.log("the url", the_url);
       }}>
-        <label htmlFor="url">Youtube URL (example: https://www.youtube.com/watch?v=_SvIzSD0USEI) :</label><br />
+        <label htmlFor="url">Youtube URL (example:  https://www.youtube.com/watch?v=7RAJUzIO8kg) :</label><br />
         <input className="url" type="text" id="url" name="url" />
         <button id="" type="submit"><span>SUBMIT</span>
           <div className="liquid"></div></button>
@@ -133,9 +107,8 @@ function IntialPage() {
 
       <p>{data && `DATA here: ${data}`}</p>
       <p>{the_url && `the url: ${the_url}`}</p>
+      <p>{totalSwearWordsDetected && `Total Number of swear words detected is: ${totalSwearWordsDetected}`}</p>
       <p>{tMinusNextSwearAt && `T-minus next swear word in: ${tMinusNextSwearAt} seconds`}</p>
-      {/* {video_id && <LoadVideo video_id={video_id} data={data} />} */}
-
 
       <div>
         <ReactPlayer
@@ -151,14 +124,6 @@ function IntialPage() {
     </div>
   );
 }
-
-
-// player.loadVideoById(`${video_id["video_id"]}`, 5, "large") // a bit of hack to get the video_id to load. For some reason, if we don't include this line, it will break it. This may cause unexpected issues, but it works for now.
-
-
-// setInterval(function () {  console.log("STAMP:::::::", player.playerInfo.currentTime)  }, 800);
-
-
 
 export { IntialPage };
 

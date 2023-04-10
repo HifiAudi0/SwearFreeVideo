@@ -1,0 +1,59 @@
+  All code below from inside React (App.js)
+  
+
+  // const handleProgress = (state) => {
+  //   if (state.playedSeconds >= 49 && !isMuted) {
+  //     playerRef.current?.getInternalPlayer()?.mute();
+  //     setIsMuted(true);
+  //   } else if (state.playedSeconds >= 50 && isMuted) {
+  //     playerRef.current?.getInternalPlayer()?.unMute();
+  //     setIsMuted(false);
+  //   }
+  // };
+
+
+
+
+   // useEffect(() => {
+
+  // Videos with Confirmed swearing in them: 
+  //https://www.youtube.com/watch?v=_SvIzSD0USE
+  // https://www.youtube.com/watch?v=2uvV1-02UCU 
+  // https://www.youtube.com/watch?v=2d4L1flXhLY- ALOT OF SWEARING OVER 300 TIMES I THINK
+  // https://www.youtube.com/watch?v=7RAJUzIO8kg TONS OF SWEARING Kanel Joseph
+
+  // setTheUrl("https://www.youtube.com/watch?v=_SvIzSD0USE");
+
+  // Using axios instead of fetch fixed an issue where we got a response but not the data we wanted.
+
+   // setData(jsonData.data);
+
+        // var id = /v=(.*)/.exec(the_url)[1];
+          // }, [])
+
+
+
+    const removeItem = (index) => {
+      // setData(prevItems => prevItems.filter((_, i) => i !== index));
+    }
+
+          if (counter != 1) {
+        // removeItem(0);
+        // removeItem(1);
+        data.shift();
+        data.shift();
+        counter = 1;
+      }
+
+
+
+
+            {/* WORKS - <form onSubmit={() => fetchSubmit(document.getElementById("url").value)}> */}
+      {/*  WORKS - jsonSwearingData = FetchSubmit({ url: document.getElementById("url").value }) */}
+
+
+
+      // player.loadVideoById(`${video_id["video_id"]}`, 5, "large") // a bit of hack to get the video_id to load. For some reason, if we don't include this line, it will break it. This may cause unexpected issues, but it works for now.
+
+
+// setInterval(function () {  console.log("STAMP:::::::", player.playerInfo.currentTime)  }, 800);
