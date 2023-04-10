@@ -1,11 +1,22 @@
 from youtube_transcript_api import YouTubeTranscriptApi
 import json
 import sys
+import os.path
+
+transcriptDir = "./transcripts/"
 
     # **CAUTION**: We are -NOT- checking arguments passed in for malicious code
 video_id = str(sys.argv[1])
 
 print ("Python:::" + str(sys.argv[1]))
+
+print ("DEBUG video_id:", video_id)
+
+alreadyDownloadedTranscripts = os.path.isfile(transcriptDir + video_id + '.json');
+if (alreadyDownloadedTranscripts):
+    print("JSON file already exists for this video. Exiting.")
+    exit()
+        
 
 # retrieve the available transcripts
 try:
@@ -66,7 +77,7 @@ transcript = transcript_list.find_transcript(['en'])
 # Write the transcript to a file as a json object
 try:
     print("Python Writing Transcript to File:::")
-    with open(video_id + '.json', 'w') as outfile:
+    with open(transcriptDir + video_id + '.json', 'w') as outfile:
         json.dump(transcript.fetch(), outfile)
 except:
     print("Error writing transcript to file")

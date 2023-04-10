@@ -82,7 +82,7 @@ app.post("/sendUrl", (req, res, next) => {
         // SNYK
         // Path Traversal: Unsanitized input from an HTTP parameter flows into fs.readFileSync, where it is use...
         // deepcode ignore PT: <please specify a reason of ignoring this>
-        data = fs.readFileSync(`${video_id}.json`, 'utf8')
+        data = fs.readFileSync(`./transcripts/${video_id}.json`, 'utf8')
         // WARNING
         // SNYK
         // Path Traversal: Unsanitized input from an HTTP parameter flows into fs.readFileSync, where it is use...

@@ -110,6 +110,7 @@ function IntialPage() {
       {/*  WORKS - jsonSwearingData = FetchSubmit({ url: document.getElementById("url").value }) */}
       <h1>YouTube Swearing Blocker</h1>
       <h3>Auto-detects swear words in YouTube videos and mutes the volume at each swear word in the video.</h3>
+      <h3>Example use-case: A parent can watch a YouTube video with their child with only a few bad words in it.</h3>
       <form onSubmit={(e) => {
         e.preventDefault();
 

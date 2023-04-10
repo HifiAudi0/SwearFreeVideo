@@ -11,8 +11,9 @@
 
 }
 
-
 url,
 .url {
   width: 400px;
+  color: black;
+  text-align: left;
 }
