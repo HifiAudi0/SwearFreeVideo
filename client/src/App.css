@@ -1,3 +1,16 @@
+* {
+  color: white;
+}
+
+.bg {
+  min-width: 100%;
+  min-height: 100%;
+  background-color: black;
+  background-size: 100% 100%;
+
+}
+
+
 url,
 .url {
   width: 400px;

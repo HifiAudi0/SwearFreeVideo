@@ -2,7 +2,8 @@ import './App.css';
 import React, { useRef, useState, useEffect } from 'react';
 import axios from 'axios';
 import ReactPlayer from 'react-player/youtube'
-
+import './neon-shadow-button-effect.css';
+import './liquid-button-effect.css';
 // Note to self:
 // Chrome deveeloper console - highlight object then ctrl+alt+click to expand all object properties
 // Turbo console log = ctrl+alt+l (that is an lowercase L) after highlighting variable
@@ -107,7 +108,7 @@ function LoadVideo() {
   }, 800); // This SHOULD be 800 under 1 second, in the future. 2800 temporarily.
 
   return (
-    <>
+    <div className="bg">
       {/* WORKS - <form onSubmit={() => fetchSubmit(document.getElementById("url").value)}> */}
       {/*  WORKS - jsonSwearingData = FetchSubmit({ url: document.getElementById("url").value }) */}
       <form onSubmit={(e) => { 
@@ -118,15 +119,17 @@ function LoadVideo() {
         console.log("the url", the_url); 
         }}>
         <label htmlFor="url">Youtube URL (example: https://www.youtube.com/watch?v=_SvIzSD0USEI) :</label><br />
-        <input className="url" type="text" id="url" name="url" /><br />
-        <input type="submit" value="Submit"></input>
+        <input className="url" type="text" id="url" name="url" />
+        <button id="" type="submit"><span>SUBMIT</span>
+        <div className="liquid"></div></button>
+        {/* <input className="liquid" type="submit" value="Submit">
+        </input> */}
       </form>
-      <p><ul>Disclaimer:<br/>
+      <ul>Disclaimer:<br/>
       <li>This is tool is not a subsutite for parenting.</li>
       <li>This tool is not fool proof nor is it 100% accurate.</li>
       <li>Children should always be supervised when using this tool.</li>
       </ul>
-      </p>
 
       <p>{data && `DATA here: ${data}`}</p>
       <p>{the_url && `the url: ${the_url}`}</p>
@@ -145,7 +148,7 @@ function LoadVideo() {
         ref={playerRef}
       />
     </div>
-    </>
+    </div>
   );
 }
 
