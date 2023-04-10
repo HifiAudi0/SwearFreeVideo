@@ -24,6 +24,7 @@ function IntialPage() {
 
   const playerRef = useRef(null);
   const [isMuted, setIsMuted] = useState(false);
+  const [tMinusNextSwearAt, setTMinusNextSwearAt] = useState(0);
 
   // const handleProgress = (state) => {
   //   if (state.playedSeconds >= 49 && !isMuted) {
@@ -72,6 +73,7 @@ function LoadVideo() {
     var nextSwearStartsAt = data[1];
     var nextSwearDurationIs = data[0];
     var endSwearingDuration = nextSwearStartsAt + nextSwearDurationIs;
+    setTMinusNextSwearAt(Math.round(nextSwearStartsAt - currentTimestamp));
 
     if (currentTimestamp > nextSwearStartsAt && currentTimestamp < endSwearingDuration) {
       console.log("SWEARING INCOMING TIMSTAMP:::::", currentTimestamp);
@@ -119,9 +121,16 @@ function LoadVideo() {
         <input className="url" type="text" id="url" name="url" /><br />
         <input type="submit" value="Submit"></input>
       </form>
+      <p><ul>Disclaimer:<br/>
+      <li>This is tool is not a subsutite for parenting.</li>
+      <li>This tool is not fool proof nor is it 100% accurate.</li>
+      <li>Children should always be supervised when using this tool.</li>
+      </ul>
+      </p>
 
       <p>{data && `DATA here: ${data}`}</p>
       <p>{the_url && `the url: ${the_url}`}</p>
+      <p>{tMinusNextSwearAt && `T-minus next swear word in: ${tMinusNextSwearAt} seconds`}</p>
       {/* {video_id && <LoadVideo video_id={video_id} data={data} />} */}
 
 
