@@ -29,10 +29,6 @@ function IntialPage() {
   const [totalSwearWordsDetected, setTotalSwearWordsDetected] = useState(0);
 
 
-
-
-
-
   function LoadVideo() {
     axios.post("/sendUrl?url=" + the_url)
       .then((jsonData) => {
@@ -46,7 +42,7 @@ function IntialPage() {
 
     var counter;
 
-    console.log("DATA", data);
+    // console.log("DATA", data);
     var currentTimestamp = playerRef.current?.getCurrentTime();
     var nextSwearStartsAt = data[1];
     var nextSwearDurationIs = data[0];
@@ -102,7 +98,7 @@ function IntialPage() {
       <ul>Disclaimer:<br />
         <li>This is tool is not a subsutite for parenting.</li>
         <li>This tool is not fool proof nor is it 100% accurate.</li>
-        <li>Children should always be supervised when using this tool.</li>
+        <li>Children should always be supervised. This tool should be understood and operated with adult supervision.</li>
       </ul>
 
       <p>{data && `DATA here: ${data}`}</p>
