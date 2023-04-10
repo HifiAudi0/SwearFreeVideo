@@ -111,6 +111,8 @@ function LoadVideo() {
     <div className="bg">
       {/* WORKS - <form onSubmit={() => fetchSubmit(document.getElementById("url").value)}> */}
       {/*  WORKS - jsonSwearingData = FetchSubmit({ url: document.getElementById("url").value }) */}
+      <h1>YouTube Swearing Blocker</h1>
+      <h3>Auto-detects swear words in YouTube videos and mutes the volume at each swear word in the video.</h3>
       <form onSubmit={(e) => { 
          e.preventDefault(); 
    
