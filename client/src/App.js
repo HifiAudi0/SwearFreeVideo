@@ -14,6 +14,14 @@ import './liquid-button-effect.css';
 // If no transcript is availabile which happens, do not load the video at all, show error message to user.
 
 
+// Videos with Confirmed swearing in them (for testing purposes): 
+//https://www.youtube.com/watch?v=_SvIzSD0USE
+// https://www.youtube.com/watch?v=2uvV1-02UCU 
+// https://www.youtube.com/watch?v=2d4L1flXhLY- ALOT OF SWEARING OVER 300 TIMES I THINK
+// https://www.youtube.com/watch?v=7RAJUzIO8kg TONS OF SWEARING Kanel Joseph
+// https://www.youtube.com/watch?v=PawZ8NsOQk8 - lots of swearing
+// https://www.youtube.com/watch?v=we6PRXmfils - Mr. Beast - 42 total swear words
+
 var data = [];
 // var the_url = "";
 
@@ -88,9 +96,9 @@ function IntialPage() {
         LoadVideo();
         console.log("the url", the_url);
       }}>
-        <label htmlFor="url">Youtube URL (example:  https://www.youtube.com/watch?v=7RAJUzIO8kg) :</label><br />
+        <label htmlFor="url">Youtube URL ( example:  https://www.youtube.com/watch?v=we6PRXmfils ) :</label><br />
         <input className="url" type="text" id="url" name="url" />
-        <button id="submit" type="submit"><span>SUBMIT</span>
+        <button id="" type="submit"><span id="submit">SUBMIT</span>
           <div className="liquid"></div></button>
         {/* <input className="liquid" type="submit" value="Submit">
         </input> */}
