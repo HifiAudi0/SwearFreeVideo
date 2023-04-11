@@ -90,7 +90,7 @@ function IntialPage() {
       }}>
         <label htmlFor="url">Youtube URL (example:  https://www.youtube.com/watch?v=7RAJUzIO8kg) :</label><br />
         <input className="url" type="text" id="url" name="url" />
-        <button id="" type="submit"><span>SUBMIT</span>
+        <button id="submit" type="submit"><span>SUBMIT</span>
           <div className="liquid"></div></button>
         {/* <input className="liquid" type="submit" value="Submit">
         </input> */}
@@ -103,8 +103,10 @@ function IntialPage() {
 
       <p>{data && `DATA here: ${data}`}</p>
       <p>{the_url && `the url: ${the_url}`}</p>
-      <p>{totalSwearWordsDetected && `Total Number of swear words detected is: ${totalSwearWordsDetected}`}</p>
-      <p>{tMinusNextSwearAt && `T-minus next swear word in: ${tMinusNextSwearAt} seconds`}</p>
+      <p>Total Number of swear words detected is: <span id='counters'>{totalSwearWordsDetected}</span></p>
+      {/* <p>{tMinusNextSwearAt && `T-minus next swear word in: <span id='counters'>  ${tMinusNextSwearAt} seconds</span>`}</p> */}
+
+      <p>T-minus next swear word in: <span id='counters'>{tMinusNextSwearAt} seconds</span></p>
 
       <div>
         <ReactPlayer
@@ -115,6 +117,7 @@ function IntialPage() {
           muted={false}
           // onProgress={handleProgress}
           ref={playerRef}
+          id="videoPlayer"
         />
       </div>
     </div>

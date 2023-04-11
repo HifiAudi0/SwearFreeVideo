@@ -18,3 +18,15 @@ url,
   color: black;
   text-align: left;
 }
+
+#counters {
+
+  text-align: left;
+  color: greenyellow;
+}
+
+#videoPlayer {
+
+  position: relative;
+  left: 30%;
+}
