@@ -96,7 +96,7 @@ function IntialPage() {
       // console.log("NO SWEARING NEXT SWEAR STARTS AT", nextSwearStartsAt)
       // console.log("NO SWEARING NEXT SWEAR DURATION IS", nextSwearDurationIs)
     }
-  }, 800);
+  }, 500);
 
   return (
     <div className="bg">

@@ -43,6 +43,9 @@ url,
   top: 100px;
   left: 0px;
   border: 20px solid greenyellow;
+  animation-name: swearingTextAnimation;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
 }
 
 .show {
@@ -51,4 +54,14 @@ url,
 
 .hide {
   display: none;
+}
+
+@keyframes swearingTextAnimation {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
