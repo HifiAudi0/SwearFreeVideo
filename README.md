@@ -8,3 +8,6 @@ Disclaimer:
 This is tool is not a subsutite for parenting.
 This tool is not fool proof nor is it 100% accurate.
 Children should always be supervised. This tool should be understood and operated with adult supervision.
+
+Backend: Node.js , Express , Python
+Frontend: HTML , CSS , Javascript , React
