@@ -19,7 +19,6 @@ import './liquid-button-effect.css';
 // https://www.youtube.com/watch?v=2uvV1-02UCU 
 // https://www.youtube.com/watch?v=2d4L1flXhLY- ALOT OF SWEARING OVER 300 TIMES I THINK
 // https://www.youtube.com/watch?v=7RAJUzIO8kg TONS OF SWEARING Kanel Joseph
-// https://www.youtube.com/watch?v=PawZ8NsOQk8 - lots of swearing
 // https://www.youtube.com/watch?v=we6PRXmfils - Mr. Beast - 42 total swear words
 // https://www.youtube.com/watch?v=-2JmHi9x7VY - Risk Kill Pete Channel - 40 words
 
@@ -45,11 +44,14 @@ function IntialPage() {
 
 
 
-  function LoadVideo() {
-    axios.post("/sendUrl?url=" + the_url)
+  function LoadVideo(formUrl) {
+
+    console.log("Inside LoadVideo() sending url:/sendUrl?url=", formUrl)
+
+    axios.post("/sendUrl?url=" + formUrl)
       .then((jsonData) => {
         data = jsonData.data;
-        setVideoId(/v=(.*)/.exec(the_url)[1]);
+        setVideoId(/v=(.*)/.exec(formUrl)[1]);
       }).catch((err) => { console.log("REACT FETCH ERROR::: ", err); })
   }
 
@@ -107,7 +109,7 @@ function IntialPage() {
         e.preventDefault();
 
         setTheUrl(document.getElementById("url").value);
-        LoadVideo();
+        LoadVideo(document.getElementById("url").value);
         console.log("the url", the_url);
       }}>
         <label htmlFor="url">Youtube URL ( example:  https://www.youtube.com/watch?v=we6PRXmfils ) :</label><br />
