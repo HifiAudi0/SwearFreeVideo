@@ -21,8 +21,14 @@ import './liquid-button-effect.css';
 // https://www.youtube.com/watch?v=7RAJUzIO8kg TONS OF SWEARING Kanel Joseph
 // https://www.youtube.com/watch?v=PawZ8NsOQk8 - lots of swearing
 // https://www.youtube.com/watch?v=we6PRXmfils - Mr. Beast - 42 total swear words
+// https://www.youtube.com/watch?v=-2JmHi9x7VY - Risk Kill Pete Channel - 40 words
+
+// Keeping tracking of swear words that are MAYBE not detected by the transcript
+// Could be added manually in the future?
+// "shittest", "dick", "vagina"
 
 var data = [];
+
 // var the_url = "";
 
 function IntialPage() {
@@ -37,6 +43,8 @@ function IntialPage() {
   const [totalSwearWordsDetected, setTotalSwearWordsDetected] = useState(0);
 
 
+
+
   function LoadVideo() {
     axios.post("/sendUrl?url=" + the_url)
       .then((jsonData) => {
@@ -49,6 +57,7 @@ function IntialPage() {
   setInterval(function () {
 
     var counter;
+    var displaySwearingText = document.querySelector("#displaySwearingText");
 
     // console.log("DATA", data);
     var currentTimestamp = playerRef.current?.getCurrentTime();
@@ -64,6 +73,9 @@ function IntialPage() {
       // console.log("_____________________________________________")
 
       playerRef.current?.getInternalPlayer()?.mute();
+      displaySwearingText.classList.add("show");
+      displaySwearingText.classList.remove("hide");
+
       setIsMuted(true);
 
       counter = 0;
@@ -71,6 +83,8 @@ function IntialPage() {
       // setData.shift();
     } else if (currentTimestamp > endSwearingDuration) {
       playerRef.current?.getInternalPlayer()?.unMute();
+      displaySwearingText.classList.add("hide");
+      displaySwearingText.classList.remove("show");
       setIsMuted(false);
       if (counter != 1) {
         data.shift();
@@ -117,6 +131,7 @@ function IntialPage() {
       <p>T-minus next swear word in: <span id='counters'>{tMinusNextSwearAt} seconds</span></p>
 
       <div>
+        <h1 className="hide" id="displaySwearingText"></h1>
         <ReactPlayer
           url={the_url}
           playing

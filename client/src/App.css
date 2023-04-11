@@ -26,7 +26,29 @@ url,
 }
 
 #videoPlayer {
-
   position: relative;
   left: 30%;
+}
+
+
+#displaySwearingText::after {
+  content: "SWEARING";
+  font-size: 2rem;
+  /* display: block; */
+  z-index: 1;
+  position: relative;
+  width: 100px;
+  height: 100px;
+
+  top: 100px;
+  left: 0px;
+  border: 20px solid greenyellow;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
 }
