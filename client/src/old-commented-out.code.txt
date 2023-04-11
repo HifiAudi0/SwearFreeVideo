@@ -16,11 +16,12 @@
 
    // useEffect(() => {
 
-  // Videos with Confirmed swearing in them: 
+  // Videos with Confirmed swearing in them (for testing purposes): 
   //https://www.youtube.com/watch?v=_SvIzSD0USE
   // https://www.youtube.com/watch?v=2uvV1-02UCU 
   // https://www.youtube.com/watch?v=2d4L1flXhLY- ALOT OF SWEARING OVER 300 TIMES I THINK
   // https://www.youtube.com/watch?v=7RAJUzIO8kg TONS OF SWEARING Kanel Joseph
+  // https://www.youtube.com/watch?v=PawZ8NsOQk8 - lots of swearing
 
   // setTheUrl("https://www.youtube.com/watch?v=_SvIzSD0USE");
 

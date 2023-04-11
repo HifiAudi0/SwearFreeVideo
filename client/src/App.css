@@ -17,6 +17,8 @@ url,
   width: 700px;
   color: black;
   text-align: left;
+  border-radius: 25px;
+  margin-top: 20px;
 }
 
 #counters {

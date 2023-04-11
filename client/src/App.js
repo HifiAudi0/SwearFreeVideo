@@ -114,7 +114,7 @@ function IntialPage() {
       }}>
         <label htmlFor="url">Youtube URL ( example:  https://www.youtube.com/watch?v=we6PRXmfils ) :</label><br />
         <div className="neonShadow"><input className="url" type="text" id="url" name="url" /></div>
-        <button id="" type="submit"><span id="submit">SUBMIT</span>
+        <button type="submit"><span id="submit">SUBMIT</span>
           <div className="liquid"></div></button>
         {/* <input className="liquid" type="submit" value="Submit">
         </input> */}
