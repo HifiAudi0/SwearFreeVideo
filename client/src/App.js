@@ -17,7 +17,7 @@ import './liquid-button-effect.css';
 // Videos with Confirmed swearing in them (for testing purposes): 
 //https://www.youtube.com/watch?v=_SvIzSD0USE
 // https://www.youtube.com/watch?v=2uvV1-02UCU 
-// https://www.youtube.com/watch?v=2d4L1flXhLY- ALOT OF SWEARING OVER 300 TIMES I THINK
+// https://www.youtube.com/watch?v=2d4L1flXhLY- Swat video 5 total swear words
 // https://www.youtube.com/watch?v=7RAJUzIO8kg TONS OF SWEARING Kanel Joseph
 // https://www.youtube.com/watch?v=we6PRXmfils - Mr. Beast - 42 total swear words
 // https://www.youtube.com/watch?v=-2JmHi9x7VY - Risk Kill Pete Channel - 40 words
