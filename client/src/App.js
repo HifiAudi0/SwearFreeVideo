@@ -172,13 +172,18 @@ function Features() {
 
   return (
     <>
-      <ul>
-        <li><Checkbox disabled defaultChecked />Works on any video</li>
-        <li><Checkbox disabled defaultChecked />Visual and audio notification of swearing</li>
-        <li><Checkbox disabled defaultChecked />Swear word counter</li>
-        <li><Checkbox disabled defaultChecked />Swear word countdown</li>
-      </ul>
+      <div class="footer-grid-container">
+        <div class="footer-grid-item">
+          <ul>
+            <li><img className="featuresIcons" src="./img/video.png" /><Checkbox disabled defaultChecked />Works on any video</li>
+            <span><li><img className="featuresIcons" src="./img/visual.png" /><img className="featuresIcons" src="./img/muted.png" /><Checkbox disabled defaultChecked />Visual and audio notification of swearing</li></span>
+            <li><img className="featuresIcons" src="./img/curseIcon.png" /><Checkbox disabled defaultChecked />Swear word counter</li>
+            <li><img className="featuresIcons" src="./img/countdown.jpeg" /><Checkbox disabled defaultChecked />Swear word countdown</li>
+            <li><img className="featuresIcons" src="./img/easyToUse.png" /><Checkbox disabled defaultChecked />Easy to use - just paste and go!</li>
+          </ul>
 
+        </div>
+      </div>
     </>
   );
 }
