@@ -3,7 +3,22 @@ import React, { useRef, useState, useEffect } from 'react';
 import axios from 'axios';
 import ReactPlayer from 'react-player/youtube'
 import './neon-shadow-button-effect.css';
+
 import './liquid-button-effect.css';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+
+import { motion } from "framer-motion";
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import Typography from "@mui/material/Typography";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import Checkbox from '@mui/material/Checkbox';
+import { green } from '@mui/material/colors';
+
 // Note to self:
 // Chrome deveeloper console - highlight object then ctrl+alt+click to expand all object properties
 // Turbo console log = ctrl+alt+l (that is an lowercase L) after highlighting variable
@@ -145,7 +160,69 @@ function IntialPage() {
           id="videoPlayer"
         />
       </div>
+      <Features />
+      <Faq />
     </div>
+
+
+  );
+}
+
+function Features() {
+
+  return (
+    <>
+      <ul>
+        <li><Checkbox disabled defaultChecked />Works on any video</li>
+        <li><Checkbox disabled defaultChecked />Visual and audio notification of swearing</li>
+        <li><Checkbox disabled defaultChecked />Swear word counter</li>
+        <li><Checkbox disabled defaultChecked />Swear word countdown</li>
+      </ul>
+
+    </>
+  );
+}
+
+function Faq() {
+  return (
+    <>
+      <h1>FAQ</h1>
+      <Accordion className="accordion">
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography className="accordHeading">Is it Free to use?</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography className="accordPara">
+            Yes, it is free to use.
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion className="accordion">
+        <AccordionSummary aria-controls="panel2a-content" id="panel2a-header">
+          <Typography className="accordHeading">How do I get started?</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography className="accordPara">
+            Just copy and paste the YouTube video URL into the form and click submit.
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion className="accordion">
+        <AccordionSummary aria-controls="panel2a-content" id="panel2a-header">
+          <Typography className="accordHeading"></Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography className="accordPara">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            malesuada lacus ex, sit amet blandit leo lobortis eget.
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+    </>
   );
 }
 

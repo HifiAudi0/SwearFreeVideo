@@ -67,3 +67,20 @@ url,
     opacity: 1;
   }
 }
+
+.accordion {
+  width: 50%;
+
+  left: 25%;
+
+}
+
+.accordHeading {
+  font-size: 1.5rem !important;
+  color: black;
+}
+
+.accordPara {
+  font-size: 1.2rem !important;
+  color: black;
+}
