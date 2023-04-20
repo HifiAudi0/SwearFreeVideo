@@ -117,7 +117,8 @@ function IntialPage() {
 
   return (
     <div className="bg">
-      <h1>YouTube Swearing Blocker</h1>
+
+      <img className="swearingEmoji" src="./img/swearingEmoji.png" /><h1>YouTube Swearing Blocker</h1>
       <h3>Auto-detects swear words in YouTube videos and mutes the volume at each swear word in the video.</h3>
       <h3>Example use-case: A parent can watch a YouTube video with their child with only a few bad words in it.</h3>
       <form onSubmit={(e) => {
@@ -135,12 +136,12 @@ function IntialPage() {
         </input> */}
       </form>
       <ul>Disclaimer:<br />
-        <li>This is tool is not a subsutite for parenting.</li>
-        <li>This tool is not fool proof nor is it 100% accurate.</li>
-        <li>Children should always be supervised. This tool should be understood and operated with adult supervision.</li>
+        <li>This is tool is not a subsutite for parenting.</li><br />
+        <li>This tool is not fool proof nor is it 100% accurate.</li><br />
+        <li>Children should always be supervised.<br />This tool should be understood and operated with adult supervision.</li><br />
       </ul>
-
-      <p>{data && `DATA here: ${data}`}</p>
+      <br /><br />
+      <p>{data && `Debug data here: ${data}`}</p>
       <p>{the_url && `the url: ${the_url}`}</p>
       <p>Total Number of swear words detected is: <span id='counters'>{totalSwearWordsDetected}</span></p>
       {/* <p>{tMinusNextSwearAt && `T-minus next swear word in: <span id='counters'>  ${tMinusNextSwearAt} seconds</span>`}</p> */}
@@ -234,12 +235,22 @@ function Faq() {
       </Accordion>
       <Accordion className="accordion">
         <AccordionSummary aria-controls="panel2a-content" id="panel2a-header">
-          <Typography className="accordHeading"></Typography>
+          <Typography className="accordHeading">Is it safe to use?</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography className="accordPara">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
+            Yes, it is safe to use. This service is web-based meaning, no need to download or install anything on your computer.
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion className="accordion">
+        <AccordionSummary aria-controls="panel2a-content" id="panel2a-header">
+          <Typography className="accordHeading">Does it work with any Youtube video?</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography className="accordPara">
+            Yes it works with almost any Youtube video, where an auto generated transcript is available.
+            Not sure if it will work with your video? Just try it out!
           </Typography>
         </AccordionDetails>
       </Accordion>

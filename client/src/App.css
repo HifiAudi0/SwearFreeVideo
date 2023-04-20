@@ -21,6 +21,11 @@ url,
   margin-top: 20px;
 }
 
+.swearingEmoji {
+  width: 100px;
+  height: 100px;
+}
+
 #counters {
 
   text-align: left;
