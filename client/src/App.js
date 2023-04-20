@@ -268,6 +268,16 @@ function Faq() {
           </Typography>
         </AccordionDetails>
       </Accordion>
+      <Accordion className="accordion">
+        <AccordionSummary aria-controls="panel2a-content" id="panel2a-header">
+          <Typography className="accordHeading">Why does the muting last for a few seconds or longer?</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography className="accordPara">
+            When a swear word is detected within a sentence, the muting will last until the end of the sentence. Not the start and end of any single word.
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
     </>
   );
 }
