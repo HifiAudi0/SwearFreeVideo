@@ -172,14 +172,30 @@ function Features() {
 
   return (
     <>
+      <h1>Features</h1>
       <div class="footer-grid-container">
         <div class="footer-grid-item">
           <ul>
-            <li><img className="featuresIcons" src="./img/video.png" /><Checkbox disabled defaultChecked />Works on any video</li>
-            <span><li><img className="featuresIcons" src="./img/visual.png" /><img className="featuresIcons" src="./img/muted.png" /><Checkbox disabled defaultChecked />Visual and audio notification of swearing</li></span>
-            <li><img className="featuresIcons" src="./img/curseIcon.png" /><Checkbox disabled defaultChecked />Swear word counter</li>
-            <li><img className="featuresIcons" src="./img/countdown.jpeg" /><Checkbox disabled defaultChecked />Swear word countdown</li>
-            <li><img className="featuresIcons" src="./img/easyToUse.png" /><Checkbox disabled defaultChecked />Easy to use - just paste and go!</li>
+
+            <li><img className="featuresIcons" src="./img/video.png" />
+              <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Works on any video</span></li>
+
+            <li><img className="featuresIcons" src="./img/visual.png" />
+              <img className="featuresIcons" src="./img/muted.png" />
+              <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Visual and audio notification of swearing</span></li>
+
+            <li><img className="featuresIcons" src="./img/curseIcon.png" />
+              <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Swear word counter</span></li>
+
+            <li><img className="featuresIcons" src="./img/countdown.jpeg" />
+              <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Swear word countdown</span></li>
+
+            <li><img className="featuresIcons" src="./img/easyToUse.png" />
+              <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Easy to use - just paste and go!</span></li>
+
+            <li><img className="featuresIcons" src="./img/secure.png" />
+              <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">No need to download anything - safe and secure.</span></li>
+
           </ul>
 
         </div>

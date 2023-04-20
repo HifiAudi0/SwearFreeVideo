@@ -91,10 +91,22 @@ url,
 }
 
 li {
-  text-align: center;
+  /* text-align: center;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
   text-decoration: none;
+
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+}
+
+.featurePara {
+  /* margin-top: -200px; */
+  top: -95px;
+  position: relative;
 
 }
 
