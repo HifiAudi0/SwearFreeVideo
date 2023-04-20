@@ -78,6 +78,17 @@ function IntialPage() {
 
   }
 
+  function startedPlaying() {
+    // setInterval(function () {
+    if (totalSwearWordsDetected <= 0) {
+      console.log("No swear words detected!!!");
+    }
+    else {
+      console.log(totalSwearWordsDetected + " swear words detected!!!")
+    }
+    // }, 2000);
+  }
+
 
   setInterval(function () {
 
@@ -173,6 +184,7 @@ function IntialPage() {
           // onProgress={handleProgress}
           ref={playerRef}
           id="videoPlayer"
+          onStart={() => startedPlaying()}
         />
       </div>
       <Features />
