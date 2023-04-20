@@ -68,10 +68,20 @@ function IntialPage() {
         data = jsonData.data;
         setVideoId(/v=(.*)/.exec(formUrl)[1]);
       }).catch((err) => { console.log("REACT FETCH ERROR::: ", err); })
+
+    // setInterval(function () {
+    //   if (totalSwearWordsDetected <= 0) {
+    //     console.log("No swear words detected!!!");
+    //   }
+    // }, 2000);
+
+
   }
 
 
   setInterval(function () {
+
+
 
     var counter;
     var displaySwearingText = document.querySelector("#displaySwearingText");
@@ -83,6 +93,10 @@ function IntialPage() {
     var endSwearingDuration = nextSwearStartsAt + nextSwearDurationIs;
     setTMinusNextSwearAt(Math.round(nextSwearStartsAt - currentTimestamp));
     setTotalSwearWordsDetected(data.length / 2)
+
+
+    // console.log("Number:", totalSwearWordsDetected);
+    // console.log("No swear words detected!!!");
 
     if (currentTimestamp > nextSwearStartsAt && currentTimestamp < endSwearingDuration) {
       // console.log("SWEARING INCOMING TIMSTAMP:::::", currentTimestamp);
@@ -261,3 +275,21 @@ function Faq() {
 export { IntialPage };
 
 
+
+
+
+
+// const myTimeout = setTimeout(checkTotalSwearWordsDetected, 1000);
+
+// function checkTotalSwearWordsDetected() {
+//   if (totalSwearWordsDetected <= 0) {
+//     // console.log("Number:", totalSwearWordsDetected);
+//     // console.log("No swear words detected!!!");
+//   }
+
+//   myStopFunction(myTimeout);
+// }
+
+// function myStopFunction(myTimeout) {
+//   clearTimeout(myTimeout);
+// }
