@@ -52,7 +52,7 @@ app.post("/sendUrl", (req, res, next) => {
 
 
 
-    var video_id = /v=(.*)/.exec(req.query.url)[1];
+    var video_id = /v=(\w\w\w\w\w\w\w\w\w\w\w)/.exec(req.query.url)[1];
     // console.log("video_id", sanitizedUrl);
 
     // See python notes at bottom of .py file
@@ -62,6 +62,45 @@ app.post("/sendUrl", (req, res, next) => {
     //     console.log("(Node) Python said this to me: ", data.toString());
     // });
 
+    /*
+        if (video_id.length >= 12) {
+    
+            console.log("VIDEO ID is longer than 12 characters, so it is probably an invalid video id")
+    
+            let date_time = new Date();
+            // get current date
+            // adjust 0 before single digit date
+            let date = ("0" + date_time.getDate()).slice(-2);
+    
+            // get current month
+            let month = ("0" + (date_time.getMonth() + 1)).slice(-2);
+    
+            // get current year
+            let year = date_time.getFullYear();
+    
+            // get current hours
+            let hours = date_time.getHours();
+    
+            // get current minutes
+            let minutes = date_time.getMinutes();
+    
+            // get current seconds
+            let seconds = date_time.getSeconds();
+    
+            // prints date in YYYY-MM-DD format
+            console.log(year + "-" + month + "-" + date);
+    
+            // prints date & time in YYYY-MM-DD HH:MM:SS format
+            console.log(year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds);
+    
+            fs.appendFile('.security.log', `\nAttempt to read file ${req.query.url} on year: ${year}  month: ${month} day: ${date} @ ${hours} hours and ${minutes} minutes and ${seconds} seconds`, 'utf-8', (err) => {
+    
+                console.log("video_is was longer then 11 charchters, so it is probably an invalid video id and unsafe to proceed with the request....exiting....");
+    
+                process.exit(1)
+            });
+        }
+    */
 
     var fetchTrandscript = spawn('python', ["fetch_transcript.py", video_id]);
 
@@ -82,6 +121,7 @@ app.post("/sendUrl", (req, res, next) => {
         // SNYK
         // Path Traversal: Unsanitized input from an HTTP parameter flows into fs.readFileSync, where it is use...
         // deepcode ignore PT: <please specify a reason of ignoring this>
+
         data = fs.readFileSync(`./transcripts/${video_id}.json`, 'utf8')
         // WARNING
         // SNYK
