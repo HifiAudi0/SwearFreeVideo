@@ -36,10 +36,12 @@ import { green } from '@mui/material/colors';
 // https://www.youtube.com/watch?v=7RAJUzIO8kg TONS OF SWEARING Kanel Joseph
 // https://www.youtube.com/watch?v=we6PRXmfils - Mr. Beast - 42 total swear words
 // https://www.youtube.com/watch?v=-2JmHi9x7VY - Risk Kill Pete Channel - 40 words
+// https://www.youtube.com/watch?v=kQWXoQZWlMw - South Park - 1o words detected
 
 // Keeping tracking of swear words that are MAYBE not detected by the transcript
 // Could be added manually in the future?
-// "shittest", "dick", "vagina"
+// "shittest", "dick", "vagina", "balls"
+// Sometimes when music is playing with swears in it. Transcript says [Music] and no words are transcripted.
 
 var data = [];
 
@@ -205,7 +207,7 @@ function Features() {
           <ul>
 
             <li><img className="featuresIcons" src="./img/video.png" />
-              <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Works on any video</span></li>
+              <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Works on almost every video on Youtube</span></li>
 
             <li><img className="featuresIcons" src="./img/visual.png" />
               <img className="featuresIcons" src="./img/muted.png" />
