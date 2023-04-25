@@ -91,7 +91,6 @@ function IntialPage() {
     // }, 2000);
   }
 
-
   setInterval(function () {
 
 
@@ -162,6 +161,7 @@ function IntialPage() {
         {/* <input className="liquid" type="submit" value="Submit">
         </input> */}
       </form>
+      <img class="disclaimerImage" src="./img/disclaimer.png" />
       <ul>Disclaimer:<br />
         <li>This is tool is not a subsutite for parenting.</li><br />
         <li>This tool is not fool proof nor is it 100% accurate.</li><br />

@@ -21,6 +21,11 @@ url,
   margin-top: 20px;
 }
 
+.disclaimerImage {
+  width: 300px;
+  height: 200px;
+}
+
 .swearingEmoji {
   width: 100px;
   height: 100px;
