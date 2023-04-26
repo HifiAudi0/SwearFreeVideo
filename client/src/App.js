@@ -154,12 +154,12 @@ function IntialPage() {
 
           <img className="logo" src="./img/logo.png" />
 
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+          {/* <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-          </button>
+          </button> */}
 
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="" id="navbarNavAltMarkup">
             <div class="navbar-nav">
               <a class="nav-link fw-bold fs-3 active" aria-current="page" href="#home">HOME</a>
               <a class="nav-link fw-bold fs-3" href="#features">FEATURES</a>
