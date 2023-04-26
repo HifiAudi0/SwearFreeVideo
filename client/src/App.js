@@ -148,26 +148,22 @@ function IntialPage() {
 
       {/* <!-- NAV BAR --> */}
 
-      <nav class="navbar navbar-expand-lg navbar-dark mx-auto">
+      <nav className="navbar navbar-expand-lg navbar-dark mx-auto sticky-top ">
 
-        <div class="container-fluid">
-
-          <img className="logo" src="./img/logo.png" />
-
-          {/* <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        {/* <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button> */}
 
-          <div class="" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a class="nav-link fw-bold fs-3 active" aria-current="page" href="#home">HOME</a>
-              <a class="nav-link fw-bold fs-3" href="#features">FEATURES</a>
-              <a class="nav-link fw-bold fs-3" href="#disclaimer">DISCLAIMER</a>
-              <a class="nav-link fw-bold fs-3" href="#faq">FAQ</a>
-            </div>
+        <div className="" id="navbarNavAltMarkup">
+          <div className="navbar-nav">
+            <a className="nav-link fw-bold fs-3 active " aria-current="page" href="#home">HOME</a>
+            <a className="nav-link fw-bold fs-3" href="#features">FEATURES</a>
+            <a className="nav-link fw-bold fs-3" href="#disclaimer">DISCLAIMER</a>
+            <a className="nav-link fw-bold fs-3" href="#faq">FAQ</a>
           </div>
         </div>
+
 
       </nav>
       {/* <!-- NAV BAR ENDS --> */}
@@ -183,6 +179,7 @@ function IntialPage() {
         LoadVideo(document.getElementById("url").value);
         console.log("the url", the_url);
       }}><br /><br /><br /><br /><br /><br /><br /><br />
+        <img className="logo" src="./img/logo.png" /><br />
         <label htmlFor="url">Youtube URL ( example:  https://www.youtube.com/watch?v=we6PRXmfils ) :</label><br />
         <div className="neonShadow"><input className="url" type="text" id="url" name="url" /></div>
         <button type="submit"><span id="submit">SUBMIT</span>

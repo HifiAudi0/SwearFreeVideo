@@ -25,11 +25,13 @@
   text-transform: uppercase;
   animation-name: nav-animation;
   animation-duration: 3s;
-  width: 250px !important;
-  top: 10px !important;
+  /* width: 250px !important; */
+  /* top: 10px !important; */
   z-index: 2;
+  justify-content: center;
 
 }
+
 
 p {
   /** TEXT GRADIENT */
@@ -43,7 +45,7 @@ p {
 }
 
 .nav-link {
-  margin-right: 50px;
+  margin-right: 25px;
 
 }
 
@@ -64,8 +66,8 @@ url,
 .logo {
   width: 200px;
   height: 100px;
-  margin-left: -21rem;
-  margin-right: 2.5rem;
+  /* margin-left: -120%;
+  margin-right: 2.5rem; */
 }
 
 
