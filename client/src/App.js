@@ -163,6 +163,7 @@ function IntialPage() {
             <div class="navbar-nav">
               <a class="nav-link fw-bold fs-3 active" aria-current="page" href="#home">HOME</a>
               <a class="nav-link fw-bold fs-3" href="#features">FEATURES</a>
+              <a class="nav-link fw-bold fs-3" href="#disclaimer">DISCLAIMER</a>
               <a class="nav-link fw-bold fs-3" href="#faq">FAQ</a>
             </div>
           </div>
@@ -193,12 +194,9 @@ function IntialPage() {
       <p>Auto-detects swear words in YouTube videos and mutes the volume at each swear word in the video
         <br />Example use-case: A parent can watch a YouTube video with their child with only a few bad words in it.<br />Current version only works with YouTube videos. I am not endored, affiliated, or sponsored by YouTube in anyway. Youtube is a registered copyright and trademark of Google LLC.
       </p>
-      <img class="disclaimerImage" src="./img/disclaimer.png" />
-      <ul>Disclaimer:<br />
-        <li>This is tool is not a subsutite for parenting.</li><br />
-        <li>This tool is not fool proof nor is it 100% accurate.</li><br />
-        <li>Children should always be supervised.<br />This tool should be understood and operated with adult supervision.</li><br />
-      </ul>
+
+      <Disclaimer />
+
       <br /><br />
       <p>{data && `Debug data here: ${data}`}</p>
       <p>{the_url && `the url: ${the_url}`}</p>
@@ -226,6 +224,31 @@ function IntialPage() {
     </div>
 
 
+  );
+}
+
+function Disclaimer() {
+  return (
+    <>
+
+      <svg height="5px" width="150px">
+        <line class="svgLine" x1="0" y1="0" x2="300" y2="0" />
+      </svg>
+      <h2 id="disclaimer">DISCLAIMER:</h2>
+      <svg height="5px" width="150px">
+        <line class="svgLine" x1="0" y1="0" x2="300" y2="0" />
+      </svg>
+      <br />
+      <img class="disclaimerImage" src="./img/disclaimer.png" />
+      <ul>
+
+        <li>This is tool is not a subsutite for parenting.</li><br />
+        <li>This tool is not fool proof nor is it 100% accurate.</li><br />
+        <li>Children should always be supervised.<br />This tool should be understood and operated with adult supervision.</li><br />
+
+      </ul>
+
+    </>
   );
 }
 
