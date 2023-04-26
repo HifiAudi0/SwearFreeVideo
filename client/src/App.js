@@ -173,10 +173,7 @@ function IntialPage() {
 
 
       <br /><br />
-      <img className="swearingEmoji" src="./img/swearingEmoji.png" /><h1 id="home">Swear Free Video</h1>
-      <p>Auto-detects swear words in YouTube videos and mutes the volume at each swear word in the video
-        <br />Example use-case: A parent can watch a YouTube video with their child with only a few bad words in it.<br />Current version only works with YouTube videos. I am not endored, affiliated, or sponsored by YouTube in anyway. Youtube is a registered copyright and trademark of Google LLC.
-      </p>
+
 
       <form onSubmit={(e) => {
         e.preventDefault();
@@ -184,7 +181,7 @@ function IntialPage() {
         setTheUrl(document.getElementById("url").value);
         LoadVideo(document.getElementById("url").value);
         console.log("the url", the_url);
-      }}>
+      }}><br /><br /><br /><br /><br /><br /><br /><br />
         <label htmlFor="url">Youtube URL ( example:  https://www.youtube.com/watch?v=we6PRXmfils ) :</label><br />
         <div className="neonShadow"><input className="url" type="text" id="url" name="url" /></div>
         <button type="submit"><span id="submit">SUBMIT</span>
@@ -192,6 +189,10 @@ function IntialPage() {
         {/* <input className="liquid" type="submit" value="Submit">
         </input> */}
       </form>
+      <img className="swearingEmoji" src="./img/swearingEmoji.png" /><h1 id="home">Swear Free Video</h1>
+      <p>Auto-detects swear words in YouTube videos and mutes the volume at each swear word in the video
+        <br />Example use-case: A parent can watch a YouTube video with their child with only a few bad words in it.<br />Current version only works with YouTube videos. I am not endored, affiliated, or sponsored by YouTube in anyway. Youtube is a registered copyright and trademark of Google LLC.
+      </p>
       <img class="disclaimerImage" src="./img/disclaimer.png" />
       <ul>Disclaimer:<br />
         <li>This is tool is not a subsutite for parenting.</li><br />

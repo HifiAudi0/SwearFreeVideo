@@ -1,5 +1,8 @@
 * {
+
   color: white;
+
+
   text-align: center;
   font-size: 1.3rem;
 }
@@ -26,6 +29,17 @@
   top: 10px !important;
   z-index: 2;
 
+}
+
+p {
+  /** TEXT GRADIENT */
+  /* color: #E300F2; */
+  /* background-image: -webkit-linear-gradient(45deg, #6020F7 50%, #E300F2 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent; */
+  font-weight: 900;
 }
 
 .nav-link {
@@ -208,3 +222,13 @@ li {
 } */
 
 /* FEATURES SECTION */
+
+
+/* TEXT GRADIENT */
+/* color: #6020F7;
+  background-image: -webkit-linear-gradient(45deg, #6020F7 50%, #E300F2 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900; */
