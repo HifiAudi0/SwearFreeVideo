@@ -353,7 +353,7 @@ function Faq() {
       </Accordion>
       <Accordion className="accordion">
         <AccordionSummary aria-controls="panel2a-content" id="panel2a-header">
-          <Typography className="accordHeading">Why does the muting last for a few seconds or longer?</Typography>
+          <Typography className="accordHeading">Muting lasts for a few seconds or longer, why?</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography className="accordPara">

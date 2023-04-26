@@ -33,6 +33,7 @@
 }
 
 
+
 p {
   /** TEXT GRADIENT */
   /* color: #E300F2; */
@@ -140,9 +141,9 @@ url,
 }
 
 .accordion {
-  width: 50%;
+  width: 70%;
 
-  left: 25%;
+  left: 10%;
 
 }
 
