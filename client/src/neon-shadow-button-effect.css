@@ -50,7 +50,17 @@
     text-align: left;
     /* CHANGED */
 
-    background-color: rgba(54, 187, 92, 0.3);
+    /* background-color: rgba(54, 187, 92, 0.3); */
+
+    /** TEXT GRADIENT */
+    color: #6020F7;
+    background-image: -webkit-linear-gradient(45deg, #6020F7 50%, #E300F2 50%);
+    /* background-clip: text;
+    -webkit-background-clip: text;
+    text-fill-color: transparent;
+    -webkit-text-fill-color: transparent; */
+
+
     animation: glow 1s infinite;
     color: white;
 }
