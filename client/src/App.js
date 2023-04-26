@@ -232,31 +232,39 @@ function Features() {
 
   return (
     <>
-      <h1 id="features">Features</h1>
+      <svg height="5px" width="150px">
+        <line class="svgLine" x1="0" y1="0" x2="300" y2="0" />
+      </svg>
+      <h1 id="features">FEATURES</h1>
+      <svg height="5px" width="150px">
+        <line class="svgLine" x1="0" y1="0" x2="300" y2="0" />
+      </svg>
+      <br />     <br />
       {/* <div class="footer-grid-container">
         <div class="footer-grid-item"> */}
       <ul>
+        <div className="featuresContainer">
+          <li><img className="featuresIcons" src="./img/video.png" />
+            <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Works on almost every video on Youtube</span></li><br />
 
-        <li><img className="featuresIcons" src="./img/video.png" />
-          <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Works on almost every video on Youtube</span></li><br />
+          <li>
+            {/* <img className="featuresIcons" src="./img/visual.png" /> */}
+            <img className="featuresIcons" src="./img/muted.png" />
+            <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Visual and audio notification of swearing</span></li><br />
 
-        <li>
-          {/* <img className="featuresIcons" src="./img/visual.png" /> */}
-          <img className="featuresIcons" src="./img/muted.png" />
-          <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Visual and audio notification of swearing</span></li><br />
+          <li className="swearWord">
+            <img className="featuresIcons" src="./img/curseIcon.png" />
+            <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Swear word counter</span></li><br />
 
-        <li><img className="featuresIcons" src="./img/curseIcon.png" />
-          <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Swear word counter</span></li><br />
+          <li className="swearCounter"><img className="featuresIcons" src="./img/countdown.jpeg" />
+            <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Swear word countdown</span></li><br />
 
-        <li><img className="featuresIcons" src="./img/countdown.jpeg" />
-          <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Swear word countdown</span></li><br />
+          <li className="easyToUse"><img className="featuresIcons" src="./img/easyToUse.png" />
+            <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Easy to use - just paste and go!</span></li><br />
 
-        <li><img className="featuresIcons" src="./img/easyToUse.png" />
-          <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Easy to use - just paste and go!</span></li><br />
-
-        <li><img className="featuresIcons" src="./img/secure.png" />
-          <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">No need to download anything - safe and secure.</span></li><br />
-
+          <li className="noDownload"><img className="featuresIcons" src="./img/secure.png" />
+            <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">No need to download anything - safe and secure.</span></li><br />
+        </div>
       </ul>
 
       {/* </div>
@@ -268,7 +276,15 @@ function Features() {
 function Faq() {
   return (
     <>
+      <br /> <br /> <br /> <br />
+      <svg height="5px" width="150px">
+        <line class="svgLine" x1="0" y1="0" x2="300" y2="0" />
+      </svg>
       <h1 id="faq">FAQ</h1>
+      <svg height="5px" width="150px">
+        <line class="svgLine" x1="0" y1="0" x2="300" y2="0" />
+      </svg>
+      <br /> <br />
       <Accordion className="accordion">
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
@@ -324,6 +340,8 @@ function Faq() {
           </Typography>
         </AccordionDetails>
       </Accordion>
+
+      <br /> <br /><br /> <br />
     </>
   );
 }

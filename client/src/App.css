@@ -102,6 +102,13 @@ url,
   }
 }
 
+/* FAQ SECTION */
+
+#faq {
+  display: inline;
+  margin: 50px;
+}
+
 .accordion {
   width: 50%;
 
@@ -111,7 +118,7 @@ url,
 
 .accordHeading {
   font-size: 1.5rem !important;
-  color: black;
+  color: #E300F2;
 }
 
 .accordPara {
@@ -119,7 +126,20 @@ url,
   color: black;
 }
 
+/* FAQ SECTION */
+
 /* FEATURES SECTION */
+
+.svgLine {
+  stroke: white;
+  stroke-width: 3;
+
+}
+
+#features {
+  display: inline;
+  margin: 50px;
+}
 
 .featuresIcons {
   width: 200px;
@@ -127,23 +147,18 @@ url,
 
 }
 
-.featuresContainer {
-  display: table;
-  height: 100%;
-}
+.featuresContainer {}
 
 li {
   text-decoration: none;
 
-  /* display: inline-block;
-  overflow: hidden; */
+  display: inline-block;
+  overflow: hidden;
   /* white-space: nowrap; */
   /* text-overflow: ellipsis; */
 
 
-  display: table-cell;
-  text-align: center;
-  vertical-align: middle;
+
 }
 
 .featurePara {
@@ -151,6 +166,22 @@ li {
   position: relative;
   font-weight: bold;
 
+}
+
+.swearWord {
+  margin-left: -260px;
+}
+
+.swearCounter {
+  margin-left: -230px;
+}
+
+.easyToUse {
+  margin-left: -140px;
+}
+
+.noDownload {
+  margin-left: 100px;
 }
 
 .footer-grid-container {
