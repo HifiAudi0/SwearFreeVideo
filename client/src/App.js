@@ -148,7 +148,7 @@ function IntialPage() {
 
       {/* <!-- NAV BAR --> */}
 
-      <nav className="navbar navbar-expand-lg navbar-dark mx-auto sticky-top ">
+      <nav className="navbar navbar-expand-lg navbar-dark mx-auto">
 
         {/* <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -228,20 +228,27 @@ function Disclaimer() {
   return (
     <>
 
-      <svg height="5px" width="150px">
+      {/* <svg height="5px" width="150px">
         <line class="svgLine" x1="0" y1="0" x2="300" y2="0" />
       </svg>
       <h2 id="disclaimer">DISCLAIMER:</h2>
       <svg height="5px" width="150px">
         <line class="svgLine" x1="0" y1="0" x2="300" y2="0" />
-      </svg>
+      </svg> */}
       <br />
-      <img class="disclaimerImage" src="./img/disclaimer.png" />
+      {/* <svg height="5px" width="150px">
+        <line class="svgLine" x1="0" y1="0" x2="300" y2="0" />
+      </svg>  */}
+      <img className="disclaimerImage" src="./img/disclaimer2.png" />
+      {/* <svg height="5px" width="150px">
+        <line class="svgLine" x1="0" y1="0" x2="300" y2="0" />
+      </svg> */}
       <ul>
-
-        <li>This is tool is not a subsutite for parenting.</li><br />
-        <li>This tool is not fool proof nor is it 100% accurate.</li><br />
-        <li>Children should always be supervised.<br />This tool should be understood and operated with adult supervision.</li><br />
+        <div className="disclaimerPara">
+          <li>This is tool is not a subsutite for parenting.</li><br />
+          <li>This tool is not fool proof nor is it 100% accurate.</li><br />
+          <li>Children should always be supervised.<br />This tool should be understood and operated with adult supervision.</li><br />
+        </div>
 
       </ul>
 
@@ -265,25 +272,30 @@ function Features() {
         <div class="footer-grid-item"> */}
       <ul>
         <div className="featuresContainer">
-          <li><img className="featuresIcons" src="./img/video.png" />
+          <li><img className="featuresIcons" src="./img/video2.png" />
             <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Works on almost every video on Youtube</span></li><br />
+
+
+          <li className="autoDetect">
+            <img className="featuresIcons" src="./img/autoDetectRed.png" />
+            <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Automatically detects swear words</span></li><br />
 
           <li>
             {/* <img className="featuresIcons" src="./img/visual.png" /> */}
-            <img className="featuresIcons" src="./img/muted.png" />
+            <img className="featuresIcons" src="./img/muted3.png" />
             <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Visual and audio notification of swearing</span></li><br />
 
           <li className="swearWord">
-            <img className="featuresIcons" src="./img/curseIcon.png" />
+            <img className="featuresIcons" src="./img/counter.png" />
             <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Swear word counter</span></li><br />
 
           <li className="swearCounter"><img className="featuresIcons" src="./img/countdown.jpeg" />
             <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Swear word countdown</span></li><br />
 
-          <li className="easyToUse"><img className="featuresIcons" src="./img/easyToUse.png" />
+          <li className="easyToUse"><img className="featuresIcons" src="./img/easyToUse2.png" />
             <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Easy to use - just paste and go!</span></li><br />
 
-          <li className="noDownload"><img className="featuresIcons" src="./img/secure.png" />
+          <li className="noDownload"><img className="featuresIcons" src="./img/safeSecure3.png" />
             <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">No need to download anything - safe and secure.</span></li><br />
         </div>
       </ul>
