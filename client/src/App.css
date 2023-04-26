@@ -65,6 +65,11 @@ url,
   margin: 40px;
 }
 
+.swearFreePara {
+  text-align: left;
+  margin-left: 15%;
+}
+
 .logo {
   width: 200px;
   height: 100px;
@@ -239,6 +244,15 @@ li {
 } */
 
 /* FEATURES SECTION */
+
+/* DISCLAIMER SECTION */
+
+.disclaimerPara {
+  text-align: left;
+  margin-left: 15%;
+}
+
+/* DISCLAIMER SECTION */
 
 
 /* TEXT GRADIENT */

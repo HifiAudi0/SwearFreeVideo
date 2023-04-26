@@ -187,11 +187,12 @@ function IntialPage() {
         {/* <input className="liquid" type="submit" value="Submit">
         </input> */}
       </form>
-      <img className="swearingEmoji" src="./img/swearingEmoji.png" /><h1 id="home">Swear Free Video</h1>
-      <p>Auto-detects swear words in YouTube videos and mutes the volume at each swear word in the video
-        <br />Example use-case: A parent can watch a YouTube video with their child with only a few bad words in it.<br />Current version only works with YouTube videos. I am not endored, affiliated, or sponsored by YouTube in anyway. Youtube is a registered copyright and trademark of Google LLC.
-      </p>
-
+      <img className="swearingEmoji" src="./img/swearingEmoji.png" /><h1 id="home">What does it do?</h1>
+      <div className="swearFreePara">
+        Auto-detects swear words in YouTube videos and mutes the volume at each swear word sentence in the video<br />
+        Example use-case: A parent can watch a YouTube video with their child with only a few bad words in it with the swear words muted.<br />
+        Current version only works with YouTube videos. I am not endored, affiliated, or sponsored by YouTube in anyway. Youtube is a registered copyright and trademark of Google LLC.
+      </div>
       <Disclaimer />
 
       <br /><br />
@@ -243,14 +244,12 @@ function Disclaimer() {
       {/* <svg height="5px" width="150px">
         <line class="svgLine" x1="0" y1="0" x2="300" y2="0" />
       </svg> */}
-      <ul>
-        <div className="disclaimerPara">
-          <li>This is tool is not a subsutite for parenting.</li><br />
-          <li>This tool is not fool proof nor is it 100% accurate.</li><br />
-          <li>Children should always be supervised.<br />This tool should be understood and operated with adult supervision.</li><br />
-        </div>
+      <div className="disclaimerPara">
+        This is tool is not a subsutite for parenting.<br />
+        This tool is not fool proof nor is it 100% accurate.<br />
+        Children should always be supervised.<br />This tool should be understood and operated with adult supervision.<br />
+      </div>
 
-      </ul>
 
     </>
   );
