@@ -26,6 +26,11 @@ url,
   height: 200px;
 }
 
+.logo {
+  width: 200px;
+  height: 100px;
+}
+
 .swearingEmoji {
   width: 100px;
   height: 100px;
