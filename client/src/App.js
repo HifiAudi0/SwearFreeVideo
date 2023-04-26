@@ -147,8 +147,12 @@ function IntialPage() {
 
 
       {/* <!-- NAV BAR --> */}
+
       <nav class="navbar navbar-expand-lg navbar-dark mx-auto">
+
         <div class="container-fluid">
+
+          <img className="logo" src="./img/logo.png" />
 
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -168,10 +172,12 @@ function IntialPage() {
       {/* <!-- NAV BAR ENDS --> */}
 
 
-      <img className="logo" src="./img/logo.png" />
-      <img className="swearingEmoji" src="./img/swearingEmoji.png" /><h1 if="home">YouTube Swearing Blocker</h1>
-      <h3>Auto-detects swear words in YouTube videos and mutes the volume at each swear word in the video.</h3>
-      <h3>Example use-case: A parent can watch a YouTube video with their child with only a few bad words in it.</h3>
+      <br /><br />
+      <img className="swearingEmoji" src="./img/swearingEmoji.png" /><h1 id="home">Swear Free Video</h1>
+      <p>Auto-detects swear words in YouTube videos and mutes the volume at each swear word in the video
+        <br />Example use-case: A parent can watch a YouTube video with their child with only a few bad words in it.<br />Current version only works with YouTube videos. I am not endored, affiliated, or sponsored by YouTube in anyway. Youtube is a registered copyright and trademark of Google LLC.
+      </p>
+
       <form onSubmit={(e) => {
         e.preventDefault();
 
@@ -227,33 +233,34 @@ function Features() {
   return (
     <>
       <h1 id="features">Features</h1>
-      <div class="footer-grid-container">
-        <div class="footer-grid-item">
-          <ul>
+      {/* <div class="footer-grid-container">
+        <div class="footer-grid-item"> */}
+      <ul>
 
-            <li><img className="featuresIcons" src="./img/video.png" />
-              <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Works on almost every video on Youtube</span></li>
+        <li><img className="featuresIcons" src="./img/video.png" />
+          <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Works on almost every video on Youtube</span></li><br />
 
-            <li><img className="featuresIcons" src="./img/visual.png" />
-              <img className="featuresIcons" src="./img/muted.png" />
-              <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Visual and audio notification of swearing</span></li>
+        <li>
+          {/* <img className="featuresIcons" src="./img/visual.png" /> */}
+          <img className="featuresIcons" src="./img/muted.png" />
+          <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Visual and audio notification of swearing</span></li><br />
 
-            <li><img className="featuresIcons" src="./img/curseIcon.png" />
-              <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Swear word counter</span></li>
+        <li><img className="featuresIcons" src="./img/curseIcon.png" />
+          <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Swear word counter</span></li><br />
 
-            <li><img className="featuresIcons" src="./img/countdown.jpeg" />
-              <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Swear word countdown</span></li>
+        <li><img className="featuresIcons" src="./img/countdown.jpeg" />
+          <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Swear word countdown</span></li><br />
 
-            <li><img className="featuresIcons" src="./img/easyToUse.png" />
-              <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Easy to use - just paste and go!</span></li>
+        <li><img className="featuresIcons" src="./img/easyToUse.png" />
+          <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Easy to use - just paste and go!</span></li><br />
 
-            <li><img className="featuresIcons" src="./img/secure.png" />
-              <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">No need to download anything - safe and secure.</span></li>
+        <li><img className="featuresIcons" src="./img/secure.png" />
+          <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">No need to download anything - safe and secure.</span></li><br />
 
-          </ul>
+      </ul>
 
-        </div>
-      </div>
+      {/* </div>
+      </div> */}
     </>
   );
 }

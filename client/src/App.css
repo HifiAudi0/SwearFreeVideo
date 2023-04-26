@@ -45,11 +45,14 @@ url,
 .logo {
   width: 200px;
   height: 100px;
+  margin-left: -12rem;
 }
+
 
 .swearingEmoji {
   width: 100px;
   height: 100px;
+  float: left;
 }
 
 #counters {
@@ -116,27 +119,35 @@ url,
   color: black;
 }
 
+/* FEATURES SECTION */
+
 .featuresIcons {
   width: 200px;
   height: 200px;
+
+}
+
+.featuresContainer {
+  display: table;
+  height: 100%;
 }
 
 li {
-  /* text-align: center;
-  align-items: center;
-  justify-content: center; */
   text-decoration: none;
 
-  display: inline-block;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  /* display: inline-block;
+  overflow: hidden; */
+  /* white-space: nowrap; */
+  /* text-overflow: ellipsis; */
 
+
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
 }
 
 .featurePara {
   /* margin-top: -200px; */
-  top: -95px;
   position: relative;
   font-weight: bold;
 
@@ -159,3 +170,5 @@ li {
   font-size: 30px;
   text-align: center;
 } */
+
+/* FEATURES SECTION */
