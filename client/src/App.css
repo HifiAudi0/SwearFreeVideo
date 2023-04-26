@@ -12,6 +12,22 @@
 
 }
 
+
+.navbar {
+  text-transform: uppercase;
+  animation-name: nav-animation;
+  animation-duration: 3s;
+  width: 250px !important;
+  top: 10px !important;
+  z-index: 2;
+
+}
+
+.nav-link {
+  margin-right: 50px;
+
+}
+
 url,
 .url {
   width: 700px;

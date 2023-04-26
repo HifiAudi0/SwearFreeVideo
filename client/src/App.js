@@ -143,8 +143,33 @@ function IntialPage() {
 
   return (
     <div className="bg">
+
+
+
+      {/* <!-- NAV BAR --> */}
+      <nav class="navbar navbar-expand-lg navbar-dark mx-auto">
+        <div class="container-fluid">
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link fw-bold fs-3 active" aria-current="page" href="#home">HOME</a>
+              <a class="nav-link fw-bold fs-3" href="#features">FEATURES</a>
+              <a class="nav-link fw-bold fs-3" href="#faq">FAQ</a>
+            </div>
+          </div>
+        </div>
+
+      </nav>
+      {/* <!-- NAV BAR ENDS --> */}
+
+
       <img className="logo" src="./img/logo.png" />
-      <img className="swearingEmoji" src="./img/swearingEmoji.png" /><h1>YouTube Swearing Blocker</h1>
+      <img className="swearingEmoji" src="./img/swearingEmoji.png" /><h1 if="home">YouTube Swearing Blocker</h1>
       <h3>Auto-detects swear words in YouTube videos and mutes the volume at each swear word in the video.</h3>
       <h3>Example use-case: A parent can watch a YouTube video with their child with only a few bad words in it.</h3>
       <form onSubmit={(e) => {
@@ -201,7 +226,7 @@ function Features() {
 
   return (
     <>
-      <h1>Features</h1>
+      <h1 id="features">Features</h1>
       <div class="footer-grid-container">
         <div class="footer-grid-item">
           <ul>
@@ -236,7 +261,7 @@ function Features() {
 function Faq() {
   return (
     <>
-      <h1>FAQ</h1>
+      <h1 id="faq">FAQ</h1>
       <Accordion className="accordion">
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
