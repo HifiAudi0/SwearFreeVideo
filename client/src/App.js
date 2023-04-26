@@ -142,7 +142,7 @@ function IntialPage() {
   }, 500);
 
   return (
-    <div className="bg">
+    <div className="bg" id="gradient">
 
 
 
