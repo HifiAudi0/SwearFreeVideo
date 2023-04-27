@@ -19,6 +19,10 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Checkbox from '@mui/material/Checkbox';
 import { green } from '@mui/material/colors';
 
+const hiddenMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 30px, rgba(0,0,0,1) 30px, rgba(0,0,0,1) 30px)`;
+const visibleMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 0px, rgba(0,0,0,1) 0px, rgba(0,0,0,1) 30px)`;
+
+
 // Note to self:
 // Chrome deveeloper console - highlight object then ctrl+alt+click to expand all object properties
 // Turbo console log = ctrl+alt+l (that is an lowercase L) after highlighting variable
@@ -58,7 +62,8 @@ function IntialPage() {
   const [tMinusNextSwearAt, setTMinusNextSwearAt] = useState(0);
   const [totalSwearWordsDetected, setTotalSwearWordsDetected] = useState(0);
 
-
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isInView, setIsInView] = useState(false);
 
 
   function LoadVideo(formUrl) {
@@ -199,30 +204,55 @@ function IntialPage() {
       </form>
 
 
-      <div className="info">
-        <img className="infoBg" src="./img/infoBlue.png" />
-        <img className="infoIcon" src="./img/infoBulb.png" />
-        <h1 className="infoHeading infoBlueHeading">What does it do?</h1>
-        <div className="swearFreePara">
-          Auto-detects swear words in YouTube videos and mutes the volume at each swear word sentence in the video<br /><br />
-          {/* Example use-case: A parent can watch a YouTube video with their child with only a few bad words in it with the swear words muted.<br /> */}
+      <motion.div
+        initial={false}
+        animate={
+          isLoaded && isInView
+            ? { WebkitMaskImage: visibleMask, maskImage: visibleMask }
+            : { WebkitMaskImage: hiddenMask, maskImage: hiddenMask }
+        }
+        transition={{ duration: 1, delay: 1 }}
+        viewport={{ once: true }}
+        onViewportEnter={() => setIsInView(true)}
+      >
+
+        <div className="info" onLoad={() => setIsLoaded(true)} >
+          <img className="infoBg" src="./img/infoBlue.png" />
+          <img className="infoIcon" src="./img/infoBulb.png" />
+          <h1 className="infoHeading infoBlueHeading">What does it do?</h1>
+          <div className="swearFreePara">
+            Auto-detects swear words in YouTube videos and mutes the volume at each swear word sentence in the video<br /><br />
+            {/* Example use-case: A parent can watch a YouTube video with their child with only a few bad words in it with the swear words muted.<br /> */}
+          </div>
         </div>
-      </div>
 
-      <br /><br />
+        <br /><br />
 
 
-      <div className="info">
-        <img className="infoBg" src="./img/infoYellow.png" />
-        <img className="infoIcon" src="./img/infoCompt.png" />
-        <h1 className="infoHeading infoYellowHeading">Compatibility</h1>
-        <div className="swearFreePara">
-          Current version only works with YouTube videos. I am not endored, affiliated, or sponsored by YouTube in anyway. Youtube is a registered copyright and trademark of Google LLC.
+        <div className="info">
+          <img className="infoBg" src="./img/infoYellow.png" />
+          <img className="infoIcon" src="./img/infoCompt.png" />
+          <h1 className="infoHeading infoYellowHeading">Compatibility</h1>
+          <div className="swearFreePara">
+            Current version only works with YouTube videos. I am not endored, affiliated, or sponsored by YouTube in anyway. Youtube is a registered copyright and trademark of Google LLC.
+          </div>
         </div>
-      </div>
 
 
-      <Disclaimer />
+        <br />  <br />
+        <div className="info" onLoad={() => setIsLoaded(true)} >
+          <img className="infoBg" src="./img/infoRed.png" />
+          <img className="infoIcon disclaimerImage" src="./img/disclaimer2.png" />
+          <h1 className="infoHeading infoRedHeading">Disclaimer</h1>
+          <div className="swearFreePara">
+            This is tool is not a subsutite for parenting.<br />
+            This tool is not fool proof nor is it 100% accurate.<br />
+            This tool should be operated with adult supervision.<br />
+          </div>
+        </div>
+
+      </motion.div>
+
 
 
 
@@ -256,32 +286,13 @@ function IntialPage() {
   );
 }
 
-function Disclaimer() {
-  return (
-    <>
-      <br />  <br />
-      <div className="info">
-        <img className="infoBg" src="./img/infoRed.png" />
-        <img className="infoIcon disclaimerImage" src="./img/disclaimer2.png" />
-        <h1 className="infoHeading infoRedHeading">Disclaimer</h1>
-        <div className="swearFreePara">
-          This is tool is not a subsutite for parenting.<br />
-          This tool is not fool proof nor is it 100% accurate.<br />
-          This tool should be operated with adult supervision.<br />
-        </div>
-      </div>
-      {/* 
-      <img className="disclaimerImage" src="./img/disclaimer2.png" />
 
-      <div className="disclaimerPara">
-        This is tool is not a subsutite for parenting.<br />
-        This tool is not fool proof nor is it 100% accurate.<br />
-        Children should always be supervised.<br />This tool should be understood and operated with adult supervision.<br />
-      </div> */}
 
-    </>
-  );
-}
+
+
+
+
+
 
 function Features() {
 
@@ -508,3 +519,15 @@ export { IntialPage };
 // function myStopFunction(myTimeout) {
 //   clearTimeout(myTimeout);
 // }
+
+
+
+
+{/* 
+      <img className="disclaimerImage" src="./img/disclaimer2.png" />
+
+      <div className="disclaimerPara">
+        This is tool is not a subsutite for parenting.<br />
+        This tool is not fool proof nor is it 100% accurate.<br />
+        Children should always be supervised.<br />This tool should be understood and operated with adult supervision.<br />
+      </div> */}
