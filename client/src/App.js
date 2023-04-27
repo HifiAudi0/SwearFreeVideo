@@ -307,28 +307,28 @@ function Features() {
         <div className="featureList">
           <img src="./img/featuresList1.png" className="featureListHex" />
           <img src="./img/safeSecure3-v2.png" className="featureListAutoDetect featureListIcon" />
-          <h3 className="featureListHeading">No need to download anything - safe and secure.</h3>
+          <h3 id="pinkGradient" className="featureListHeading featureGradient ">No need to download anything - safe and secure.</h3>
         </div>
 
 
         <div className="featureList">
           <img src="./img/featuresList2.png" className="featureListHex" />
           <img src="./img/autoDetectOrangish.png" className="featureListAutoDetect featureListIcon" />
-          <h3 className="featureListHeading">Automatically detects swear words</h3>
+          <h3 id="orangeGradient" className="featureListHeading featureGradient ">Automatically detects swear words</h3>
         </div>
 
 
         <div className="featureList">
           <img src="./img/featuresList3-v3.png" className="featureListHex" />
           <img src="./img/easyToUseYellowish.png" className="featureListAutoDetect featureListIcon" />
-          <h3 className="featureListHeading">Just paste and go!</h3>
+          <h3 id="yellowGradient" className="featureListHeading featureGradient ">Just paste and go!</h3>
         </div>
 
 
         <div className="featureList">
           <img src="./img/featuresList4.png" className="featureListHex" />
           <img src="./img/videoPlayerPurpleish.png" className="featureListAutoDetect featureListIcon" />
-          <h3 className="featureListHeading">Works on almost every video on Youtube</h3>
+          <h3 id="purpleGradient" className="featureListHeading featureGradient ">Works on almost every video on Youtube</h3>
         </div>
 
         <br />
@@ -336,19 +336,19 @@ function Features() {
         <div className="featureList">
           <img src="./img/featuresList5.png" className="featureListHex" />
           <img src="./img/mutedTealish.png" className="featureListAutoDetect featureListIcon" />
-          <h3 className="featureListHeading">Visual and audio notification of swearing</h3>
+          <h3 id="tealGradient" className="featureListHeading featureGradient ">Visual and audio notification of swearing</ h3>
         </div>
 
         <div className="featureList">
           <img src="./img/featuresList6.png" className="featureListHex" />
           <img src="./img/countdownGreenish.png" className="featureListAutoDetect featureListIcon" />
-          <h3 className="featureListHeading">Visual and audio notification of swearing</h3>
+          <h3 id="greenGradient" className="featureListHeading featureGradient ">Visual and audio notification of swearing</h3>
         </div>
 
         <div className="featureList">
           <img src="./img/featuresList7.png" className="featureListHex" />
           <img src="./img/counter-v2.png" className="featureListAutoDetect featureListIcon" />
-          <h3 className="featureListHeading">Visual and audio notification of swearing</h3>
+          <h3 id="redGradient" className="featureListHeading featureGradient ">Swear word counter</h3>
         </div>
 
 

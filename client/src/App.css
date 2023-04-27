@@ -228,6 +228,42 @@ li {
 /* NEW FEAUTES */
 .featuresContainer {}
 
+.featureGradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+}
+
+#redGradient {
+  background-image: -webkit-linear-gradient(45deg, #FF6A6E 0%, #D40005 100%);
+}
+
+#greenGradient {
+  background-image: -webkit-linear-gradient(45deg, #B7D333 0%, #5DBA45 100%);
+}
+
+#pinkGradient {
+  background-image: -webkit-linear-gradient(45deg, #D24F9D 0%, #A3228D 100%);
+}
+
+#orangeGradient {
+  background-image: -webkit-linear-gradient(45deg, #E99E17 0%, #F15B21 100%);
+}
+
+#yellowGradient {
+  background-image: -webkit-linear-gradient(45deg, #F8D53F 0%, #FCB117 100%);
+}
+
+#purpleGradient {
+  background-image: -webkit-linear-gradient(45deg, #8979BA 0%, #473E8F 100%);
+}
+
+#tealGradient {
+  background-image: -webkit-linear-gradient(45deg, #57E1E6 0%, #00AAA7 100%);
+}
+
 .featureListIcon {
   width: 200px;
   height: 200px;
