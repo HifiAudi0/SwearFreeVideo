@@ -148,8 +148,8 @@ url,
 
 .accordion {
   width: 70%;
-
   left: 10%;
+  background-color: #484A4C !important;
 
 }
 
@@ -160,7 +160,7 @@ url,
 
 .accordPara {
   font-size: 1.2rem !important;
-  color: black;
+  color: white;
 }
 
 /* FAQ SECTION */
@@ -273,6 +273,7 @@ li {
   position: relative;
   display: inline;
   margin: 100px;
+  /* margin-bottom: 300px; */
 }
 
 .featureListAutoDetect {
@@ -282,6 +283,10 @@ li {
   right: 0;
   left: 150px;
 
+}
+
+.featureListIconBottom {
+  top: -200px;
 }
 
 .featureListHeading {
@@ -296,6 +301,26 @@ li {
   right: 0;
   left: 110px;
   width: 300px;
+}
+
+.featureHeadingSecure {
+  bottom: -280px;
+}
+
+.featureHeadingDetect {
+  bottom: -125px;
+}
+
+.featureHeadingWorksEvery {
+  bottom: -170px;
+}
+
+.featureHeadingAudioVideo {
+  bottom: -230px;
+}
+
+.featureHeadingCountdown {
+  bottom: -120px;
 }
 
 /* NEW FEAUTES */
