@@ -299,6 +299,60 @@ function Features() {
         </div>
       </ul>
 
+
+
+      <div className="featuresContainer">
+
+
+        <div className="featureList">
+          <img src="./img/featuresList1.png" className="featureListHex" />
+          <img src="./img/safeSecure3-v2.png" className="featureListAutoDetect featureListIcon" />
+          <h3 className="featureListHeading">No need to download anything - safe and secure.</h3>
+        </div>
+
+
+        <div className="featureList">
+          <img src="./img/featuresList2.png" className="featureListHex" />
+          <img src="./img/autoDetectOrangish.png" className="featureListAutoDetect featureListIcon" />
+          <h3 className="featureListHeading">Automatically detects swear words</h3>
+        </div>
+
+
+        <div className="featureList">
+          <img src="./img/featuresList3-v3.png" className="featureListHex" />
+          <img src="./img/easyToUseYellowish.png" className="featureListAutoDetect featureListIcon" />
+          <h3 className="featureListHeading">Just paste and go!</h3>
+        </div>
+
+
+        <div className="featureList">
+          <img src="./img/featuresList4.png" className="featureListHex" />
+          <img src="./img/videoPlayerPurpleish.png" className="featureListAutoDetect featureListIcon" />
+          <h3 className="featureListHeading">Works on almost every video on Youtube</h3>
+        </div>
+
+        <br />
+
+        <div className="featureList">
+          <img src="./img/featuresList5.png" className="featureListHex" />
+          <img src="./img/mutedTealish.png" className="featureListAutoDetect featureListIcon" />
+          <h3 className="featureListHeading">Visual and audio notification of swearing</h3>
+        </div>
+
+        <div className="featureList">
+          <img src="./img/featuresList6.png" className="featureListHex" />
+          <img src="./img/countdownGreenish.png" className="featureListAutoDetect featureListIcon" />
+          <h3 className="featureListHeading">Visual and audio notification of swearing</h3>
+        </div>
+
+        <div className="featureList">
+          <img src="./img/featuresList7.png" className="featureListHex" />
+          <img src="./img/counter-v2.png" className="featureListAutoDetect featureListIcon" />
+          <h3 className="featureListHeading">Visual and audio notification of swearing</h3>
+        </div>
+
+
+      </div>
       {/* </div>
       </div> */}
     </>
