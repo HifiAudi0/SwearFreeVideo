@@ -178,12 +178,22 @@ function IntialPage() {
         setTheUrl(document.getElementById("url").value);
         LoadVideo(document.getElementById("url").value);
         console.log("the url", the_url);
-      }}><br /><br /><br /><br /><br /><br /><br /><br />
+      }}>
+
+        <br /><br /><br /><br /><br /><br /><br /><br />
+
         <img className="logo" src="./img/logo.png" /><br />
+
         <label htmlFor="url">Youtube URL ( example:  https://www.youtube.com/watch?v=we6PRXmfils ) :</label><br />
+
         <div className="neonShadow"><input className="url" type="text" id="url" name="url" /></div>
+
+
         <button type="submit"><span id="submit">SUBMIT</span>
-          <div className="liquid"></div></button>
+
+          <div className="liquid"></div>
+        </button>
+
         {/* <input className="liquid" type="submit" value="Submit">
         </input> */}
       </form>
@@ -277,107 +287,129 @@ function Features() {
 
   return (
     <>
-      <svg height="5px" width="150px">
-        <line class="svgLine" x1="0" y1="0" x2="300" y2="0" />
-      </svg>
-      <h1 id="features">FEATURES</h1>
-      <svg height="5px" width="150px">
-        <line class="svgLine" x1="0" y1="0" x2="300" y2="0" />
-      </svg>
-      <br />     <br />
-      {/* <div class="footer-grid-container">
+
+
+
+      <motion.div
+        className="box"
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 0.3,
+          ease: [0, 0.71, 0.2, 1.01],
+          scale: {
+            type: "spring",
+            damping: 5,
+            stiffness: 100,
+            restDelta: 0.001
+          }
+        }}
+      >
+
+
+        <svg height="5px" width="150px">
+          <line class="svgLine" x1="0" y1="0" x2="300" y2="0" />
+        </svg>
+        <h1 id="features">FEATURES</h1>
+        <svg height="5px" width="150px">
+          <line class="svgLine" x1="0" y1="0" x2="300" y2="0" />
+        </svg>
+        <br />     <br />
+        {/* <div class="footer-grid-container">
         <div class="footer-grid-item"> */}
 
 
 
-      {
+        {
 
-        // <ul>
-        //   <div className="featuresContainer">
-        //     <li><img className="featuresIcons" src="./img/video2.png" />
-        //       <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Works on almost every video on Youtube</span></li><br />
-
-
-        //     <li className="autoDetect">
-        //       <img className="featuresIcons" src="./img/autoDetectRed.png" />
-        //       <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Automatically detects swear words</span></li><br />
-
-        //     <li>
-        //       <img className="featuresIcons" src="./img/muted3.png" />
-        //       <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Visual and audio notification of swearing</span></li><br />
-
-        //     <li className="swearWord">
-        //       <img className="featuresIcons" src="./img/counter.png" />
-        //       <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Swear word counter</span></li><br />
-
-        //     <li className="swearCounter"><img className="featuresIcons" src="./img/countdown.jpeg" />
-        //       <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Swear word countdown</span></li><br />
-
-        //     <li className="easyToUse"><img className="featuresIcons" src="./img/easyToUse2.png" />
-        //       <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Easy to use - just paste and go!</span></li><br />
-
-        //     <li className="noDownload"><img className="featuresIcons" src="./img/safeSecure3.png" />
-        //       <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">No need to download anything - safe and secure.</span></li><br />
-        //   </div>
-        // </ul>
-
-      }
+          // <ul>
+          //   <div className="featuresContainer">
+          //     <li><img className="featuresIcons" src="./img/video2.png" />
+          //       <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Works on almost every video on Youtube</span></li><br />
 
 
-      < div className="featuresContainer">
+          //     <li className="autoDetect">
+          //       <img className="featuresIcons" src="./img/autoDetectRed.png" />
+          //       <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Automatically detects swear words</span></li><br />
+
+          //     <li>
+          //       <img className="featuresIcons" src="./img/muted3.png" />
+          //       <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Visual and audio notification of swearing</span></li><br />
+
+          //     <li className="swearWord">
+          //       <img className="featuresIcons" src="./img/counter.png" />
+          //       <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Swear word counter</span></li><br />
+
+          //     <li className="swearCounter"><img className="featuresIcons" src="./img/countdown.jpeg" />
+          //       <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Swear word countdown</span></li><br />
+
+          //     <li className="easyToUse"><img className="featuresIcons" src="./img/easyToUse2.png" />
+          //       <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Easy to use - just paste and go!</span></li><br />
+
+          //     <li className="noDownload"><img className="featuresIcons" src="./img/safeSecure3.png" />
+          //       <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">No need to download anything - safe and secure.</span></li><br />
+          //   </div>
+          // </ul>
+
+        }
 
 
-        <div className="featureList">
-          <img src="./img/featuresList1.png" className="featureListHex" />
-          <img src="./img/safeSecure3-v2.png" className="featureListAutoDetect featureListIcon" />
-          <h3 id="pinkGradient" className="featureListHeading featureGradient featureHeadingSecure">No need to download anything - safe and secure.</h3>
-        </div>
+        < div className="featuresContainer">
 
 
-        <div className="featureList">
-          <img src="./img/featuresList2.png" className="featureListHex" />
-          <img src="./img/autoDetectOrangish.png" className="featureListAutoDetect featureListIcon featureListIconBottom" />
-          <h3 id="orangeGradient" className="featureListHeading featureGradient featureHeadingDetect">Automatically detects swear words</h3>
-        </div>
-        <br />     <br />     <br />
-
-        <div className="featureList">
-          <img src="./img/featuresList3-v3.png" className="featureListHex" />
-          <img src="./img/easyToUseYellowish.png" className="featureListAutoDetect featureListIcon" />
-          <h3 id="yellowGradient" className="featureListHeading featureGradient ">Just paste and go!</h3>
-        </div>
+          <div className="featureList">
+            <img src="./img/featuresList1.png" className="featureListHex" />
+            <img src="./img/safeSecure3-v2.png" className="featureListAutoDetect featureListIcon" />
+            <h3 id="pinkGradient" className="featureListHeading featureGradient featureHeadingSecure">No need to download anything - safe and secure.</h3>
+          </div>
 
 
-        <div className="featureList">
-          <img src="./img/featuresList4.png" className="featureListHex" />
-          <img src="./img/videoPlayerPurpleish.png" className="featureListAutoDetect featureListIcon featureListIconBottom " />
-          <h3 id="purpleGradient" className="featureListHeading featureGradient featureHeadingWorksEvery">Works on almost every video on Youtube</h3>
-        </div>
+          <div className="featureList">
+            <img src="./img/featuresList2.png" className="featureListHex" />
+            <img src="./img/autoDetectOrangish.png" className="featureListAutoDetect featureListIcon featureListIconBottom" />
+            <h3 id="orangeGradient" className="featureListHeading featureGradient featureHeadingDetect">Automatically detects swear words</h3>
+          </div>
+          <br />     <br />     <br />
 
-        <br />     <br />     <br />
-
-        <div className="featureList">
-          <img src="./img/featuresList5.png" className="featureListHex" />
-          <img src="./img/mutedTealish.png" className="featureListAutoDetect featureListIcon" />
-          <h3 id="tealGradient" className="featureListHeading featureGradient featureHeadingAudioVideo">Visual and audio notification of swearing</ h3>
-        </div>
-
-        <div className="featureList">
-          <img src="./img/featuresList6.png" className="featureListHex" />
-          <img src="./img/countdownGreenish.png" className="featureListAutoDetect featureListIcon featureListIconBottom " />
-          <h3 id="greenGradient" className="featureListHeading featureGradient featureHeadingCountdown">Swear word countdown</h3>
-        </div>
-
-        <div className="featureList">
-          <img src="./img/featuresList7.png" className="featureListHex" />
-          <img src="./img/counter-v2.png" className="featureListAutoDetect featureListIcon" />
-          <h3 id="redGradient" className="featureListHeading featureGradient ">Swear word counter</h3>
-        </div>
+          <div className="featureList">
+            <img src="./img/featuresList3-v3.png" className="featureListHex" />
+            <img src="./img/easyToUseYellowish.png" className="featureListAutoDetect featureListIcon" />
+            <h3 id="yellowGradient" className="featureListHeading featureGradient ">Just paste and go!</h3>
+          </div>
 
 
-      </div >
-      {/* </div>
+          <div className="featureList">
+            <img src="./img/featuresList4.png" className="featureListHex" />
+            <img src="./img/videoPlayerPurpleish.png" className="featureListAutoDetect featureListIcon featureListIconBottom " />
+            <h3 id="purpleGradient" className="featureListHeading featureGradient featureHeadingWorksEvery">Works on almost every video on Youtube</h3>
+          </div>
+
+          <br />     <br />     <br />
+
+          <div className="featureList">
+            <img src="./img/featuresList5.png" className="featureListHex" />
+            <img src="./img/mutedTealish.png" className="featureListAutoDetect featureListIcon" />
+            <h3 id="tealGradient" className="featureListHeading featureGradient featureHeadingAudioVideo">Visual and audio notification of swearing</ h3>
+          </div>
+
+          <div className="featureList">
+            <img src="./img/featuresList6.png" className="featureListHex" />
+            <img src="./img/countdownGreenish.png" className="featureListAutoDetect featureListIcon featureListIconBottom " />
+            <h3 id="greenGradient" className="featureListHeading featureGradient featureHeadingCountdown">Swear word countdown</h3>
+          </div>
+
+          <div className="featureList">
+            <img src="./img/featuresList7.png" className="featureListHex" />
+            <img src="./img/counter-v2.png" className="featureListAutoDetect featureListIcon" />
+            <h3 id="redGradient" className="featureListHeading featureGradient ">Swear word counter</h3>
+          </div>
+
+
+        </div >
+        {/* </div>
       </div> */}
+
+      </motion.div>
     </>
   );
 }
