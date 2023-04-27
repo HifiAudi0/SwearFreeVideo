@@ -65,12 +65,12 @@ url,
   margin: 100px;
 }
 
-.infoBlueBg {
+.infoBg {
   width: 1100px;
   height: 300px;
 }
 
-.infoBlueIcon {
+.infoIcon {
   position: absolute;
   top: -80px;
   bottom: 0;
@@ -87,6 +87,7 @@ url,
   right: 0;
   left: 350px;
   width: 500px;
+  text-transform: uppercase;
 }
 
 .infoBlueHeading {

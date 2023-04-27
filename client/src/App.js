@@ -190,8 +190,8 @@ function IntialPage() {
 
 
       <div className="info">
-        <img className="infoBlueBg" src="./img/infoBlue.png" />
-        <img className="infoBlueIcon" src="./img/infoBulb.png" />
+        <img className="infoBg" src="./img/infoBlue.png" />
+        <img className="infoIcon" src="./img/infoBulb.png" />
         <h1 className="infoHeading infoBlueHeading">What does it do?</h1>
         <div className="swearFreePara">
           Auto-detects swear words in YouTube videos and mutes the volume at each swear word sentence in the video<br /><br />
@@ -203,8 +203,8 @@ function IntialPage() {
 
 
       <div className="info">
-        <img className="infoBlueBg" src="./img/infoYellow.png" />
-        <img className="infoBlueIcon" src="./img/infoCompt.png" />
+        <img className="infoBg" src="./img/infoYellow.png" />
+        <img className="infoIcon" src="./img/infoCompt.png" />
         <h1 className="infoHeading infoYellowHeading">Compatibility</h1>
         <div className="swearFreePara">
           Current version only works with YouTube videos. I am not endored, affiliated, or sponsored by YouTube in anyway. Youtube is a registered copyright and trademark of Google LLC.
@@ -251,13 +251,12 @@ function Disclaimer() {
     <>
       <br />  <br />
       <div className="info">
-        <img className="infoBlueBg" src="./img/infoRed.png" />
-        <img className="infoBlueIcon disclaimerImage" src="./img/disclaimer2.png" />
+        <img className="infoBg" src="./img/infoRed.png" />
+        <img className="infoIcon disclaimerImage" src="./img/disclaimer2.png" />
         <h1 className="infoHeading infoRedHeading">Disclaimer</h1>
         <div className="swearFreePara">
           This is tool is not a subsutite for parenting.<br />
           This tool is not fool proof nor is it 100% accurate.<br />
-          Children should always be supervised.<br />
           This tool should be operated with adult supervision.<br />
         </div>
       </div>
