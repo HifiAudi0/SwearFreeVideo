@@ -187,13 +187,34 @@ function IntialPage() {
         {/* <input className="liquid" type="submit" value="Submit">
         </input> */}
       </form>
-      <img className="swearingEmoji" src="./img/swearingEmoji.png" /><h1 id="home">What does it do?</h1>
-      <div className="swearFreePara">
-        Auto-detects swear words in YouTube videos and mutes the volume at each swear word sentence in the video<br />
-        Example use-case: A parent can watch a YouTube video with their child with only a few bad words in it with the swear words muted.<br />
-        Current version only works with YouTube videos. I am not endored, affiliated, or sponsored by YouTube in anyway. Youtube is a registered copyright and trademark of Google LLC.
+
+
+      <div className="info">
+        <img className="infoBlueBg" src="./img/infoBlue.png" />
+        <img className="infoBlueIcon" src="./img/infoBulb.png" />
+        <h1 className="infoHeading infoBlueHeading">What does it do?</h1>
+        <div className="swearFreePara">
+          Auto-detects swear words in YouTube videos and mutes the volume at each swear word sentence in the video<br /><br />
+          {/* Example use-case: A parent can watch a YouTube video with their child with only a few bad words in it with the swear words muted.<br /> */}
+        </div>
       </div>
+
+      <br /><br />
+
+
+      <div className="info">
+        <img className="infoBlueBg" src="./img/infoYellow.png" />
+        <img className="infoBlueIcon" src="./img/infoCompt.png" />
+        <h1 className="infoHeading infoYellowHeading">Compatibility</h1>
+        <div className="swearFreePara">
+          Current version only works with YouTube videos. I am not endored, affiliated, or sponsored by YouTube in anyway. Youtube is a registered copyright and trademark of Google LLC.
+        </div>
+      </div>
+
+
       <Disclaimer />
+
+
 
       <br /><br />
       <p>{data && `Debug data here: ${data}`}</p>
@@ -228,28 +249,26 @@ function IntialPage() {
 function Disclaimer() {
   return (
     <>
-
-      {/* <svg height="5px" width="150px">
-        <line class="svgLine" x1="0" y1="0" x2="300" y2="0" />
-      </svg>
-      <h2 id="disclaimer">DISCLAIMER:</h2>
-      <svg height="5px" width="150px">
-        <line class="svgLine" x1="0" y1="0" x2="300" y2="0" />
-      </svg> */}
-      <br />
-      {/* <svg height="5px" width="150px">
-        <line class="svgLine" x1="0" y1="0" x2="300" y2="0" />
-      </svg>  */}
+      <br />  <br />
+      <div className="info">
+        <img className="infoBlueBg" src="./img/infoRed.png" />
+        <img className="infoBlueIcon disclaimerImage" src="./img/disclaimer2.png" />
+        <h1 className="infoHeading infoRedHeading">Disclaimer</h1>
+        <div className="swearFreePara">
+          This is tool is not a subsutite for parenting.<br />
+          This tool is not fool proof nor is it 100% accurate.<br />
+          Children should always be supervised.<br />
+          This tool should be operated with adult supervision.<br />
+        </div>
+      </div>
+      {/* 
       <img className="disclaimerImage" src="./img/disclaimer2.png" />
-      {/* <svg height="5px" width="150px">
-        <line class="svgLine" x1="0" y1="0" x2="300" y2="0" />
-      </svg> */}
+
       <div className="disclaimerPara">
         This is tool is not a subsutite for parenting.<br />
         This tool is not fool proof nor is it 100% accurate.<br />
         Children should always be supervised.<br />This tool should be understood and operated with adult supervision.<br />
-      </div>
-
+      </div> */}
 
     </>
   );
@@ -269,39 +288,44 @@ function Features() {
       <br />     <br />
       {/* <div class="footer-grid-container">
         <div class="footer-grid-item"> */}
-      <ul>
-        <div className="featuresContainer">
-          <li><img className="featuresIcons" src="./img/video2.png" />
-            <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Works on almost every video on Youtube</span></li><br />
-
-
-          <li className="autoDetect">
-            <img className="featuresIcons" src="./img/autoDetectRed.png" />
-            <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Automatically detects swear words</span></li><br />
-
-          <li>
-            {/* <img className="featuresIcons" src="./img/visual.png" /> */}
-            <img className="featuresIcons" src="./img/muted3.png" />
-            <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Visual and audio notification of swearing</span></li><br />
-
-          <li className="swearWord">
-            <img className="featuresIcons" src="./img/counter.png" />
-            <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Swear word counter</span></li><br />
-
-          <li className="swearCounter"><img className="featuresIcons" src="./img/countdown.jpeg" />
-            <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Swear word countdown</span></li><br />
-
-          <li className="easyToUse"><img className="featuresIcons" src="./img/easyToUse2.png" />
-            <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Easy to use - just paste and go!</span></li><br />
-
-          <li className="noDownload"><img className="featuresIcons" src="./img/safeSecure3.png" />
-            <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">No need to download anything - safe and secure.</span></li><br />
-        </div>
-      </ul>
 
 
 
-      <div className="featuresContainer">
+      {
+
+        // <ul>
+        //   <div className="featuresContainer">
+        //     <li><img className="featuresIcons" src="./img/video2.png" />
+        //       <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Works on almost every video on Youtube</span></li><br />
+
+
+        //     <li className="autoDetect">
+        //       <img className="featuresIcons" src="./img/autoDetectRed.png" />
+        //       <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Automatically detects swear words</span></li><br />
+
+        //     <li>
+        //       <img className="featuresIcons" src="./img/muted3.png" />
+        //       <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Visual and audio notification of swearing</span></li><br />
+
+        //     <li className="swearWord">
+        //       <img className="featuresIcons" src="./img/counter.png" />
+        //       <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Swear word counter</span></li><br />
+
+        //     <li className="swearCounter"><img className="featuresIcons" src="./img/countdown.jpeg" />
+        //       <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Swear word countdown</span></li><br />
+
+        //     <li className="easyToUse"><img className="featuresIcons" src="./img/easyToUse2.png" />
+        //       <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Easy to use - just paste and go!</span></li><br />
+
+        //     <li className="noDownload"><img className="featuresIcons" src="./img/safeSecure3.png" />
+        //       <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">No need to download anything - safe and secure.</span></li><br />
+        //   </div>
+        // </ul>
+
+      }
+
+
+      < div className="featuresContainer">
 
 
         <div className="featureList">
@@ -316,7 +340,7 @@ function Features() {
           <img src="./img/autoDetectOrangish.png" className="featureListAutoDetect featureListIcon featureListIconBottom" />
           <h3 id="orangeGradient" className="featureListHeading featureGradient featureHeadingDetect">Automatically detects swear words</h3>
         </div>
-
+        <br />     <br />     <br />
 
         <div className="featureList">
           <img src="./img/featuresList3-v3.png" className="featureListHex" />
@@ -331,7 +355,7 @@ function Features() {
           <h3 id="purpleGradient" className="featureListHeading featureGradient featureHeadingWorksEvery">Works on almost every video on Youtube</h3>
         </div>
 
-        <br />
+        <br />     <br />     <br />
 
         <div className="featureList">
           <img src="./img/featuresList5.png" className="featureListHex" />
@@ -352,7 +376,7 @@ function Features() {
         </div>
 
 
-      </div>
+      </div >
       {/* </div>
       </div> */}
     </>
