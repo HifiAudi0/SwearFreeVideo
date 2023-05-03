@@ -10,7 +10,9 @@ const e = require("express");
 const spawn = require("child_process").spawn;
 require("dotenv").config({ path: __dirname + "/.env" }); // FIX vercel .replace ERROR , always worked locally though
 var cors = require('cors')
-const validator = require('validator');
+// const validator = require('validator');
+const { check, validationResult } = require('express-validator');
+
 
 app.use(cors()) // FIX solves the following error: Access to XMLHttpRequest at  from origin has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource
 
@@ -45,14 +47,46 @@ app.get("/index", (req, res) => {
 
 
 
-app.post("/sendUrl", (req, res, next) => {
+// Validation Array
+var santizeInput = [
+    // Check Username
+    // check('username', 'Video_id may not be secure').trim().escape().isAlphanumeric().isLength({ min: 11, max: 11 })
+    check('video_id', 'Video_id may not be secure').trim().escape(),
+    // check('video_id').isLength({ min: 10, max: 12 }).withMessage('Video is should only be 11 characters long').matches('a-z and/or 0-9'),
+    // Check Password
+    // check('password').isLength({ min: 8 }).withMessage('Password Must Be at Least 8 Characters').matches('[0-9]').withMessage('Password Must Contain a Number').matches('[A-Z]').withMessage('Password Must Contain an Uppercase Letter').trim().escape()
+];
+
+
+
+
+app.post("/sendUrl", santizeInput, (req, res) => {
     console.log("GOT INDEX POST REQUEST");
     // ! **CAUTION**: We are -NOT- checking req.query for malicious code
     console.log("URL", req.query);
 
 
+    const errors = validationResult(req);
+    console.log("Checking for errors in video_id");
+    console.log("vido_id: ", req.query.url)
+    if (!errors.isEmpty()) {
 
-    var video_id = /v=(\w\w\w\w\w\w\w\w\w\w\w)/.exec(req.query.url)[1];
+        console.log("ERROR FOUND!!!!!!!!!!!!")
+        console.log(errors.array());
+        return res.status(422).json({ errors: errors.array() });
+    }
+    else {
+        // Insert Login Code Here
+        console.log("Santizing complete, no errors.");
+        var video_id = req.query.url;
+        console.log("videoId: ", video_id)
+        // res.send(`Username: ${username}`);
+    }
+
+
+
+    // var video_id = /v=(\w\w\w\w\w\w\w\w\w\w\w)/.exec(req.query.url)[1];
+    // var video_id = req.query.url;
     // console.log("video_id", sanitizedUrl);
 
     // See python notes at bottom of .py file
@@ -122,6 +156,7 @@ app.post("/sendUrl", (req, res, next) => {
         // Path Traversal: Unsanitized input from an HTTP parameter flows into fs.readFileSync, where it is use...
         // deepcode ignore PT: <please specify a reason of ignoring this>
 
+
         data = fs.readFileSync(`./transcripts/${video_id}.json`, 'utf8')
         // WARNING
         // SNYK
@@ -158,6 +193,30 @@ app.post("/sendUrl", (req, res, next) => {
 
     })
 });
+
+// Route to Login Page
+// app.get('/login', (req, res) => {
+// });
+
+
+
+// app.post('/sendUrl', santizeInput, (req, res) => {
+
+//     const errors = validationResult(req);
+//     console.log("Checking for errors in login");
+//     console.log("Username: ", req.query.url)
+//     if (!errors.isEmpty()) {
+
+//         console.log("ERROR FOUND!!!!!!!!!!!!")
+//         return res.status(422).json({ errors: errors.array() });
+//     }
+//     else {
+//         // Insert Login Code Here
+//         let username = req.query.url;
+//         console.log("Username: ", username)
+//         res.send(`Username: ${username}`);
+//     }
+// });
 // })
 
 // router.post("/sendUrl", (req, res) => {

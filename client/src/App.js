@@ -71,10 +71,13 @@ function IntialPage() {
 
     console.log("Inside LoadVideo() sending url:/sendUrl?url=", formUrl)
 
+    formUrl = /v=(\w\w\w\w\w\w\w\w\w\w\w)/.exec(formUrl)[1];
+
     axios.post("/sendUrl?url=" + formUrl)
+      // axios.post("/login?url=" + formUrl)
       .then((jsonData) => {
         data = jsonData.data;
-        setVideoId(/v=(.*)/.exec(formUrl)[1]);
+        setVideoId(/v=(\w\w\w\w\w\w\w\w\w\w\w)/.exec(formUrl)[1]);
       }).catch((err) => { console.log("REACT FETCH ERROR::: ", err); })
 
     // setInterval(function () {
