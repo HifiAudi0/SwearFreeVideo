@@ -12,11 +12,17 @@ require("dotenv").config({ path: __dirname + "/.env" }); // FIX vercel .replace 
 var cors = require('cors')
 // const validator = require('validator');
 const { check, validationResult } = require('express-validator');
+const helmet = require('helmet');
+const rateLimit = require('express-rate-limit')
 
 
 app.use(cors()) // FIX solves the following error: Access to XMLHttpRequest at  from origin has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource
 
 app.use("/", router);
+
+/* Fixses a security issue raised by Snyk */
+app.use(helmet())
+app.use('/', rateLimit())
 
 
 app.engine(
