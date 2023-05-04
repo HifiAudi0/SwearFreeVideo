@@ -6,7 +6,7 @@ import re
 
 transcriptDir = "./transcripts/"
 
-    # **CAUTION**: We are -NOT- checking arguments passed in for malicious code
+
 video_id = str(sys.argv[1])
 
 # Check if the video_id is valid for security reasons

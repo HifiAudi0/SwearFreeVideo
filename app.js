@@ -20,7 +20,7 @@ app.use(cors()) // FIX solves the following error: Access to XMLHttpRequest at  
 
 app.use("/", router);
 
-/* Fixses a security issue raised by Snyk */
+/* Fixses two security issues raised by Snyk */
 app.use(helmet())
 app.use('/', rateLimit())
 
@@ -68,7 +68,7 @@ var santizeInput = [
 
 app.post("/sendUrl", santizeInput, (req, res) => {
     console.log("GOT INDEX POST REQUEST");
-    // ! **CAUTION**: We are -NOT- checking req.query for malicious code
+
     console.log("URL", req.query);
 
 
@@ -91,6 +91,15 @@ app.post("/sendUrl", santizeInput, (req, res) => {
 
 
 
+
+    pattern = /^\w{11}$/
+
+    let validOrNot = pattern.test(video_id)
+
+    if (!validOrNot) {
+        res.send("Invalid video id, intentionally exiting program for security reasons.")
+    }
+    console.log("Express:::", validOrNot)
     // var video_id = /v=(\w\w\w\w\w\w\w\w\w\w\w)/.exec(req.query.url)[1];
     // var video_id = req.query.url;
     // console.log("video_id", sanitizedUrl);
