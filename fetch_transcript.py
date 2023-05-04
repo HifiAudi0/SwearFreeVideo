@@ -1,12 +1,19 @@
 from youtube_transcript_api import YouTubeTranscriptApi
 import json
 import sys
-import os.path
+import os
+import re
 
 transcriptDir = "./transcripts/"
 
     # **CAUTION**: We are -NOT- checking arguments passed in for malicious code
 video_id = str(sys.argv[1])
+
+# Check if the video_id is valid for security reasons
+validOrNotResult = re.search("^\w{11}$", video_id)
+
+if not validOrNotResult:
+    exit("Python Error: Invalid video ID, intentionally exiting for security reasons.")
 
 print ("Python:::" + str(sys.argv[1]))
 
@@ -74,11 +81,13 @@ transcript = transcript_list.find_transcript(['en'])
 # transcript = transcript_list.find_generated_transcript(['de', 'en'])
 
 
+
+
 # Write the transcript to a file as a json object
 try:
     print("Python Writing Transcript to File:::")
     with open(transcriptDir + video_id + '.json', 'w') as outfile:
-        json.dump(transcript.fetch(), outfile)
+        json.dump(transcript.fetch(), (outfile))
 except:
     print("Error writing transcript to file")
     
@@ -86,3 +95,10 @@ except:
 # But it still works when run from the command line
 # However it is the only way to get the output sent back to Node (incase of errors)
 #sys.stdout.flush()
+
+
+
+
+
+# if __name__ == "__main__":
+#     main(sys.argv[1:])
