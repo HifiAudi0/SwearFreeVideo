@@ -102,8 +102,6 @@ function IntialPage() {
 
   setInterval(function () {
 
-
-
     var counter;
     var displaySwearingText = document.querySelector("#displaySwearingText");
 
@@ -121,8 +119,6 @@ function IntialPage() {
 
     if (currentTimestamp > nextSwearStartsAt && currentTimestamp < endSwearingDuration) {
       // console.log("SWEARING INCOMING TIMSTAMP:::::", currentTimestamp);
-      // console.log("__________________________________MUTE")
-      // console.log("_____________________________________________")
 
       playerRef.current?.getInternalPlayer()?.mute();
       displaySwearingText.classList.add("show");
@@ -258,13 +254,10 @@ function IntialPage() {
       </motion.div>
 
 
-
-
       <br /><br />
       <p>Status: <span id='counters'>{data}</span></p>
       {/* <p>{the_url && `the url: ${the_url}`}</p> */}
       <p>Total Number of swear words detected is: <span id='counters'>{totalSwearWordsDetected}</span></p>
-      {/* <p>{tMinusNextSwearAt && `T-minus next swear word in: <span id='counters'>  ${tMinusNextSwearAt} seconds</span>`}</p> */}
 
       <p>T-minus next swear word in: <span id='counters'>{tMinusNextSwearAt} seconds</span></p>
 
@@ -291,13 +284,6 @@ function IntialPage() {
 }
 
 
-
-
-
-
-
-
-
 function Features() {
 
   /* framer-motion */
@@ -306,24 +292,6 @@ function Features() {
 
   return (
     <>
-
-
-
-      {/* <motion.div
-        className="box"
-        initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{
-          duration: 0.3,
-          ease: [0, 0.71, 0.2, 1.01],
-          scale: {
-            type: "spring",
-            damping: 5,
-            stiffness: 100,
-            restDelta: 0.001
-          }
-        }}
-      > */}
 
       <motion.div
         initial={false}
@@ -348,47 +316,8 @@ function Features() {
             <line class="svgLine" x1="0" y1="0" x2="300" y2="0" />
           </svg>
           <br />     <br />
-          {/* <div class="footer-grid-container">
-        <div class="footer-grid-item"> */}
-
-
-
-          {
-
-            // <ul>
-            //   <div className="featuresContainer">
-            //     <li><img className="featuresIcons" src="./img/video2.png" />
-            //       <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Works on almost every video on Youtube</span></li><br />
-
-
-            //     <li className="autoDetect">
-            //       <img className="featuresIcons" src="./img/autoDetectRed.png" />
-            //       <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Automatically detects swear words</span></li><br />
-
-            //     <li>
-            //       <img className="featuresIcons" src="./img/muted3.png" />
-            //       <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Visual and audio notification of swearing</span></li><br />
-
-            //     <li className="swearWord">
-            //       <img className="featuresIcons" src="./img/counter.png" />
-            //       <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Swear word counter</span></li><br />
-
-            //     <li className="swearCounter"><img className="featuresIcons" src="./img/countdown.jpeg" />
-            //       <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Swear word countdown</span></li><br />
-
-            //     <li className="easyToUse"><img className="featuresIcons" src="./img/easyToUse2.png" />
-            //       <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Easy to use - just paste and go!</span></li><br />
-
-            //     <li className="noDownload"><img className="featuresIcons" src="./img/safeSecure3.png" />
-            //       <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">No need to download anything - safe and secure.</span></li><br />
-            //   </div>
-            // </ul>
-
-          }
-
 
           < div className="featuresContainer">
-
 
             <div className="featureList">
               <img src="./img/featuresList1.png" className="featureListHex" />
@@ -439,8 +368,6 @@ function Features() {
 
           </div>
         </div >
-        {/* </div>
-      </div> */}
 
       </motion.div>
 
@@ -451,6 +378,7 @@ function Features() {
 function Faq() {
   return (
     <>
+
       <br /> <br /> <br /> <br />
       <svg height="5px" width="150px">
         <line class="svgLine" x1="0" y1="0" x2="300" y2="0" />
@@ -460,6 +388,7 @@ function Faq() {
         <line class="svgLine" x1="0" y1="0" x2="300" y2="0" />
       </svg>
       <br /> <br />
+
       <Accordion className="accordion">
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
@@ -554,3 +483,38 @@ export { IntialPage };
         This tool is not fool proof nor is it 100% accurate.<br />
         Children should always be supervised.<br />This tool should be understood and operated with adult supervision.<br />
       </div> */}
+
+
+
+{
+
+  // <ul>
+  //   <div className="featuresContainer">
+  //     <li><img className="featuresIcons" src="./img/video2.png" />
+  //       <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Works on almost every video on Youtube</span></li><br />
+
+
+  //     <li className="autoDetect">
+  //       <img className="featuresIcons" src="./img/autoDetectRed.png" />
+  //       <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Automatically detects swear words</span></li><br />
+
+  //     <li>
+  //       <img className="featuresIcons" src="./img/muted3.png" />
+  //       <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Visual and audio notification of swearing</span></li><br />
+
+  //     <li className="swearWord">
+  //       <img className="featuresIcons" src="./img/counter.png" />
+  //       <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Swear word counter</span></li><br />
+
+  //     <li className="swearCounter"><img className="featuresIcons" src="./img/countdown.jpeg" />
+  //       <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Swear word countdown</span></li><br />
+
+  //     <li className="easyToUse"><img className="featuresIcons" src="./img/easyToUse2.png" />
+  //       <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">Easy to use - just paste and go!</span></li><br />
+
+  //     <li className="noDownload"><img className="featuresIcons" src="./img/safeSecure3.png" />
+  //       <Checkbox className="featurePara" disabled defaultChecked /><span className="featurePara">No need to download anything - safe and secure.</span></li><br />
+  //   </div>
+  // </ul>
+
+}
