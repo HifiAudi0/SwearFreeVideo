@@ -96,7 +96,9 @@ app.post("/sendUrl", santizeInput, (req, res) => {
     let validOrNot = pattern.test(video_id)
 
     if (!validOrNot) {
-        res.send("Invalid video id, intentionally exiting program for security reasons.")
+        let response = "HTTP-400: Invalid video id, intentionally exiting program for security reasons. Please try again, see example url provided."
+        console.log(response);
+        return res.send("HTTP-400: Invalid video id, intentionally exiting program for security reasons.");
     }
     console.log("Express:::", validOrNot)
     // var video_id = /v=(\w\w\w\w\w\w\w\w\w\w\w)/.exec(req.query.url)[1];

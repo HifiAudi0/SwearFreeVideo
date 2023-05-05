@@ -261,8 +261,8 @@ function IntialPage() {
 
 
       <br /><br />
-      <p>{data && `Debug data here: ${data}`}</p>
-      <p>{the_url && `the url: ${the_url}`}</p>
+      <p>Status: <span id='counters'>{data}</span></p>
+      {/* <p>{the_url && `the url: ${the_url}`}</p> */}
       <p>Total Number of swear words detected is: <span id='counters'>{totalSwearWordsDetected}</span></p>
       {/* <p>{tMinusNextSwearAt && `T-minus next swear word in: <span id='counters'>  ${tMinusNextSwearAt} seconds</span>`}</p> */}
 
