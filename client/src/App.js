@@ -203,6 +203,28 @@ function IntialPage() {
         </input> */}
       </form>
 
+      <p>Status: <span id='counters'>{data}</span></p>
+      {/* <p>{the_url && `the url: ${the_url}`}</p> */}
+      <p>Total Number of swear words detected is: <span id='counters'>{totalSwearWordsDetected}</span></p>
+
+      <p>T-minus next swear word in: <span id='counters'>{tMinusNextSwearAt} seconds</span></p>
+
+      <div>
+        <h1 className="hide" id="displaySwearingText"></h1>
+        <ReactPlayer
+          url={the_url}
+          playing
+          controls
+          volume={1}
+          muted={false}
+          // onProgress={handleProgress}
+          ref={playerRef}
+          id="videoPlayer"
+          onStart={() => startedPlaying()}
+        />
+      </div>
+
+      <br /><br />
 
       <motion.div
         initial={false}
@@ -254,27 +276,7 @@ function IntialPage() {
       </motion.div>
 
 
-      <br /><br />
-      <p>Status: <span id='counters'>{data}</span></p>
-      {/* <p>{the_url && `the url: ${the_url}`}</p> */}
-      <p>Total Number of swear words detected is: <span id='counters'>{totalSwearWordsDetected}</span></p>
 
-      <p>T-minus next swear word in: <span id='counters'>{tMinusNextSwearAt} seconds</span></p>
-
-      <div>
-        <h1 className="hide" id="displaySwearingText"></h1>
-        <ReactPlayer
-          url={the_url}
-          playing
-          controls
-          volume={1}
-          muted={false}
-          // onProgress={handleProgress}
-          ref={playerRef}
-          id="videoPlayer"
-          onStart={() => startedPlaying()}
-        />
-      </div>
       <Features />
       <Faq />
     </div>
