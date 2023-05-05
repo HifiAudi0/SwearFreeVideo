@@ -6,7 +6,6 @@ const path = require("node:path"); // FIX half of the fix for vercel not working
 const bodyParser = require("body-parser");
 const router = express.Router();
 var qs = require('qs'); // Need this to capture req.query instead of req.params
-const e = require("express");
 const spawn = require("child_process").spawn;
 require("dotenv").config({ path: __dirname + "/.env" }); // FIX vercel .replace ERROR , always worked locally though
 var cors = require('cors')

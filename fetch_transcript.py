@@ -13,7 +13,7 @@ video_id = str(sys.argv[1])
 validOrNotResult = re.search("^\w{11}$", video_id)
 
 if not validOrNotResult:
-    exit("Python Error: Invalid video ID, intentionally exiting for security reasons.")
+    sys.exit("Python Error: Invalid video ID, intentionally exiting for security reasons.")
 
 print ("Python:::" + str(sys.argv[1]))
 
@@ -22,7 +22,7 @@ print ("DEBUG video_id:", video_id)
 alreadyDownloadedTranscripts = os.path.isfile(transcriptDir + video_id + '.json');
 if (alreadyDownloadedTranscripts):
     print("JSON file already exists for this video. Exiting.")
-    exit()
+    sys.exit()
         
 
 # retrieve the available transcripts
