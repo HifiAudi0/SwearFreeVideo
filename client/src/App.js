@@ -187,11 +187,11 @@ function IntialPage() {
 
         <br /><br /><br /><br /><br /><br /><br /><br />
 
-        <img className="logo" src="./img/logo.png" /><br />
+        <img className="logo" src="./img/logo.png" alt="Company logo image" /><br />
 
         <label htmlFor="url">Youtube URL ( example:  https://www.youtube.com/watch?v=we6PRXmfils ) :</label><br />
 
-        <div className="neonShadow"><input className="url" type="text" id="url" name="url" /></div>
+        <div className="neonShadow"><input className="url" type="text" id="url" name="url" alt="An input box to input the url of the video to load." /></div>
 
 
         <button type="submit"><span id="submit">SUBMIT</span>
@@ -244,8 +244,8 @@ function IntialPage() {
       >
 
         <div className="info" onLoad={() => setIsLoaded(true)} >
-          <img className="infoBg" src="./img/infoBlue.png" />
-          <img className="infoIcon" src="./img/infoBulb.png" />
+          <img className="infoBg" src="./img/infoBlue.png" alt="Background to hold text" />
+          <img className="infoIcon" src="./img/infoBulb.png" alt="Lightbulb icon" />
           <h1 className="infoHeading infoBlueHeading">What does it do?</h1>
           <div className="swearFreePara">
             Auto-detects swear words in YouTube videos and mutes the volume at each swear word sentence in the video<br /><br />
@@ -257,8 +257,8 @@ function IntialPage() {
 
 
         <div className="info">
-          <img className="infoBg" src="./img/infoYellow.png" />
-          <img className="infoIcon" src="./img/infoCompt.png" />
+          <img className="infoBg" src="./img/infoYellow.png" alt="Background to hold text" />
+          <img className="infoIcon" src="./img/infoCompt.png" alt="A gear icon for compatibility" />
           <h1 className="infoHeading infoYellowHeading">Compatibility</h1>
           <div className="swearFreePara">
             Current version only works with YouTube videos. I am not endored, affiliated, or sponsored by YouTube in anyway. Youtube is a registered copyright and trademark of Google LLC.
@@ -268,8 +268,8 @@ function IntialPage() {
 
         <br />  <br />
         <div className="info" onLoad={() => setIsLoaded(true)} >
-          <img className="infoBg" src="./img/infoRed.png" />
-          <img className="infoIcon disclaimerImage" src="./img/disclaimer2.png" />
+          <img className="infoBg" src="./img/infoRed.png" alt="Background to hold text" />
+          <img className="infoIcon disclaimerImage" src="./img/disclaimer2.png" alt="A disclaimer image" />
           <h1 className="infoHeading infoRedHeading">Disclaimer</h1>
           <div className="swearFreePara">
             This is tool is not a subsutite for parenting.<br />
@@ -318,7 +318,7 @@ function Features() {
           <svg height="5px" width="150px">
             <line class="svgLine" x1="0" y1="0" x2="300" y2="0" />
           </svg>
-          <h1 id="features">FEATURES</h1>
+          <h2 id="features">FEATURES</h2>
           <svg height="5px" width="150px">
             <line class="svgLine" x1="0" y1="0" x2="300" y2="0" />
           </svg>
@@ -327,49 +327,49 @@ function Features() {
           < div className="featuresContainer">
 
             <div className="featureList">
-              <img src="./img/featuresList1.png" className="featureListHex" />
-              <img src="./img/safeSecure3-v2.png" className="featureListAutoDetect featureListIcon" />
+              <img src="./img/featuresList1.png" className="featureListHex" alt="A background icon to hold heading and text" />
+              <img src="./img/safeSecure3-v2.png" className="featureListAutoDetect featureListIcon" alt="A safe and secure icon" />
               <h3 id="pinkGradient" className="featureListHeading featureGradient featureHeadingSecure">No need to download anything - safe and secure.</h3>
             </div>
 
 
             <div className="featureList">
-              <img src="./img/featuresList2.png" className="featureListHex" />
-              <img src="./img/autoDetectOrangish.png" className="featureListAutoDetect featureListIcon featureListIconBottom" />
+              <img src="./img/featuresList2.png" className="featureListHex" alt="A background icon to hold heading and text" />
+              <img src="./img/autoDetectOrangish.png" className="featureListAutoDetect featureListIcon featureListIconBottom" alt="A bullseye icon" />
               <h3 id="orangeGradient" className="featureListHeading featureGradient featureHeadingDetect">Automatically detects swear words</h3>
             </div>
             <br />     <br />     <br />
 
             <div className="featureList">
-              <img src="./img/featuresList3-v3.png" className="featureListHex" />
-              <img src="./img/easyToUseYellowish.png" className="featureListAutoDetect featureListIcon" />
+              <img src="./img/featuresList3-v3.png" className="featureListHex" alt="A background icon to hold heading and text" />
+              <img src="./img/easyToUseYellowish.png" className="featureListAutoDetect featureListIcon" alt="A ponting hand, clicking like a mouse." />
               <h3 id="yellowGradient" className="featureListHeading featureGradient ">Just paste and go!</h3>
             </div>
 
 
             <div className="featureList">
-              <img src="./img/featuresList4.png" className="featureListHex" />
-              <img src="./img/videoPlayerPurpleish.png" className="featureListAutoDetect featureListIcon featureListIconBottom " />
+              <img src="./img/featuresList4.png" className="featureListHex" alt="A background icon to hold heading and text" />
+              <img src="./img/videoPlayerPurpleish.png" className="featureListAutoDetect featureListIcon featureListIconBottom " alt="A video player icon" />
               <h3 id="purpleGradient" className="featureListHeading featureGradient featureHeadingWorksEvery">Works on almost every video on Youtube</h3>
             </div>
 
             <br />     <br />     <br />
 
             <div className="featureList">
-              <img src="./img/featuresList5.png" className="featureListHex" />
-              <img src="./img/mutedTealish.png" className="featureListAutoDetect featureListIcon" />
+              <img src="./img/featuresList5.png" className="featureListHex" alt="A background icon to hold heading and text" />
+              <img src="./img/mutedTealish.png" className="featureListAutoDetect featureListIcon" lt="A audio icon that is muted." />
               <h3 id="tealGradient" className="featureListHeading featureGradient featureHeadingAudioVideo">Visual and audio notification of swearing</ h3>
             </div>
 
             <div className="featureList">
-              <img src="./img/featuresList6.png" className="featureListHex" />
-              <img src="./img/countdownGreenish.png" className="featureListAutoDetect featureListIcon featureListIconBottom " />
+              <img src="./img/featuresList6.png" className="featureListHex" alt="A background icon to hold heading and text" />
+              <img src="./img/countdownGreenish.png" className="featureListAutoDetect featureListIcon featureListIconBottom " alt="A icon representing a counter of numbers" />
               <h3 id="greenGradient" className="featureListHeading featureGradient featureHeadingCountdown">Swear word countdown</h3>
             </div>
 
             <div className="featureList">
-              <img src="./img/featuresList7.png" className="featureListHex" />
-              <img src="./img/counter-v2.png" className="featureListAutoDetect featureListIcon" />
+              <img src="./img/featuresList7.png" className="featureListHex" alt="A background icon to hold heading and text" />
+              <img src="./img/counter-v2.png" className="featureListAutoDetect featureListIcon" alt="An icon representing how many swear words are counted total." />
               <h3 id="redGradient" className="featureListHeading featureGradient ">Swear word counter</h3>
             </div>
 
