@@ -34,6 +34,7 @@ const visibleMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba
 
 
 // Videos with Confirmed swearing in them (for testing purposes): 
+// ENGLISH
 //https://www.youtube.com/watch?v=_SvIzSD0USE
 // https://www.youtube.com/watch?v=2uvV1-02UCU 
 // https://www.youtube.com/watch?v=2d4L1flXhLY- Swat video 5 total swear words
@@ -41,6 +42,9 @@ const visibleMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba
 // https://www.youtube.com/watch?v=we6PRXmfils - Mr. Beast - 42 total swear words
 // https://www.youtube.com/watch?v=-2JmHi9x7VY - Risk Kill Pete Channel - 40 words
 // https://www.youtube.com/watch?v=kQWXoQZWlMw - South Park - 1o words detected
+
+// SPAIN/SPANISH
+// https://www.youtube.com/watch?v=S95rBrTJGF0
 
 // Keeping tracking of swear words that are MAYBE not detected by the transcript
 // Could be added manually in the future?
@@ -189,9 +193,9 @@ function IntialPage() {
 
         <img className="logo" src="./img/logo.png" alt="Company logo image" /><br />
 
-        <label htmlFor="url">Youtube URL ( example:  https://www.youtube.com/watch?v=we6PRXmfils ) :</label><br />
+        <label htmlFor="url" alt="An input box to input the url of the video to load.">Youtube URL ( example:  https://www.youtube.com/watch?v=we6PRXmfils ) :</label><br />
 
-        <div className="neonShadow"><input className="url" type="text" id="url" name="url" alt="An input box to input the url of the video to load." /></div>
+        <div className="neonShadow"><input className="url" type="text" id="url" name="url" /></div>
 
 
         <button type="submit"><span id="submit">SUBMIT</span>
@@ -357,7 +361,7 @@ function Features() {
 
             <div className="featureList">
               <img src="./img/featuresList5.png" className="featureListHex" alt="A background icon to hold heading and text" />
-              <img src="./img/mutedTealish.png" className="featureListAutoDetect featureListIcon" lt="A audio icon that is muted." />
+              <img src="./img/mutedTealish.png" className="featureListAutoDetect featureListIcon" alt="A audio icon that is muted." />
               <h3 id="tealGradient" className="featureListHeading featureGradient featureHeadingAudioVideo">Visual and audio notification of swearing</ h3>
             </div>
 
