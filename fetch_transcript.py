@@ -72,7 +72,7 @@ except:
        
 
 # you can also directly filter for the language you are looking for, using the transcript list
-transcript = transcript_list.find_transcript(['en'])  
+transcript = transcript_list.find_transcript(['en', 'es', 'it', 'de'])  
 
 # or just filter for manually created transcripts  
 # transcript = transcript_list.find_manually_created_transcript(['de', 'en'])  

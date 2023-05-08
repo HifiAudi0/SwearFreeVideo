@@ -31,6 +31,7 @@ const visibleMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba
 
 // FEATURES TO ADD:
 // If no transcript is availabile which happens, do not load the video at all, show error message to user.
+// Add multiple languages support
 
 
 // Videos with Confirmed swearing in them (for testing purposes): 
@@ -45,6 +46,11 @@ const visibleMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba
 
 // SPAIN/SPANISH
 // https://www.youtube.com/watch?v=S95rBrTJGF0
+// https://www.youtube.com/watch?v=VFJb5Ut95mI - A LOT
+// https://www.youtube.com/watch?v=jFVyEdQCZYg - pepa pig
+
+// Italy/Italian
+// https://www.youtube.com/watch?v=CHbxVhzVF5k - South Park
 
 // Keeping tracking of swear words that are MAYBE not detected by the transcript
 // Could be added manually in the future?
@@ -192,6 +198,10 @@ function IntialPage() {
         <br /><br /><br /><br /><br /><br /><br /><br />
 
         <img className="logo" src="./img/logo.png" alt="Company logo image" /><br />
+
+        <p>Languages supported:<br />
+          🇺🇸 English, 🇪🇸 Spanish, 🇮🇹 Italian and 🇩🇪 German. More languages coming soon!
+        </p>
 
         <label htmlFor="url" alt="An input box to input the url of the video to load.">Youtube URL ( example:  https://www.youtube.com/watch?v=we6PRXmfils ) :</label><br />
 
@@ -452,6 +462,16 @@ function Faq() {
         <AccordionDetails>
           <Typography className="accordPara">
             When a swear word is detected within a sentence, the muting will last until the end of the sentence. Not the start and end of any single word.
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion className="accordion">
+        <AccordionSummary aria-controls="panel2a-content" id="panel2a-header">
+          <Typography className="accordHeading">What languages are currently supported?</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography className="accordPara">
+            The languages currently supported area: 🇺🇸 English, 🇪🇸 Spanish, 🇮🇹 Italian and 🇩🇪 German. More languages are coming soon, stay tuned!
           </Typography>
         </AccordionDetails>
       </Accordion>
