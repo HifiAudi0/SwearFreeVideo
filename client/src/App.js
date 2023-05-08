@@ -52,6 +52,11 @@ const visibleMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba
 // Italy/Italian
 // https://www.youtube.com/watch?v=CHbxVhzVF5k - South Park
 
+// France/French 
+// https://www.youtube.com/watch?v=e_zJLS-5POo - Only 1 swear word
+// https://www.youtube.com/watch?v=Ng2lqQlRkmA - 5 swear words music video
+// https://www.youtube.com/watch?v=rq0FllWlGpk - A LOT - South Park
+
 // Keeping tracking of swear words that are MAYBE not detected by the transcript
 // Could be added manually in the future?
 // "shittest", "dick", "vagina", "balls"

@@ -19,19 +19,14 @@
 }
 
 .statusBg {
-  /* min-width: 100vw;
-  min-height: 100vh; */
-  /* min-width: 100%;
-  width: 100%;
-  height: 900px; */
-  background-color: black;
-  /* background-size: 100% 100%; */
+  /* background-color: black;
+
   background-repeat: no-repeat;
   background-image:
-    /* repeating-radial-gradient(circle, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.75)), */
+    repeating-radial-gradient(circle, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.75)),
     url("../public/img/technoBg.png");
-  background-size: 100% 100%;
-  /* border: 10px solid red; */
+  background-size: 100% 100%; */
+
 }
 
 #gradient {}
