@@ -32,6 +32,7 @@ const visibleMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba
 // FEATURES TO ADD:
 // If no transcript is availabile which happens, do not load the video at all, show error message to user.
 // Add multiple languages support
+// add clearInterval so we only run interval function when video is playing
 
 
 // Videos with Confirmed swearing in them (for testing purposes): 
@@ -56,6 +57,10 @@ const visibleMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba
 // https://www.youtube.com/watch?v=e_zJLS-5POo - Only 1 swear word
 // https://www.youtube.com/watch?v=Ng2lqQlRkmA - 5 swear words music video
 // https://www.youtube.com/watch?v=rq0FllWlGpk - A LOT - South Park
+
+// Videos with -no- transcript availabile (for testing purposes):
+// https://www.youtube.com/watch?v=xXTujbDlfuA - No transcript availabile (English)
+// https://www.youtube.com/watch?v=a5ffLo6JSy4 - No transcript availabile (English)
 
 // Keeping tracking of swear words that are MAYBE not detected by the transcript
 // Could be added manually in the future?
@@ -252,7 +257,7 @@ function IntialPage() {
 
       <h3>Video Player Information:</h3>
       <div className="statusBg">
-        <p>Status: <span id='counters'>{goodResponse ? "Ready to play!" : data}</span></p>
+        <p>Status: <span id={goodResponse ? 'green' : 'red'}>{goodResponse ? "Ready to play!" : data}</span></p>
         {/* <p>{the_url && `the url: ${the_url}`}</p> */}
         <p>Total Number of swear words detected (remaining) is: <span id='counters'>{totalSwearWordsDetected}</span></p>
 
