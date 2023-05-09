@@ -189,7 +189,13 @@ app.post("/sendUrl", santizeInput, (req, res) => {
         // Path Traversal: Unsanitized input from an HTTP parameter flows into fs.readFileSync, where it is use...
 
         // console.log("DATA:::::::::  ", data)
-        let jsonData = JSON.parse(data);
+        try {
+            var jsonData = JSON.parse(data);
+        } catch (err) {
+            let msg = "There was an error parsing the transcript data, please try again."
+            console.log(msg)
+            return res.send(msg);
+        }
         var swearingData = [];
         // jsonData = JSON.parse(data);
         jsonData.map((sentence) => {

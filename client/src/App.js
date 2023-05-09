@@ -81,8 +81,14 @@ function IntialPage() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isInView, setIsInView] = useState(false);
 
+  var [goodResponse, setGoodResponse] = useState(false);
+
+  console.log("Good response?????", goodResponse);
+
 
   function LoadVideo(formUrl) {
+
+
 
     console.log("Inside LoadVideo() sending url:/sendUrl?url=", formUrl)
 
@@ -93,7 +99,22 @@ function IntialPage() {
       .then((jsonData) => {
         data = jsonData.data;
         setVideoId(/v=(\w\w\w\w\w\w\w\w\w\w\w)/.exec(formUrl)[1]);
-      }).catch((err) => { console.log("REACT FETCH ERROR::: ", err); })
+
+
+      }).catch((err) => {
+
+
+        /* check if response was a success or not */
+        // console.log("Pattern checking...........")
+        // let pattern = /^\d+\W\d+$/;
+        // let result = pattern.test(data);
+        if (typeof (data) == "object") { setGoodResponse(true); console.log("Response was a success", goodResponse); }
+        console.log("Error[0]", data)
+        console.log("Typof.....", typeof (data))
+
+
+        console.log("REACT FETCH ERROR::: ", err);
+      })
 
     // setInterval(function () {
     //   if (totalSwearWordsDetected <= 0) {
@@ -161,6 +182,8 @@ function IntialPage() {
     }
   }, 500);
 
+
+
   return (
     <div className="bg" id="gradient">
 
@@ -224,9 +247,9 @@ function IntialPage() {
 
       <h3>Video Player Information:</h3>
       <div className="statusBg">
-        <p>Status: <span id='counters'>{data}</span></p>
+        <p>Status: <span id='counters'>{goodResponse ? "Ready to play!" : data}</span></p>
         {/* <p>{the_url && `the url: ${the_url}`}</p> */}
-        <p>Total Number of swear words detected is: <span id='counters'>{totalSwearWordsDetected}</span></p>
+        <p>Total Number of swear words detected (remaining) is: <span id='counters'>{totalSwearWordsDetected}</span></p>
 
         <p>T-minus next swear word in: <span id='counters'>{tMinusNextSwearAt} seconds</span></p>
       </div>
