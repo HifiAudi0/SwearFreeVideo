@@ -165,6 +165,12 @@ app.post("/sendUrl", santizeInput, (req, res) => {
     fetchTrandscript.on('exit', (code) => {
         console.log(`Child exited with code ${code}`);
 
+        if (code >= 1) {
+            let msg = "There was an error fetching the transcript, please try again."
+            console.log(msg)
+            return res.send(msg);
+        }
+
         // fetchTranscriptReadFile().then((data) => {
 
         // WARNING
@@ -172,8 +178,12 @@ app.post("/sendUrl", santizeInput, (req, res) => {
         // Path Traversal: Unsanitized input from an HTTP parameter flows into fs.readFileSync, where it is use...
         // deepcode ignore PT: <please specify a reason of ignoring this>
 
-
-        data = fs.readFileSync(`./transcripts/${video_id}.json`, 'utf8')
+        try {
+            data = fs.readFileSync(`./transcripts/${video_id}.json`, 'utf8')
+        } catch (err) {
+            console.log("Node file system error: ", err, "Exiting.....");
+            return;
+        }
         // WARNING
         // SNYK
         // Path Traversal: Unsanitized input from an HTTP parameter flows into fs.readFileSync, where it is use...
