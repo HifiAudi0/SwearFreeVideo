@@ -168,7 +168,7 @@ app.post("/sendUrl", santizeInput, (req, res) => {
         if (code >= 1) {
             let msg = "There was an error fetching the transcript, please try again."
             console.log(msg)
-            return res.send(msg);
+            return res.status(404).send(msg);
         }
 
         // fetchTranscriptReadFile().then((data) => {
@@ -194,7 +194,7 @@ app.post("/sendUrl", santizeInput, (req, res) => {
         } catch (err) {
             let msg = "There was an error parsing the transcript data, please try again."
             console.log(msg)
-            return res.send(msg);
+            return res.status(404).send(msg);
         }
         var swearingData = [];
         // jsonData = JSON.parse(data);

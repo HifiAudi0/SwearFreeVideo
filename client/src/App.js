@@ -88,6 +88,8 @@ function IntialPage() {
 
   var [goodResponse, setGoodResponse] = useState(false);
 
+  const [err, setErr] = useState("");
+
   console.log("Good response?????", goodResponse);
 
 
@@ -107,18 +109,21 @@ function IntialPage() {
         if (typeof (data) == "object") { setGoodResponse(true); console.log("Response was a success", goodResponse); }
         console.log("Error[0]", data)
         console.log("Typof.....", typeof (data))
+        console.log("response status...........", jsonData.status)
 
-      }).catch((err) => {
+        // Give me an example of res.sendStatus
+
+      }).catch((error) => {
 
 
         /* check if response was a success or not */
         // console.log("Pattern checking...........")
         // let pattern = /^\d+\W\d+$/;
         // let result = pattern.test(data);
-
-
-
-        console.log("REACT FETCH ERROR::: ", err);
+        // setErr(error.response.data);
+        setErr(error.response.data)
+        console.log("REACT FETCH ERROR::: ", error);
+        console.log("type of err", typeof (error), "ERROR====", error.response.data)
       })
 
     // setInterval(function () {
@@ -257,7 +262,7 @@ function IntialPage() {
 
       <h3>Video Player Information:</h3>
       <div className="statusBg">
-        <p>Status: <span id={goodResponse ? 'green' : 'red'}>{goodResponse ? "Ready to play!" : data}</span></p>
+        <p>Status: <span id={goodResponse ? 'green' : 'red'}>{goodResponse ? "Ready to play!" : err}</span></p>
         {/* <p>{the_url && `the url: ${the_url}`}</p> */}
         <p>Total Number of swear words detected (remaining) is: <span id='counters'>{totalSwearWordsDetected}</span></p>
 
