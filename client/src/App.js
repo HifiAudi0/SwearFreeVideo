@@ -74,7 +74,7 @@ var data = [];
 function IntialPage() {
 
   // const [data, setData] = useState({}); // DEBUG FIX, do -not- use {} for objects. use [] for objects too. see console.log
-  const [video_id, setVideoId] = useState("");
+
   const [the_url, setTheUrl] = useState("");
 
   const playerRef = useRef(null);
@@ -103,8 +103,10 @@ function IntialPage() {
       // axios.post("/login?url=" + formUrl)
       .then((jsonData) => {
         data = jsonData.data;
-        setVideoId(/v=(\w\w\w\w\w\w\w\w\w\w\w)/.exec(formUrl)[1]);
 
+        if (typeof (data) == "object") { setGoodResponse(true); console.log("Response was a success", goodResponse); }
+        console.log("Error[0]", data)
+        console.log("Typof.....", typeof (data))
 
       }).catch((err) => {
 
@@ -113,9 +115,7 @@ function IntialPage() {
         // console.log("Pattern checking...........")
         // let pattern = /^\d+\W\d+$/;
         // let result = pattern.test(data);
-        if (typeof (data) == "object") { setGoodResponse(true); console.log("Response was a success", goodResponse); }
-        console.log("Error[0]", data)
-        console.log("Typof.....", typeof (data))
+
 
 
         console.log("REACT FETCH ERROR::: ", err);
