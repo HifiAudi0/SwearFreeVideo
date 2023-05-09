@@ -132,6 +132,7 @@ function IntialPage() {
     }
     else {
       console.log(totalSwearWordsDetected + " swear words detected!!!")
+      console.log("TYPEOF................", typeof (data))
     }
     // }, 2000);
   }
@@ -147,8 +148,12 @@ function IntialPage() {
     var nextSwearDurationIs = data[0];
     var endSwearingDuration = nextSwearStartsAt + nextSwearDurationIs;
     setTMinusNextSwearAt(Math.round(nextSwearStartsAt - currentTimestamp));
-    setTotalSwearWordsDetected(data.length / 2)
-
+    if (typeof (data) == "object") {
+      setTotalSwearWordsDetected(data.length / 2)
+    }
+    else {
+      setTotalSwearWordsDetected(0)
+    }
 
     // console.log("Number:", totalSwearWordsDetected);
     // console.log("No swear words detected!!!");
