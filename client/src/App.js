@@ -138,17 +138,15 @@ function IntialPage() {
 
   }
 
-  function startedPlaying() {
-    // setInterval(function () {
-    if (totalSwearWordsDetected <= 0) {
-      console.log("No swear words detected!!!");
-    }
-    else {
-      console.log(totalSwearWordsDetected + " swear words detected!!!")
-      console.log("TYPEOF................", typeof (data))
-    }
-    // }, 2000);
-  }
+  // function startedPlaying() {
+  //   if (totalSwearWordsDetected <= 0) {
+  //     console.log("No swear words detected!!!");
+  //   }
+  //   else {
+  //     console.log(totalSwearWordsDetected + " swear words detected!!!")
+  //     console.log("TYPEOF................", typeof (data))
+  //   }
+  // }
 
 
   function currentlyPlaying() {
@@ -277,7 +275,6 @@ function IntialPage() {
       <h3>Video Player:</h3>
       <div>
         <h1 className="hide" id="displaySwearingText"></h1>
-        {console.log("The NEW form url................................", the_url)}
         <ReactPlayer
           url={the_url}
           playing
