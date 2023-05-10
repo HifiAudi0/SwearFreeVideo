@@ -102,6 +102,8 @@ function IntialPage() {
 
     formUrl = /v=(\w\w\w\w\w\w\w\w\w\w\w)/.exec(formUrl)[1];
 
+    setTheUrl("https://www.youtube.com/watch?v=" + formUrl);
+
     axios.post("/sendUrl?url=" + formUrl)
       // axios.post("/login?url=" + formUrl)
       .then((jsonData) => {
@@ -275,6 +277,7 @@ function IntialPage() {
       <h3>Video Player:</h3>
       <div>
         <h1 className="hide" id="displaySwearingText"></h1>
+        {console.log("The NEW form url................................", the_url)}
         <ReactPlayer
           url={the_url}
           playing
