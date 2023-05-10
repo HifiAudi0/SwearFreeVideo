@@ -148,8 +148,8 @@ function IntialPage() {
     // }, 2000);
   }
 
-  setInterval(function () {
 
+  function currentlyPlaying() {
     var counter;
     var displaySwearingText = document.querySelector("#displaySwearingText");
 
@@ -196,7 +196,7 @@ function IntialPage() {
       // console.log("NO SWEARING NEXT SWEAR STARTS AT", nextSwearStartsAt)
       // console.log("NO SWEARING NEXT SWEAR DURATION IS", nextSwearDurationIs)
     }
-  }, 500);
+  }
 
 
 
@@ -283,7 +283,8 @@ function IntialPage() {
           // onProgress={handleProgress}
           ref={playerRef}
           id="videoPlayer"
-          onStart={() => startedPlaying()}
+          onPlay={() =>
+            setInterval(currentlyPlaying, 500)}
         />
       </div>
 
