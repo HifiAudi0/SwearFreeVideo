@@ -33,6 +33,7 @@ const visibleMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba
 // If no transcript is availabile which happens, do not load the video at all, show error message to user.
 // Add multiple languages support
 // add clearInterval so we only run interval function when video is playing
+// Watching multiple videos WITHOUT refreshing the page is still buggy.
 
 
 // Videos with Confirmed swearing in them (for testing purposes): 
@@ -246,7 +247,7 @@ function IntialPage() {
           🇺🇸 English, 🇪🇸 Spanish, 🇮🇹 Italian and 🇩🇪 German. More languages coming soon!
         </p>
 
-        <label htmlFor="url" alt="An input box to input the url of the video to load.">Youtube URL ( example:  https://www.youtube.com/watch?v=we6PRXmfils ) :</label><br />
+        <label htmlFor="url" alt="An input box to input the url of the video to load.">Youtube&#169;&trade; URL ( example:  https://www.youtube.com/watch?v=we6PRXmfils ) :</label><br />
 
         <div className="neonShadow"><input className="url" type="text" id="url" name="url" /></div>
 
@@ -305,7 +306,7 @@ function IntialPage() {
           <img className="infoIcon" src="./img/infoBulb.png" alt="Lightbulb icon" />
           <h1 className="infoHeading infoBlueHeading">What does it do?</h1>
           <div className="swearFreePara">
-            Auto-detects swear words in YouTube videos and mutes the volume at each swear word sentence in the video<br /><br />
+            Auto-detects swear words in videos and mutes the volume at each swear word sentence in the video. Current version only works with YouTube&#169;&trade; videos.<br /><br />
             {/* Example use-case: A parent can watch a YouTube video with their child with only a few bad words in it with the swear words muted.<br /> */}
           </div>
         </div>
@@ -318,7 +319,7 @@ function IntialPage() {
           <img className="infoIcon" src="./img/infoCompt.png" alt="A gear icon for compatibility" />
           <h1 className="infoHeading infoYellowHeading">Compatibility</h1>
           <div className="swearFreePara">
-            Current version only works with YouTube videos. I am not endored, affiliated, or sponsored by YouTube in anyway. Youtube is a registered copyright and trademark of Google LLC.
+            Current version works with YouTube&#169;&trade; videos. I am not endored, affiliated, or sponsored by YouTube&#169;&trade; in anyway. Youtube&#169;&trade; is a registered copyright and trademark of Google LLC.
           </div>
         </div>
 
@@ -407,7 +408,7 @@ function Features() {
             <div className="featureList">
               <img src="./img/featuresList4.png" className="featureListHex" alt="A background icon to hold heading and text" />
               <img src="./img/videoPlayerPurpleish.png" className="featureListAutoDetect featureListIcon featureListIconBottom " alt="A video player icon" />
-              <h3 id="purpleGradient" className="featureListHeading featureGradient featureHeadingWorksEvery">Works on almost every video on Youtube</h3>
+              <h3 id="purpleGradient" className="featureListHeading featureGradient featureHeadingWorksEvery">Works on almost every video on Youtube&#169;&trade;</h3>
             </div>
 
             <br />     <br />     <br />
@@ -473,7 +474,7 @@ function Faq() {
         </AccordionSummary>
         <AccordionDetails>
           <Typography className="accordPara">
-            Just copy and paste the YouTube video URL into the form and click submit.
+            Just copy and paste the YouTube&#169;&trade; video URL into the form and click submit.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -489,11 +490,11 @@ function Faq() {
       </Accordion>
       <Accordion className="accordion">
         <AccordionSummary aria-controls="panel2a-content" id="panel2a-header">
-          <Typography className="accordHeading">Does it work with any Youtube video?</Typography>
+          <Typography className="accordHeading">Does it work with any Youtube&#169;&trade; video?</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography className="accordPara">
-            Yes it works with almost any Youtube video, where an auto generated transcript is available.
+            Yes it works with almost any Youtube&#169;&trade; video, where an auto generated transcript is available.
             Not sure if it will work with your video? Just try it out!
           </Typography>
         </AccordionDetails>
