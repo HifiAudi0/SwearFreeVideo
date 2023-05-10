@@ -285,6 +285,9 @@ function IntialPage() {
           id="videoPlayer"
           onPlay={() =>
             setInterval(currentlyPlaying, 500)}
+          width={"60rem"}
+          height={"40rem"}
+          className="reactPlayer"
         />
       </div>
 

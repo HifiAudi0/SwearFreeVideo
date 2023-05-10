@@ -160,7 +160,7 @@ url,
 }
 
 #green {
-  color: green;
+  color: greenyellow;
 }
 
 #videoPlayer {
@@ -184,6 +184,10 @@ url,
   animation-name: swearingTextAnimation;
   animation-duration: 1s;
   animation-iteration-count: infinite;
+}
+
+.reactPlayer {
+  margin-left: -200px;
 }
 
 .show {
