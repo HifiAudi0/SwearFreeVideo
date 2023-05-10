@@ -11,18 +11,11 @@
   min-width: 100vw;
   min-height: 100vh;
   background-color: black;
-}
-
-.bgImage {
+  /* background-size: 100% 100%; */
+  background-repeat: no-repeat;
   background-image:
     repeating-radial-gradient(circle, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.75)),
     url("../public/img/tvBackgroundNoText.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  /* background-size: 50% 50%; */
-  width: 50rem;
-  height: 30rem;
-  margin: auto;
 }
 
 .statusBg {
@@ -35,6 +28,8 @@
   background-size: 100% 100%; */
 
 }
+
+#gradient {}
 
 
 .navbar {

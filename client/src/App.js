@@ -201,7 +201,7 @@ function IntialPage() {
 
 
   return (
-    <div className="bg">
+    <div className="bg" id="gradient">
 
 
 
@@ -225,11 +225,10 @@ function IntialPage() {
 
 
       </nav>
-      <br />
       {/* <!-- NAV BAR ENDS --> */}
-      <div className="bgImage"></div>
 
 
+      <br /><br />
 
 
       <form onSubmit={(e) => {
@@ -240,7 +239,7 @@ function IntialPage() {
         console.log("the url", the_url);
       }}>
 
-        <br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br />
 
         <img className="logo" src="./img/logo.png" alt="Company logo image" /><br />
 
