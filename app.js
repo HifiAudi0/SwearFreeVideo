@@ -42,12 +42,17 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.raw());
 
-
-app.get("/index", (req, res) => {
-    res.render("youtube_iframe", {
-
-    });
+router.get("/", function (req, res, next) {
+    res.send("Api is working..............");
 })
+
+
+app.use(express.static(path.join(__dirname, 'build')));
+
+
+// app.get('/*', function (req, res) {
+//     res.sendFile(path.join(__dirname, 'build', 'index.html'));
+// });
 
 
 

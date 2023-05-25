@@ -104,7 +104,9 @@ function IntialPage() {
 
     setTheUrl("https://www.youtube.com/watch?v=" + formUrl);
 
-    axios.post("/sendUrl?url=" + formUrl)
+    axios.post("http://162.240.97.142:49655/sendUrl?url=" + formUrl)
+      // axios.post("http://ec2-3-145-171-139.us-east-2.compute.amazonaws.com:49655/sendUrl?url=" + formUrl)
+      // axios.post("http://127.0.0.1:3005/sendUrl?url=" + formUrl)
       // axios.post("/login?url=" + formUrl)
       .then((jsonData) => {
         data = jsonData.data;
