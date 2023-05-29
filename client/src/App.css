@@ -7,10 +7,44 @@
   font-size: 1.3rem;
 }
 
+/* .bg {
+  min-width: 100%;
+  min-height: 100vh;
+  background-size: 100% 100%;
+  background-color: green;
+  background-size: cover;
+  width: 100%;
+  position: relative;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 0;
+} */
+
+
 .bg {
-  min-width: 100vw;
+  min-width: 100%;
   min-height: 100vh;
   background-color: black;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0; */
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .bgImage {
