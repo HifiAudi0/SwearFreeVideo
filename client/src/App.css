@@ -48,9 +48,10 @@
 }
 
 .bgImage {
-  background-image:
+  /* background-image:
     repeating-radial-gradient(circle, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.75)),
-    url("../public/img/tvBackgroundNoText.png");
+    url("../public/img/tvBackgroundNoText.png"); */
+  background-image: url("../public/img/tvBackgroundNoText.png");
   background-position: center;
   background-repeat: no-repeat;
   /* background-size: 50% 50%; */
