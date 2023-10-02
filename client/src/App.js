@@ -105,7 +105,7 @@ function IntialPage() {
     setTheUrl("https://www.youtube.com/watch?v=" + formUrl);
 
     // axios.post("https://www.swearfreevideos.com:51655/sendUrl?url=" + formUrl)
-    axios.post("http://www.swearfreevideos.com:51655/sendUrl?url=" + formUrl)
+    axios.post("https://www.swearfreevideos.com:51655/sendUrl?url=" + formUrl)
       // axios.post("http://ec2-3-145-171-139.us-east-2.compute.amazonaws.com:49655/sendUrl?url=" + formUrl)
       // axios.post("http://127.0.0.1:3005/sendUrl?url=" + formUrl)
       // axios.post("/login?url=" + formUrl)
