@@ -40,8 +40,8 @@ const visibleMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba
 // ENGLISH
 //https://www.youtube.com/watch?v=_SvIzSD0USE
 // https://www.youtube.com/watch?v=2uvV1-02UCU 
-// https://www.youtube.com/watch?v=2d4L1flXhLY- Swat video 5 total swear words
-// https://www.youtube.com/watch?v=7RAJUzIO8kg TONS OF SWEARING Kanel Joseph
+// https://www.youtube.com/watch?v=2d4L1flXhLY- Swat video s
+// https://www.youtube.com/watch?v=7RAJUzIO8kg  TONS OF SWEARING Kanel Joseph
 // https://www.youtube.com/watch?v=we6PRXmfils - Mr. Beast - 42 total swear words
 // https://www.youtube.com/watch?v=-2JmHi9x7VY - Risk Kill Pete Channel - 40 words
 // https://www.youtube.com/watch?v=kQWXoQZWlMw - South Park - 1o words detected
@@ -104,7 +104,8 @@ function IntialPage() {
 
     setTheUrl("https://www.youtube.com/watch?v=" + formUrl);
 
-    axios.post("https://www.swearfreevideos.com:51655/sendUrl?url=" + formUrl)
+    // axios.post("https://www.swearfreevideos.com:51655/sendUrl?url=" + formUrl)
+    axios.post("http://www.swearfreevideos.com:51655/sendUrl?url=" + formUrl)
       // axios.post("http://ec2-3-145-171-139.us-east-2.compute.amazonaws.com:49655/sendUrl?url=" + formUrl)
       // axios.post("http://127.0.0.1:3005/sendUrl?url=" + formUrl)
       // axios.post("/login?url=" + formUrl)
