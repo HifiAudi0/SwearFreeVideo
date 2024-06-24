@@ -1,10 +1,23 @@
-from youtube_transcript_api import YouTubeTranscriptApi
+try:
+    from youtube_transcript_api import YouTubeTranscriptApi
+    print("Module youtube_transcript_api imported successfully")
+except ImportError as e:
+    print(f"Error importing module: {e}")
+
 import json
 import sys
 import os
 import re
 
 transcriptDir = "./transcripts/"
+
+
+print("Python executable:", sys.executable)
+print("Python version:", sys.version)
+print("Environment PATH:", os.environ['PATH'])
+
+
+
 
 
 video_id = str(sys.argv[1])

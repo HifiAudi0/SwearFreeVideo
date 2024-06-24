@@ -157,7 +157,7 @@ app.post("/sendUrl", santizeInput, (req, res) => {
         }
     */
 
-    var fetchTrandscript = spawn('python', ["fetch_transcript.py", video_id]);
+    var fetchTrandscript = spawn('python3', ["fetch_transcript.py", video_id]);
 
     fetchTrandscript.stdout.on('data', (data) => {
         console.log(data.toString());
