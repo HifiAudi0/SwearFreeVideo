@@ -45,6 +45,7 @@ const visibleMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba
 // https://www.youtube.com/watch?v=we6PRXmfils - Mr. Beast - 42 total swear words
 // https://www.youtube.com/watch?v=-2JmHi9x7VY - Risk Kill Pete Channel - 40 words
 // https://www.youtube.com/watch?v=kQWXoQZWlMw - South Park - 1o words detected
+// https://www.youtube.com/watch?v=1ZPlMxBu7Og - Unluggy - heavy swearing around 19:00
 
 // SPAIN/SPANISH
 // https://www.youtube.com/watch?v=S95rBrTJGF0
