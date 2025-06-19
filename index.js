@@ -14,8 +14,12 @@ const server = app.listen(port, () => {
 
 
 const httpsServer = https.createServer({
-    key: fs.readFileSync('/etc/letsencrypt/archive/swearfreevideos.com/privkey1.pem'),
-    cert: fs.readFileSync('/etc/letsencrypt/archive/swearfreevideos.com/fullchain1.pem'),
+
+    key: fs.readFileSync('/etc/letsencrypt/live/swearfreevideos.com/privkey.pem'),
+    cert: fs.readFileSync('/etc/letsencrypt/live/swearfreevideos.com/fullchain.pem'),
+
+    //key: fs.readFileSync('/etc/letsencrypt/archive/swearfreevideos.com/privkey1.pem'),
+    // cert: fs.readFileSync('/etc/letsencrypt/archive/swearfreevideos.com/fullchain1.pem'),
 }, app);
 
 httpsServer.listen(51655, () => {
